@@ -1,0 +1,68 @@
+@import url('common.css');
+
+header{
+    width: 100%; 
+}
+.header_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+article.collabo_top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+.collabo_top h3, .collabor_wrapper h3{
+    font-weight: normal;
+}
+article{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+article .art_desc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+article .art_desc p{
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    word-break: break-all;
+}
+
+.collabor_wrapper{
+    max-width: 315px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 54px;
+}
+.collabo_bg{
+    width: 100%;
+    height: 130px;
+    border-radius: 5px;
+    text-indent: -9999em;
+    overflow: hidden;
+}
+.collabo_bg.lotte{
+    background: url('../images/collaboration4.jpg') center center / cover;
+    height: 315px;
+}
+.collabo_bg.samsung{
+    background: url('../images/collaboration3.jpg') center center  / cover;
+}
+.collabo_bg.gs25{
+    background: url('../images/collaboration2.jpg') center center / cover;
+}
+.collabo_bg.innisfree{
+    background: url('../images/collaboration1.jpg') center center / cover;
+}

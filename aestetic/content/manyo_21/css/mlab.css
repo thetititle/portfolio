@@ -1,0 +1,66 @@
+@import url(common.css);
+
+em{
+    font-weight: 700;
+}
+.container{
+    width: 1116px;
+    margin: 0 auto;
+}
+button{
+    float: right;
+    border: 1px solid #C4C4C4;
+    padding: 10px;
+}
+/*-----------------------MAIN------------------------*/
+.mlab{
+    margin-top: 170px;
+}
+
+.mlab_name{
+    padding: 20px 0;
+}
+.mlab_name h2{
+    padding-top: 20px;
+}
+.mlab_wrapper{
+    margin-bottom: 100px;
+}
+.mlab_list li{
+    float: left;
+    width: 255px;
+    margin-right:24px; 
+    float:left; 
+    padding: 14px 0 14px 0; 
+}
+.mlab_list li h3{
+    padding: 10px 0 0 10px;
+    font-size: 16px;
+}
+.mlab_list li:nth-child(4n){
+    margin-right:0;
+}
+.mlab_list img { border-radius:30px;}
+
+.mlab_wrapper .mlab_list .mlab_wrap{
+    position: relative;
+}
+.mlab_wrapper .mlab_list .mlab_wrap:before{
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    transition: 0.4s;
+}
+.mlab_wrapper .mlab_list .mlab_wrap a{
+    position: absolute;
+    left:50%; top:50%; transform: translate(-50%, -50%);
+    color: #393939;
+    opacity: 0;
+    transition: 0.4s;
+}
+.mlab_wrapper .mlab_list .mlab_wrap:hover:before,
+.mlab_wrapper .mlab_list .mlab_wrap:hover a{
+    opacity: 1;
+}
