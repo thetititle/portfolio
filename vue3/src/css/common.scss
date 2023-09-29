@@ -1,0 +1,45 @@
+@import url(./reset.scss);
+@import url(./nomalize.scss);
+
+// color
+:root {
+  --fontColor1: #2d2d2d;
+}
+
+// font
+body {
+  color: var(--fontColor1);
+  font-size: 0.875rem;
+  line-height: 1.2 !important;
+  @media (min-width: 768px) {
+    font-size: 1rem !important;
+  }
+}
+
+h1 {
+  font-size: 1.67rem !important;
+  @media (min-width: 768px) {
+    font-size: 2rem !important;
+  }
+}
+h2 {
+  font-size: 1.313rem !important;
+  @media (min-width: 768px) {
+    font-size: 1.67rem !important;
+  }
+}
+h1,
+h2 {
+  font-weight: 700 !important;
+  margin: 1rem 0 !important;
+}
+
+// flex & padding & margin
+
+// layout
+header {
+  &.q-layout__section--marginal {
+    background-color: transparent;
+    color: var(--fontColor1);
+  }
+}
