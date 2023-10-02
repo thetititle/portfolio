@@ -4,28 +4,31 @@
 // color
 :root {
   --fontColor1: #2d2d2d;
+  --pointClolr1: #d3221c;
+  --bgColor: #fcfcf5;
 }
 
 // font
 body {
   color: var(--fontColor1);
   font-size: 0.875rem;
-  line-height: 1.2 !important;
-  @media (min-width: 768px) {
-    font-size: 1rem !important;
+  font-size: 1rem !important;
+  background-color: var(--bgColor);
+  @media (max-width: 768px) {
+    line-height: 1.2 !important;
   }
 }
 
 h1 {
-  font-size: 1.67rem !important;
-  @media (min-width: 768px) {
-    font-size: 2rem !important;
+  font-size: 2rem !important;
+  @media (max-width: 768px) {
+    font-size: 1.67rem !important;
   }
 }
 h2 {
-  font-size: 1.313rem !important;
-  @media (min-width: 768px) {
-    font-size: 1.67rem !important;
+  font-size: 1.67rem !important;
+  @media (max-width: 768px) {
+    font-size: 1.313rem !important;
   }
 }
 h1,
@@ -35,11 +38,98 @@ h2 {
 }
 
 // flex & padding & margin
+.d-flex {
+  display: flex;
+}
+.y-flex {
+  display: flex;
+  flex-direction: column;
+}
+.jcc {
+  justify-content: center;
+}
+.jcsb {
+  justify-content: space-between;
+}
+.jcsa {
+  justify-content: space-around;
+}
+.jcse {
+  justify-content: space-evenly;
+}
+.jcfs {
+  justify-content: flex-start;
+}
+.jcfe {
+  justify-content: flex-end;
+}
+.aic {
+  align-items: center;
+}
+.aic {
+  align-items: center;
+}
+.aibl {
+  align-items: baseline;
+}
+.aist {
+  align-items: stretch;
+}
+.aifs {
+  align-items: flex-start;
+}
+.aife {
+  align-items: flex-end;
+}
+@for $i from 1 through 999 {
+  .mg#{$i} {
+    margin: 1px * $i;
+  }
+  .mt#{$i} {
+    margin-top: 1px * $i;
+  }
+  .mr#{$i} {
+    margin-right: 1px * $i;
+  }
+  .mb#{$i} {
+    margin-bottom: 1px * $i;
+  }
+  .ml#{$i} {
+    margin-left: 1px * $i;
+  }
+  .pd#{$i} {
+    padding: 1px * $i;
+  }
+  .pt#{$i} {
+    padding-top: 1px * $i;
+  }
+  .pr#{$i} {
+    padding-right: 1px * $i;
+  }
+  .pb#{$i} {
+    padding-bottom: 1px * $i;
+  }
+  .pl#{$i} {
+    padding-left: 1px * $i;
+  }
+  .g#{$i} {
+    gap: 1px * $i;
+  }
+  .rg#{$i} {
+    row-gap: 1px * $i;
+  }
+  .flex#{$i} {
+    flex: 1 * $i;
+  }
+}
 
 // layout
 header {
   &.q-layout__section--marginal {
     background-color: transparent;
     color: var(--fontColor1);
+  }
+  .q-layout__shadow:after {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.025), 0 0px 10px rgba(0, 0, 0, 0.1);
   }
 }

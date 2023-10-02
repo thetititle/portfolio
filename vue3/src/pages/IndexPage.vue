@@ -5,6 +5,7 @@
       src="~assets/quasar-logo-vertical.svg"
       style="width: 200px; height: 200px"
     />
+    <p class="mg20">dfsdf</p>
   </q-page>
 </template>
 
