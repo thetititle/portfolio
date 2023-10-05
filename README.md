@@ -14,14 +14,10 @@ I was fascinated by Medusa from Greek and Roman mythology, so I used her for thi
 <br/>
 <br/>
 <br/>
-## _💙React VER_
+## _💙React & 💚Vue3_
 
-TO BE CONTINUE
-<br/>
-<br/>
-<br/>
-## _💚Vue3 VER_
-
+Pinterst에서 레이아웃 샘플을 뽑아 그를 기반으로 디자인을 하고 있습니다.
+곧 figma 링크를 통해 완성된 작업물을 볼 수 있어요!
 TO BE CONTINUE
 <br/>
 <br/>
