@@ -3,7 +3,7 @@
 
 
 ## _🖤aestetic VER_
-
+<img src="http://thetititle.com/img/MAIN_1280.png">
 직접 디자인 했습니다!<br/>
 그리스 로마신화의 메듀사에게 매료가 되어서 그녀를 컨셉으로 디자인했어요.<br/>
 
@@ -14,11 +14,19 @@ I was fascinated by Medusa from Greek and Roman mythology, so I used her for thi
 <br/>
 <br/>
 <br/>
-## _💙React & 💚Vue3_
+## _💙React & 💚Vue3 VER_
 
-Pinterst에서 레이아웃 샘플을 뽑아 그를 기반으로 디자인을 하고 있습니다.
-곧 figma 링크를 통해 완성된 작업물을 볼 수 있어요!
-TO BE CONTINUE
+Pinterest에서 레이아웃 샘플을 뽑아 그를 기반으로 디자인을 하고 있습니다.
+<br/>
+<br/>
+<a href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=0%3A1&mode=design&t=IexUMjDJxX4exYlJ-1">🌈go figma</a>
+<br/>
+디자인기간 : from 2023.10.05 to 2023.10.10 (진행중)
+<br/>
+<br/>
+제작기간1 : from 2023.10.11 until 2023.10.18 (예정) for vue3
+<br/>
+제작기간2 : from 2023.10.21 until 2023.10.30 (예정) for react
 <br/>
 <br/>
 <br/>
