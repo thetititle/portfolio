@@ -21,13 +21,6 @@ Pinterest에서 레이아웃 샘플을 뽑아 그를 기반으로 디자인을 �
 <br/>
 <a href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=0%3A1&mode=design&t=IexUMjDJxX4exYlJ-1">🌈go figma</a>
 <br/>
-디자인기간 : from 2023.10.05 to 2023.10.10 (진행중)
-<br/>
-<br/>
-제작기간1 : from 2023.10.11 until 2023.10.18 (예정) for vue3
-<br/>
-제작기간2 : from 2023.10.21 until 2023.10.30 (예정) for react
-<br/>
 <br/>
 <br/>
 👉🏻 지속적으로 수정과 리뉴얼을 하면서 보다 더 나은 화면을 위해 노력하고 있습니다. (^◕.◕^)
