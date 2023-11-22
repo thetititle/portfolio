@@ -1,33 +1,20 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+    <q-header reveal elevated>
+      <div class="container row justify-between">
+        <q-avatar>
+          logo
+          <!-- <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"> -->
+        </q-avatar>
 
-        <q-toolbar-title> The thetitle portfolio </q-toolbar-title>
-
-        <!-- <div>tititle v{{ $q.version }}</div> -->
-      </q-toolbar>
+        <q-tabs v-model="tab">
+          <q-tab name="images" label="Images" />
+          <q-tab name="videos" label="Videos" />
+          <q-tab name="articles" label="Articles" />
+          <q-tab name="articles2" label="Articles2" />
+        </q-tabs>
+      </div>
     </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links! </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -37,69 +24,17 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
-
-const linksList = [
-  {
-    title: "velog",
-    caption: "@thetitle",
-    icon: "school",
-    link: "https://velog.io/@thetitle",
-  },
-  {
-    title: "Github",
-    caption: "github.com/thetitle",
-    icon: "code",
-    link: "https://github.com/thetitle",
-  },
-  // {
-  //   title: "Discord Chat Channel",
-  //   caption: "chat.quasar.dev",
-  //   icon: "chat",
-  //   link: "https://chat.quasar.dev",
-  // },
-  // {
-  //   title: "Forum",
-  //   caption: "forum.quasar.dev",
-  //   icon: "record_voice_over",
-  //   link: "https://forum.quasar.dev",
-  // },
-  // {
-  //   title: "Twitter",
-  //   caption: "@quasarframework",
-  //   icon: "rss_feed",
-  //   link: "https://twitter.quasar.dev",
-  // },
-  // {
-  //   title: "Facebook",
-  //   caption: "@QuasarFramework",
-  //   icon: "public",
-  //   link: "https://facebook.quasar.dev",
-  // },
-  // {
-  //   title: "Quasar Awesome",
-  //   caption: "Community Quasar projects",
-  //   icon: "favorite",
-  //   link: "https://awesome.quasar.dev",
-  // },
-];
 
 export default defineComponent({
   name: "MainLayout",
 
   components: {
-    EssentialLink,
   },
 
   setup() {
-    const leftDrawerOpen = ref(false);
 
     return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
+      tab: ref('images')
     };
   },
 });
