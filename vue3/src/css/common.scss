@@ -37,6 +37,10 @@ h2 {
   margin: 1rem 0 !important;
 }
 
+
+.hidden{
+  display: none !important;
+}
 // flex & padding & margin
 @for $i from 1 through 999 {
   .mg#{$i} {
@@ -89,17 +93,81 @@ h2 {
 }
 header {
   &.q-layout__section--marginal {
-    background-color: var(--bgColor);;
+    background-color: var(--bgColor);
     color: var(--fontColor1);
-  }
+    height: 50px;
+    opacity: 1;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
   .q-layout__shadow:after {
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.025), 0 0px 10px rgba(0, 0, 0, 0.1);
   }
+  &.active{
+    opacity: 0;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+  }
+}
+
+div#navBar{
+  background-color: purple;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: -100px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  &.active{
+    top: 0px;
+    opacity: 1;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+}
+main{
+  &.container{
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+
+  section{
+    height: 100vh;
+    &:first-of-type{
+      background-color: #2d2d2d;
+    }
+    &:nth-of-type(2){
+      background-color: #d3221c;
+    }
+    &:nth-of-type(3){
+      background-color: #2d2d2d;
+    }
+  }
+}
+.q-splitter{
+  .q-splitter__before, .q-splitter__separator{
+    display: none !important;
+  }
 }
 footer{
-  height: 90px;
-  border-top: 1px solid rgba(45, 45, 45, 0.1);
   &.q-layout__section--marginal {
+    height: 90px;
+    border-top: 1px solid rgba(45, 45, 45, 0.1);
     background-color: var(--bgColor);
     color: var(--fontColor1);
   }
