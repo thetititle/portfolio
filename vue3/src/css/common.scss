@@ -3,14 +3,15 @@
 
 // color
 :root {
-  --fontColor1: #2d2d2d;
+  --fontBasic: #2d2d2d;
+  --fontWhite: #D9D9D9;
   --pointClolr1: #d3221c;
   --bgColor: #fcfcf5;
 }
 
 // font
 body {
-  color: var(--fontColor1);
+  color: var(--fontBasic);
   font-size: 0.875rem;
   font-size: 1rem !important;
   background-color: var(--bgColor);
@@ -84,18 +85,25 @@ h2 {
   }
 }
 
+// logo
+.q-avatar.logo{
+  width: 100px;
+  height: auto;
+}
+
 // layout
 .container{
   min-width: 1180px;
   max-width: 1320px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 header {
   &.q-layout__section--marginal {
-    background-color: var(--bgColor);
-    color: var(--fontColor1);
-    height: 50px;
+    background-color: transparent;
+    color: var(--fontWhite);
+    height: 60px;
     opacity: 1;
     transition: 1s;
     -webkit-transition: 1s;
@@ -115,12 +123,11 @@ header {
     -o-transition: 1s;
   }
 }
-
 div#navBar{
-  background-color: purple;
+  background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: 60px;
   top: -100px;
   left: 0;
   right: 0;
@@ -140,28 +147,39 @@ div#navBar{
     -o-transition: 0.5s;
   }
 }
-main{
-  &.container{
-    margin: 0 auto;
-    padding: 50px 0;
-  }
-
-  section{
-    height: 100vh;
-    &:first-of-type{
-      background-color: #2d2d2d;
-    }
-    &:nth-of-type(2){
-      background-color: #d3221c;
-    }
-    &:nth-of-type(3){
-      background-color: #2d2d2d;
+.q-tabs{
+  .q-tab{
+    height: 60px;
+    .q-tab__content{
+      padding: 0;
     }
   }
 }
-.q-splitter{
-  .q-splitter__before, .q-splitter__separator{
-    display: none !important;
+
+.q-page-container.index-page{
+  padding-top: 0 !important;
+  main{
+    &.container{
+      // padding: 50px 20px;
+    }
+
+    section{
+      height: 100vh;
+      &:first-of-type{
+        background-color: #2d2d2d;
+      }
+      &:nth-of-type(2){
+        background-color: #d3221c;
+      }
+      &:nth-of-type(3){
+        background-color: #2d2d2d;
+      }
+    }
+  }
+  .q-splitter{
+    .q-splitter__before, .q-splitter__separator{
+      display: none !important;
+    }
   }
 }
 footer{

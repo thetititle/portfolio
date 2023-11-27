@@ -2,43 +2,57 @@
   <q-layout>
     <q-header elevated>
       <div class="container row justify-between">
-        <q-avatar>
-          logo
-        </q-avatar>
+        <router-link to="/">
+          <q-avatar class="logo">
+            <img src="../assets/img/logo_origin_white.png">
+          </q-avatar>
+        </router-link>
 
         <q-tabs v-model="tab" @click="moveSection($event)">
-          <q-tab name="mails" label="mails"/>
-          <q-tab name="alarms" label="alarms"/>
-          <q-tab name="movies" label="movies"/>
+          <q-tab name="project" label="project"/>
+          <q-tab name="about this page" label="about this page"/>
+          <q-tab name="introduce" label="introduce"/>
         </q-tabs>
       </div>
     </q-header>
     <div id="navBar">
       <div class="container row justify-between">
-        <q-avatar>
-          logo
-        </q-avatar>
+        <router-link to="/">
+          <q-avatar class="logo">
+            <img src="../assets/img/logo_origin_dark.png">
+          </q-avatar>
+        </router-link>
 
         <q-tabs v-model="tab" @click="moveSection($event)">
-          <q-tab name="mails" label="mails"/>
-          <q-tab name="alarms" label="alarms"/>
-          <q-tab name="movies" label="movies"/>
+          <q-tab name="project" label="project"/>
+          <q-tab name="about this page" label="about this page"/>
+          <q-tab name="introduce" label="introduce"/>
         </q-tabs>
       </div>
     </div>
 
-    <q-page-container>
-      <main class="container scrollMain">
-        <section id="mails">mails</section>
-        <section id="alarms">alarms</section>
-        <section id="movies">movies</section>
+    <q-page-container class="index-page">
+      <main class="scrollMain">
+        <section id="project">
+          <div class="container">project</div>
+        </section>
+        <section id="about this page">
+          <div class="container">about this page</div>
+        </section>
+        <section id="introduce">
+          <div class="container">introduce</div>
+        </section>
       </main>
     </q-page-container>
-    <q-footer class="row" reveal elevated>
-        <q-toolbar class="container">
-          logo
-        </q-toolbar>
-      </q-footer>
+    <q-footer class="row">
+      <q-toolbar class="container">
+        <router-link to="/">
+          <q-avatar class="logo">
+            <img src="../assets/img/logo_origin_dark.png">
+          </q-avatar>
+        </router-link>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -57,17 +71,13 @@ export default defineComponent({
     window.onscroll = () => {
       const qHeader = document.querySelector('header');
       const navBar = document.getElementById('navBar');
-      console.log('navBar', navBar);
       const scrollHtml = document.querySelector('html');
-      console.log('scrollHtml',scrollHtml.scrollTop);
-      if (scrollHtml.scrollTop > 50) {
+      if (scrollHtml.scrollTop > 60) {
         navBar.classList.add('active');
         qHeader.classList.add('active');
-        console.log('add')
       } else {
         navBar.classList.remove('active');
         qHeader.classList.remove('active');
-        console.log('remove')
       }
     }
 
@@ -76,7 +86,6 @@ export default defineComponent({
       const lowText = upperText.toLowerCase();
       const scrollPosition = document.getElementById(lowText).offsetTop;
       window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
-      console.log('ddd');
     }
 
     return {
