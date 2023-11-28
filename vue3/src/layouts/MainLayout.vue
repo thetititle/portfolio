@@ -4,13 +4,14 @@
       <div class="container row justify-between">
         <router-link to="/">
           <q-avatar class="logo">
-            <img src="../assets/img/logo_origin_white.png">
+            <img src="../assets/img/logo_origin_dark.png">
           </q-avatar>
         </router-link>
 
         <q-tabs v-model="tab" @click="moveSection($event)">
+          <q-tab name="hello" label="hello"/>
           <q-tab name="project" label="project"/>
-          <q-tab name="about this page" label="about this page"/>
+          <q-tab name="this page" label="this page"/>
           <q-tab name="introduce" label="introduce"/>
         </q-tabs>
       </div>
@@ -19,13 +20,14 @@
       <div class="container row justify-between">
         <router-link to="/">
           <q-avatar class="logo">
-            <img src="../assets/img/logo_origin_dark.png">
+            <img src="../assets/img/logo_origin_white.png">
           </q-avatar>
         </router-link>
 
         <q-tabs v-model="tab" @click="moveSection($event)">
+          <q-tab name="hello" label="hello"/>
           <q-tab name="project" label="project"/>
-          <q-tab name="about this page" label="about this page"/>
+          <q-tab name="this page" label="this page"/>
           <q-tab name="introduce" label="introduce"/>
         </q-tabs>
       </div>
@@ -33,11 +35,14 @@
 
     <q-page-container class="index-page">
       <main class="scrollMain">
+        <section id="hello">
+          <div class="container">hello</div>
+        </section>
         <section id="project">
           <div class="container">project</div>
         </section>
-        <section id="about this page">
-          <div class="container">about this page</div>
+        <section id="thisPage">
+          <div class="container">this page</div>
         </section>
         <section id="introduce">
           <div class="container">introduce</div>
@@ -84,12 +89,17 @@ export default defineComponent({
     const moveSection = (e) => {
       const upperText = e.target.innerText;
       const lowText = upperText.toLowerCase();
-      const scrollPosition = document.getElementById(lowText).offsetTop;
+      var newText = lowText.split(" ");
+      for (var i = 1; i < newText.length; i++) {
+        newText[i] = newText[i].charAt(0).toUpperCase() + newText[i].slice(1);
+      }
+      const selectTab = newText.join("");
+      const scrollPosition = document.getElementById(selectTab).offsetTop;
       window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
     }
 
     return {
-      tab: ref('mails'),
+      tab: ref('hello'),
       moveSection,
     };
 
@@ -97,3 +107,7 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss" scoped>
+  // 현재의 컴포넌트에만 아래의 스타일이 적용되도록 scoped 옵션을 필수로 넣는다.
+  @import url(../css/index.scss);
+</style>

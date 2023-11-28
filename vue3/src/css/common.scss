@@ -1,22 +1,52 @@
 @import url(./reset.scss);
 @import url(./nomalize.scss);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;600;900&display=swap');
 
 // color
 :root {
   --fontBasic: #2d2d2d;
-  --fontWhite: #D9D9D9;
+  --fontWhite: #fcfcf5;
   --pointClolr1: #d3221c;
   --bgColor: #fcfcf5;
 }
 
 // font
+@font-face {
+  font-family: 'AppleSDGothicNeoB00';
+  src: url('../assets/font/AppleSDGothicNeoB00.woff2') format('woff2'),
+      url('../assets/font/AppleSDGothicNeoB00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeoH00';
+  src: url('../assets/font/AppleSDGothicNeoH00.woff2') format('woff2'),
+      url('../assets/font/AppleSDGothicNeoH00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeoR00';
+  src: url('../assets/font/AppleSDGothicNeoR00.woff2') format('woff2'),
+      url('../assets/font/AppleSDGothicNeoR00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
+  font-family: 'AppleSDGothicNeoR00','Noto Sans KR', sans-serif;
   color: var(--fontBasic);
-  font-size: 0.875rem;
   font-size: 1rem !important;
+  line-height: 1.2;
   background-color: var(--bgColor);
   @media (max-width: 768px) {
-    line-height: 1.2 !important;
+    font-size: 0.875rem !important;
+    line-height: 1;
   }
 }
 
@@ -101,8 +131,8 @@ h2 {
 }
 header {
   &.q-layout__section--marginal {
+    font-family: 'AppleSDGothicNeoB00','Noto Sans KR', sans-serif;
     background-color: transparent;
-    color: var(--fontWhite);
     height: 60px;
     opacity: 1;
     transition: 1s;
@@ -124,7 +154,9 @@ header {
   }
 }
 div#navBar{
-  background-color: rgba(255, 255, 255, 0.8);
+  font-family: 'AppleSDGothicNeoB00','Noto Sans KR', sans-serif;
+  color: var(--fontWhite);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 100%;
   height: 60px;
@@ -137,6 +169,7 @@ div#navBar{
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
+  z-index: 9999999;
   &.active{
     top: 0px;
     opacity: 1;
@@ -152,29 +185,36 @@ div#navBar{
     height: 60px;
     .q-tab__content{
       padding: 0;
+      .q-tab__label{
+        color: var(--fontBasic)/0.9;
+      }
     }
   }
 }
 
 .q-page-container.index-page{
   padding-top: 0 !important;
+  padding-bottom: 0 !important;
   main{
-    &.container{
-      // padding: 50px 20px;
-    }
+    // &.container{
+    //   padding: 50px 20px;
+    // }
 
-    section{
-      height: 100vh;
-      &:first-of-type{
-        background-color: #2d2d2d;
-      }
-      &:nth-of-type(2){
-        background-color: #d3221c;
-      }
-      &:nth-of-type(3){
-        background-color: #2d2d2d;
-      }
-    }
+    // section{
+    //   height: 100vh;
+    //   &#hello{
+    //     background-color: #2d2d2d;
+    //   }
+    //   &#project{
+    //     background-color: #d3221c;
+    //   }
+    //   &#thisPage{
+    //     background-color: #2d2d2d;
+    //   }
+    //   &#introduce{
+    //     background-color: #2d2d2d;
+    //   }
+    // }
   }
   .q-splitter{
     .q-splitter__before, .q-splitter__separator{
