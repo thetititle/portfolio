@@ -36,7 +36,15 @@
     <q-page-container class="index-page">
       <main class="scrollMain">
         <section id="hello">
-          <div class="container">hello</div>
+          <div class="container">
+            <h1 class="title">
+              hello!<br>
+              this is<br>
+              thetititle's<br>
+              portfolio.
+            </h1>
+            <p class="name">BAE SUJI 2023 PORTFOLIO</p>
+          </div>
         </section>
         <section id="project">
           <div class="container">project</div>
