@@ -6,7 +6,7 @@
 :root {
   --fontBasic: #242020;
   --fontWhite: #fcfcf5;
-  --pointClolr1: #d3221c;
+  --pointClolr1: #FB0069;
   --bgColor: #fcfcf5;
 }
 
@@ -20,14 +20,16 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'AppleSDGothicNeoB00', 'AppleSDGothicNeoH00', 'AppleSDGothicNeoR00';
+  font-family: 'AppleSDGothicNeoB00','AppleSDGothicNeoEB00', 'AppleSDGothicNeoH00', 'AppleSDGothicNeoR00';
   src:
     url('../assets/font/AppleSDGothicNeoB00.woff2') format('woff2'),
     url('../assets/font/AppleSDGothicNeoB00.woff') format('woff'),
     url('../assets/font/AppleSDGothicNeoH00.woff2') format('woff2'),
     url('../assets/font/AppleSDGothicNeoH00.woff') format('woff'),
     url('../assets/font/AppleSDGothicNeoR00.woff2') format('woff2'),
-    url('../assets/font/AppleSDGothicNeoR00.woff') format('woff');
+    url('../assets/font/AppleSDGothicNeoR00.woff') format('woff'),
+    url('../assets/font/AppleSDGothicNeoEB00.woff2') format('woff2'),
+    url('../assets/font/AppleSDGothicNeoEB00.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -35,7 +37,7 @@
 
 h1 {
   font-size: 2rem !important;
-  @media (max-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1179px) {
     font-size: 1.67rem !important;
   }
 
@@ -43,14 +45,16 @@ h1 {
     font-family: 'against','Noto Sans KR', 'sans-serif';
     font-size: 4rem !important;
     line-height: 5.45rem !important;
-    @media (max-width: 768px) {
-      font-size: 1.67rem !important;
+    @media (min-width: 768px) and (max-width: 1179px) {
+      font-size: 2.67rem !important;
+      line-height: 3rem !important;
     }
   }
 }
 h2 {
   font-size: 1.67rem !important;
-  @media (max-width: 768px) {
+  line-height: 1.2;
+  @media (min-width: 768px) and (max-width: 1179px) {
     font-size: 1.313rem !important;
   }
 }
@@ -58,7 +62,7 @@ p.name{
   font-family: 'AppleSDGothicNeoB00','Noto Sans KR', 'sans-serif';
   font-size: 1rem !important;
   line-height: 1.2;
-  @media (max-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1179px) {
     font-size: 0.875rem !important;
     line-height: 1;
   }
@@ -69,21 +73,33 @@ p.name{
 //   margin: 1rem 0 !important;
 // }
 
-
 body {
   font-family: 'AppleSDGothicNeoR00','Noto Sans KR', 'sans-serif';
   color: var(--fontBasic);
   font-size: 1rem !important;
   line-height: 1.2;
   background-color: var(--bgColor);
-  @media (max-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1179px) {
     font-size: 0.875rem !important;
     line-height: 1;
   }
 }
 
+// common
 .hidden{
   display: none !important;
+}
+.tr{
+  text-align: right;
+}
+.tl{
+  text-align: left;
+}
+.tc{
+  text-align: center;
+}
+em{
+  color: var(--pointClolr1);
 }
 // flex & padding & margin
 @for $i from 1 through 999 {
@@ -141,12 +157,15 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  @media (min-width: 768px) and (max-width: 1179px) {
+    min-width: 768px;
+    max-width: 1179px;
+  }
 }
-
 header {
   &.q-layout__section--marginal {
-    color: rgba(36,32,32, 0.5);
-    background-color: transparent;
+    color: rgba(45,45,45, 0.8);
+    background-color: rgba(252,252,245,0.25);;
     height: 60px;
     opacity: 1;
     transition: 1s;
@@ -156,8 +175,11 @@ header {
     -o-transition: 1s;
     .q-tab--active{
       .q-tab__label{
-        color: rgba(36,32,32, 0.8);
+        color: rgba(45,45,45, 0.9);
         font-family: 'AppleSDGothicNeoB00','Noto Sans KR', sans-serif;
+      }
+      .q-tab__indicator{
+        background-color: rgba(251,0,105, 0.8);
       }
     }
   }
@@ -175,7 +197,7 @@ header {
 }
 div#navBar{
   color: var(--fontWhite);
-  background-color: rgba(36,32,32, 0.8);
+  background-color: rgba(36,32,32, 0.5);
   position: fixed;
   width: 100%;
   height: 60px;
@@ -202,7 +224,8 @@ div#navBar{
     .q-tab__content{
       .q-tab__label{
         font-family: 'AppleSDGothicNeoR00','Noto Sans KR', sans-serif;
-        color: rgba(252,252,245,0.8);
+        color: rgba(252,252,245,0.9);
+        // color: var(--fontWhite);
       }
     }
     &.q-tab--active{
@@ -211,6 +234,9 @@ div#navBar{
           font-family: 'AppleSDGothicNeoB00','Noto Sans KR', sans-serif;
           color: var(--fontWhite);
         }
+      }
+      .q-tab__indicator{
+        background-color: rgba(251,0,105, 0.8);
       }
     }
   }
@@ -224,16 +250,21 @@ div#navBar{
     }
   }
 }
-
-.q-page-container.index-page{
+// pages
+.q-page-container{
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  .q-splitter{
-    .q-splitter__before, .q-splitter__separator{
-      display: none !important;
+
+  &.index-page{
+
+    .q-splitter{
+      .q-splitter__before, .q-splitter__separator{
+        display: none !important;
+      }
     }
   }
 }
+// footer
 footer{
   &.q-layout__section--marginal {
     height: 90px;
@@ -245,3 +276,4 @@ footer{
     box-shadow: none;
   }
 }
+
