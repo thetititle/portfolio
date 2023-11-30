@@ -10,9 +10,9 @@
 
         <q-tabs v-model="tab" @click="moveSection($event)">
           <q-tab name="hello" label="hello"/>
+          <q-tab name="introduce" label="introduce"/>
           <q-tab name="project" label="project"/>
           <q-tab name="this page" label="this page"/>
-          <q-tab name="introduce" label="introduce"/>
         </q-tabs>
       </div>
     </q-header>
@@ -26,9 +26,9 @@
 
         <q-tabs v-model="tab" @click="moveSection($event)">
           <q-tab name="hello" label="hello"/>
+          <q-tab name="introduce" label="introduce"/>
           <q-tab name="project" label="project"/>
           <q-tab name="this page" label="this page"/>
-          <q-tab name="introduce" label="introduce"/>
         </q-tabs>
       </div>
     </div>
