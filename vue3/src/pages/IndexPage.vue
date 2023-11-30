@@ -14,15 +14,15 @@
               <p class="tc">
                 This is my main works archive website.<br/>
                 I hope we can have the opportunity to work together.<br/>
-                Thank you. God bless you and have a beautiful day!
+                Thank you. God bless you and have a beautiful day :)
               </p>
             </article>
           </div>
         </section>
         <section id="project">
           <div class="container">
-            <p class="tc">
-
+            <p class="tc fontB">
+              Let me introduce my self!
             </p>
           </div>
         </section>
