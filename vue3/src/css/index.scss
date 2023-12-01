@@ -46,24 +46,85 @@ section{
   }
   &#introduce{
     .userInfoWrap{
-      img{
-        width: 100%;
-      }
       .userInfo{
         .nameBirth{
           li{
-            &:nth-child(1){
-              font-family: 'AppleSDGothicNeoEB00','Noto Sans KR', 'sans-serif';
-              text-transform: uppercase;
-            }
             &:nth-child(2){
               font-family: 'AppleSDGothicNeoH00','Noto Sans KR', 'sans-serif';
               font-size: 3rem;
             }
           }
         }
-        > li{
-
+      }
+    }
+    .timeLineWrapper{
+      .timeLineWrap{
+        height: 30rem;
+        overflow-y: scroll;
+        padding: 10px 0;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar{
+          display:none;
+        }
+        .timeLines{
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          position: relative;
+          &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: calc(100% + 20px);
+            transform: translateY(-10px);
+            border-left: 1px dashed var(--fontBasic);
+            opacity: 0.7;
+          }
+          .timeLine{
+            margin-left: 10px;
+            display: flex;
+            gap: 15px;
+            > li{
+              &:nth-child(1){
+                width: 60px;
+              }
+              &:nth-child(2){
+                flex: 1;
+              }
+            }
+            .fontB{
+              span{
+                position: relative;
+                &::after{
+                  content: "";
+                  position: absolute;
+                  width: 0.3rem;
+                  height: 0.3rem;
+                  background-color: var(--pointClolr1);
+                  top: 50%;
+                  left: -12px;
+                  transform: translateY(-50%);
+                  -webkit-transform: translateY(-50%);
+                  -moz-transform: translateY(-50%);
+                  -ms-transform: translateY(-50%);
+                  -o-transform: translateY(-50%);
+                  z-index: 1;
+                  border-radius: 50%;
+                  -webkit-border-radius: 50%;
+                  -moz-border-radius: 50%;
+                  -ms-border-radius: 50%;
+                  -o-border-radius: 50%;
+}
+              }
+            }
+            > ul{
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+            }
+          }
         }
       }
     }

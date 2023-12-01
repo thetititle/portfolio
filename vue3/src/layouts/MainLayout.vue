@@ -7,7 +7,7 @@
       <router-view/>
     </q-page-container>
 
-    <q-footer class="row">
+    <q-footer class="row shadow-up-1">
       <q-toolbar class="container">
         <router-link to="/">
           <q-avatar class="logo">
