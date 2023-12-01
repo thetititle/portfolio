@@ -160,16 +160,23 @@ section{
     }
   }
   &#project{
-    // .projectName{
-    //   transform: rotate(-90deg);
-    //   -webkit-transform: rotate(-90deg);
-    //   -moz-transform: rotate(-90deg);
-    //   -ms-transform: rotate(-90deg);
-    //   -o-transform: rotate(-90deg);
-    //   .title{
-    //     margin: 0;
-    //   }
-    // }
+    .projectName{
+      img{
+        width: 5.25rem;
+        @media (min-width:768px) and (max-width: 1023px) {
+          transform: scale(0.7);
+          -webkit-transform: scale(0.7);
+          -moz-transform: scale(0.7);
+          -ms-transform: scale(0.7);
+          -o-transform: scale(0.7);
+        }
+      }
+      .swiper-wrapper{
+        .swiper-slide{
+          width: 250px !important;
+        }
+      }
+    }
   }
   // &#thisPage{
   //   background-color: #2d2d2d;
