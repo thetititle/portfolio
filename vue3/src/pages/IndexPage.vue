@@ -59,8 +59,11 @@
                   </li>
                 </ul>
               </article>
-              <div class="row item-center g30 flex5">
+              <div class="articleWrap row item-center g30 flex5">
                 <article class="timeLineWrapper column g10">
+                  <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
+                    SCROLL ME(ʘᴥʘ)
+                  </q-tooltip>
                   <p class="conTt">TIME LINE</p>
                   <div class="timeLineWrap">
                     <ul class="timeLines">
@@ -134,15 +137,9 @@
                     <p class="conTt">LINKS</p>
                     <span>Please visit this link for more information about me!</span>
                     <div class="q-gutter-sm">
-                      <q-btn flat color="black" icon="my_location" label="github"/>
-                      <q-btn flat color="secondary" icon="navigation" label="velog"/>
+                      <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetitle"/>
+                      <q-btn flat color="secondary" icon="fa-solid fa-code" label="velog" target="blank" href="https://velog.io/@thetitle"/>
                     </div>
-
-                    <!-- <q-btn-group push>
-                      <q-btn push label="First" icon="timeline" />
-                      <q-btn push label="Second" icon="visibility" />
-                      <q-btn push label="Third" icon="update" />
-                    </q-btn-group> -->
                   </article>
                 </div>
               </div>
@@ -168,6 +165,15 @@ export default defineComponent({
 
   components: {
   },
+  setup() {
+    const openWindow = (e) => {
+        console.log(e)
+      }
+
+    return {
+      openWindow
+    };
+  }
 });
 </script>
 <style lang="scss" scoped>

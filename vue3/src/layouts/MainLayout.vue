@@ -5,6 +5,9 @@
 
     <q-page-container>
       <router-view/>
+      <!-- <q-page-scroller position="bottom-right" :scroll-offset="700" :offset="[200, 60]">
+        <q-btn fab icon="keyboard_arrow_up" color="accent" />
+      </q-page-scroller> -->
     </q-page-container>
 
     <q-footer class="row shadow-up-1">

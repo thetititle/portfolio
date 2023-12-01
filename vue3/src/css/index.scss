@@ -47,40 +47,63 @@ section{
   &#introduce{
     .userInfoWrap{
       .userInfo{
+        @media (min-width:768px) and (max-width: 1023px){
+          text-align: center;
+        }
         .nameBirth{
           li{
             &:nth-child(2){
               font-family: 'AppleSDGothicNeoH00','Noto Sans KR', 'sans-serif';
               font-size: 3rem;
+              @media (min-width:768px) and (max-width: 1023px){
+                font-size: 2rem;
+              }
             }
           }
         }
       }
     }
+    .articleWrap {
+      @media (min-width:768px) and (max-width: 1023px){
+        flex: 2;
+        flex-direction: column;
+      }
+    }
     .timeLineWrapper{
       .timeLineWrap{
         height: 30rem;
-        overflow-y: scroll;
         padding: 10px 0;
-        -ms-overflow-style: none;
-        &::-webkit-scrollbar{
-          display:none;
+        overflow: hidden;
+        position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          height: calc(100% + 20px);
+          transform: translateY(-10px);
+          border-left: 1px dashed var(--fontBasic);
+          opacity: 0.7;
+        }
+        @media (min-width:768px) and (max-width: 1023px){
+          height: 12rem;
+          font-size: 0.875rem !important;
+          line-height: 1;
         }
         .timeLines{
+          height: 100%;
           display: flex;
           flex-direction: column;
           gap: 30px;
           position: relative;
-          &::after{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            height: calc(100% + 20px);
-            transform: translateY(-10px);
-            border-left: 1px dashed var(--fontBasic);
-            opacity: 0.7;
+          overflow-y: scroll;
+          -ms-overflow-style: none;
+          @media (min-width:768px) and (max-width: 1023px) {
+            gap: 20px;
+          }
+          &::-webkit-scrollbar{
+            display:none;
           }
           .timeLine{
             margin-left: 10px;
@@ -116,13 +139,20 @@ section{
                   -moz-border-radius: 50%;
                   -ms-border-radius: 50%;
                   -o-border-radius: 50%;
-}
+                }
               }
             }
             > ul{
               display: flex;
               flex-direction: column;
               gap: 5px;
+            }
+          }
+          .skills{
+            @media (min-width:768px) and (max-width: 1023px){
+              img{
+                width: 80%;
+              }
             }
           }
         }
