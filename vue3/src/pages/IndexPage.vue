@@ -122,7 +122,7 @@
                       <li>
                         <ul class="timeLine">
                           <li class="fontB"><span>2021.11</span></li>
-                          <li>그린아트컴퓨터학원 ui/uX 퍼블리싱 프론트앤드 과정 수료</li>
+                          <li>그린아트컴퓨터학원 UI/UX 퍼블리싱 프론트앤드 과정 수료</li>
                         </ul>
                       </li>
                     </ul>
@@ -147,7 +147,49 @@
           </div>
         </section>
         <section id="project">
-          <div class="container">
+          <div class="container column g160">
+            <p class="tc fontB">
+              and Now i show you my projects.🖤
+            </p>
+            <div class="slideWrapper row justify-between">
+              <article class="projectName">
+                <img src="../assets/img/title_project_col.png" alt="">
+                <!-- <h1 class="title">Project</h1>
+                <span>2021-2023 product</span> -->
+              </article>
+              <article class="slideWrap q-pa-md flex1">
+                <q-carousel
+                  animated
+                  v-model="slide"
+                  :autoplay="autoplay"
+                  ref="carousel"
+                  infinite
+                  transition-prev="slide-right"
+                  transition-next="slide-left"
+                >
+                  <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
+                  <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
+                  <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
+                  <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
+
+                  <template v-slot:control>
+                    <q-carousel-control
+                      :offset="[18, 18]"
+                      class="q-gutter-xs"
+                    >
+                      <q-btn
+                        push round dense color="orange" text-color="black" icon="arrow_left"
+                        @click="$refs.carousel.previous()"
+                      />
+                      <q-btn
+                        push round dense color="orange" text-color="black" icon="arrow_right"
+                        @click="$refs.carousel.next()"
+                      />
+                    </q-carousel-control>
+                  </template>
+                </q-carousel>
+              </article>
+            </div>
           </div>
         </section>
         <section id="thisPage">
@@ -158,7 +200,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "IndexPage",
@@ -166,12 +208,10 @@ export default defineComponent({
   components: {
   },
   setup() {
-    const openWindow = (e) => {
-        console.log(e)
-      }
 
     return {
-      openWindow
+      slide: ref(1),
+      autoplay: ref(false)
     };
   }
 });
