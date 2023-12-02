@@ -160,7 +160,14 @@ section{
     }
   }
   &#project{
-    .projectName{
+    .container{
+      display: flex;
+      flex-direction: column;
+      gap: 160px;
+    }
+    .slideWrap{
+      display: flex;
+      gap: 80px;
       img{
         width: 5.25rem;
         @media (min-width:768px) and (max-width: 1023px) {
@@ -169,11 +176,6 @@ section{
           -moz-transform: scale(0.7);
           -ms-transform: scale(0.7);
           -o-transform: scale(0.7);
-        }
-      }
-      .swiper-wrapper{
-        .swiper-slide{
-          width: 250px !important;
         }
       }
     }
