@@ -1,8 +1,16 @@
+/*
+ * File       : comoon.css
+ * Date       : 2023. 12. 03.
+ * Author     : SUJI BAE (THETITITLE)
+ */
+
 @import url(./reset.scss);
 @import url(./nomalize.scss);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;600;900&display=swap');
 
-// color
+/* **************************************** *
+ * color
+ * **************************************** */
 :root {
   --fontBasic: #242020;
   --fontWhite: #fcfcf5;
@@ -10,7 +18,9 @@
   --bgColor: #fcfcf5;
 }
 
-// font
+/* **************************************** *
+ * font
+ * **************************************** */
 @font-face {
   font-family: 'against';
   src: url('../assets/font/against-Regular.woff2') format('woff2'),
@@ -66,11 +76,6 @@ h1{
     line-height: 1.25rem !important;
   }
 }
-.desc{
-  // @media (min-width: 768px) and (max-width: 1179px) {
-  //   letter-spacing: 10px;
-  // }
-}
 
 .fontB{
   font-family: 'AppleSDGothicNeoB00','Noto Sans KR', 'sans-serif';
@@ -96,7 +101,9 @@ body {
   }
 }
 
-// common
+/* **************************************** *
+ * common
+ * **************************************** */
 .hidden{
   display: none !important;
 }
@@ -115,7 +122,24 @@ em{
 img{
   width: 100%;
 }
-// flex & padding & margin
+.btnWrap{
+  display: flex;
+  height: 42px;
+  gap: 5px;
+  .q-btn{
+    margin: 0;
+  }
+}
+.swiper{
+  height: 100%;
+  .swiper-wrapper{
+    height: 100%;
+  }
+}
+
+/* **************************************** *
+ * flex & padding & margin
+ * **************************************** */
 @for $i from 1 through 999 {
   .mg#{$i} {
     margin: 1px * $i;
@@ -158,13 +182,41 @@ img{
   }
 }
 
-// logo
-.q-avatar.logo{
+/* **************************************** *
+ * logo & icon
+ * **************************************** */
+.ico {
+  background-size: cover !important;
+  display: inline-block;
+  text-indent: -999999999999999em;
+}
+/* **************************************** *
+ * logo
+ * **************************************** */
+.ico.logoWhite{
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/logo_origin_white.png);
+}
+.ico.logoDark{
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/logo_origin_dark.png);
+}
+a.logoWrap{
   width: 100px;
-  height: auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  .q-avatar{
+    width: inherit;
+    height: 55px;
+  }
 }
 
-// layout
+/* **************************************** *
+ * layout
+ * **************************************** */
 .container{
   min-width: 1180px;
   max-width: 1320px;
@@ -256,7 +308,10 @@ div#navBar{
     }
   }
 }
-// heaver & nav 공통
+
+/* **************************************** *
+ * header & nav 공통
+ * **************************************** */
 .q-tabs{
   .q-tab{
     height: 60px;
@@ -279,7 +334,10 @@ div#navBar{
     }
   }
 }
-// footer
+
+/* **************************************** *
+ * footer
+ * **************************************** */
 footer{
   &.shadow-up-1{
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.1);
@@ -294,4 +352,3 @@ footer{
     box-shadow: none;
   }
 }
-

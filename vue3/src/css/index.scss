@@ -1,3 +1,9 @@
+/*
+ * File       : index.css
+ * Date       : 2023. 12. 03.
+ * Author     : SUJI BAE (THETITITLE)
+ */
+
 @import url(./common.scss);
 
 section{
@@ -167,7 +173,8 @@ section{
     }
     .slideWrap{
       display: flex;
-      gap: 80px;
+      gap: 40px;
+      align-items: flex-end;
       img{
         width: 5.25rem;
         @media (min-width:768px) and (max-width: 1023px) {

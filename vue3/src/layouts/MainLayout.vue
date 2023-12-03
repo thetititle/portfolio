@@ -5,16 +5,13 @@
 
     <q-page-container>
       <router-view/>
-      <!-- <q-page-scroller position="bottom-right" :scroll-offset="700" :offset="[200, 60]">
-        <q-btn fab icon="keyboard_arrow_up" color="accent" />
-      </q-page-scroller> -->
     </q-page-container>
 
     <q-footer class="row shadow-up-1">
       <q-toolbar class="container">
-        <router-link to="/">
-          <q-avatar class="logo">
-            <img src="../assets/img/logo_origin_dark.png">
+        <router-link to="/" class="logoWrap">
+          <q-avatar>
+            <span class="ico logoDark">로고</span>
           </q-avatar>
         </router-link>
       </q-toolbar>

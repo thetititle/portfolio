@@ -2,9 +2,9 @@
   <div v-if="indexHeader = true">
     <q-header elevated>
       <div class="container row justify-between">
-        <router-link to="/">
-          <q-avatar class="logo">
-            <img src="../assets/img/logo_origin_dark.png">
+        <router-link to="/" class="logoWrap">
+          <q-avatar>
+            <span class="ico logoDark">로고</span>
           </q-avatar>
         </router-link>
 
@@ -18,9 +18,9 @@
     </q-header>
     <div id="navBar">
       <div class="container row justify-between">
-        <router-link to="/">
+        <router-link to="/" class="logoWrap">
           <q-avatar class="logo">
-            <img src="../assets/img/logo_origin_white.png">
+            <span class="ico logoWhite">로고</span>
           </q-avatar>
         </router-link>
 
