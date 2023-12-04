@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGHH:LG생활건강</title>
+
+    <link rel="stylesheet" href="css/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fullpage.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div>
+                <div class="nav_left">
+                    <h1><a href="index.html" class="sprite logo2">LGHH</a></h1>
+                    <form action="get">
+                        <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요.">
+                        <label for="search" class="eng_write">search
+                            <span class="sprite search_light"></span>
+                        </label>
+                        <span class="sprite close_white"></span>
+                    </form>
+                </div>
+                <ul class="nav_right eng_write">
+                    <li class="sitemap_menu"><a href="#">SITEMAP</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li class="sprite toggle eng_write"><a href="#">MENU</a></li>
+                </ul>
+            </div>
+        </nav>
+        <aside class="side_bar">
+            <div class="aside_bg">
+                <div class="aside_top">
+                    <span class="sprite close"><a href="#">close</a></span>
+                    <div class="aside_user">
+                        <h2><em class="eng_write">user</em>님 안녕하세요:)</h2>
+                        <div>
+                            <span class="sprite user"></span>
+                            <a href="#" class="eng_write">LOGIN</a>
+                            <!-- <p class="eng_write">LOGIN</p> -->
+                        </div>
+                    </div>
+                    <form action="get">
+                        <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요.">
+                        <label for="search"><span class="sprite search eng_write">search</span></label>
+                    </form>
+
+                </div>
+        
+                <div id="accordion">
+                    <h2 class="eng_write"><a href="#">company</a><i class="sprite caret_up"></i></h2>
+                    <div>
+                        <ul>
+                            <li><a href="#">ceo 인삿말</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">수상내역</a></li>
+                            <li class="eng_write"><a href="#">information</a></li>
+                            <li class="eng_write"><a href="#">business</a></li>
+                            <li class="eng_write"><a href="#">r &amp; d</a></li>
+                            <li class="eng_write"><a href="#">location</a></li>
+                        </ul>
+                    </div>
+                    <h2 class="eng_write"><a href="#">brand</a><i class="sprite caret_up"></i></h2>
+                    <div>
+                        <ul class="eng_write">
+                            <li><a href="#">beauty</a></li>
+                            <li><a href="#">healthy</a></li>
+                            <li><a href="#">refresh</a></li>
+                        </ul>
+                    </div>
+                    <h2 class="eng_write"><a href="#">news</a><i class="sprite caret_up"></i></h2>
+                    <div>
+                        <ul class="eng_write">
+                            <li><a href="#">press</a></li>
+                            <li><a href="#">advertisement</a></li>
+                            <li><a href="#">life culture</a></li>
+                        </ul>
+                    </div>
+                    <h2 class="eng_write"><a href="#">social media</a><i class="sprite caret_up"></i></h2>
+                    <div>
+                        <ul class="eng_write">
+                            <li><a href="#">instagram</a></li>
+                            <li><a href="#">youtube</a></li>
+                            <li><a href="#">face book</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h2 class="eng_write"><a href="#">Customer center</a></h2>
+            </div>
+        </aside>
+        <aside class="site_map">
+            <div class="sitemap_bg">
+                <span class="sprite close_white"><a href="#">close</a></span>
+                <div class="sitemap_content">
+                    <div class="sitemap_head">
+                        <h1 class="sprite logo2"><a href="#" class="eng_write">LGHH</a></h1>
+                        <p class="eng_write">site map</p>
+                    </div>
+                    <div class="company">
+                        <h2 class="eng_write">company</h2>
+                        <ul>
+                            <li>
+                                <ul class="menu_list">
+                                    <li><a href="#">ceo 인삿말</a></li>
+                                    <li><a href="#">연혁</a></li>
+                                    <li><a href="#">수상내역</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3 class="eng_write">information</h3>
+                                <ul class="menu_list">
+                                    <li class="eng_write"><a href="#">CI&AMP;BI</a></li>
+                                    <li><a href="#">계열사</a></li>
+                                </ul>
+                            </li>
+                            <li class="eng_write">
+                                <h3>business</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">beauty</a></li>
+                                    <li><a href="#">healthy</a></li>
+                                    <li><a href="#">refresh</a></li>
+                                </ul>
+                            </li>
+                            <li class="eng_write">
+                                <h3>R&AMP;D</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">beautyful</a></li>
+                                    <li><a href="#">healthy</a></li>
+                                    <li><a href="#">inner beauty</a></li>
+                                    <li><a href="#">scent berry perfume</a></li>
+                                    <li><a href="#">design</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3 class="eng_write">location</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">본사</a></li>
+                                    <li><a href="#">국내사업장</a></li>
+                                    <li><a href="#">해외사업장</a></li>
+                                    <li><a href="#">매장찾기</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="brand eng_write">
+                        <h2>brand</h2>
+                        <ul>
+                            <li>
+                                <h3>beauty</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">premium</a></li>
+                                    <li><a href="#">drug store</a></li>
+                                    <li><a href="#">nature collection</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>healthy</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">hair care</a></li>
+                                    <li><a href="#">skin care</a></li>
+                                    <li><a href="#">oral care</a></li>
+                                    <li><a href="#">house holde items</a></li>
+                                    <li><a href="#">baby</a></li>
+                                    <li><a href="#">pet</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>refresh</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">sparking</a></li>
+                                    <li><a href="#">juice</a></li>
+                                    <li><a href="#">coffe &amp; tea</a></li>
+                                    <li><a href="#">life style</a></li>
+                                    <li><a href="#">bottle water</a></li>
+                                    <li><a href="#">해태htb</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="news">
+                        <h2 class="eng_write">news</h2>
+                        <ul>
+                            <li>
+                                <h3 class="eng_write">advertisement</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">tv광고</a></li>
+                                    <li><a href="#">인쇄광고</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3 class="eng_write">life culture</h3>
+                                <ul class="menu_list">
+                                    <li><a href="#">뷰티정보</a></li>
+                                    <li><a href="#">생활정보</a></li>
+                                    <li><a href="#">건강정보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </header>
+    <main>
+         
+        <div class="popup">
+
+            <div>
+                <span class="alert">
+                    해당 페이지는 구직용 포트폴리오 용도로 제작중이며 <em>미완성</em>입니다.<br/>
+                    메인 상단 Banner video를 제외한 모든 이미지와 콘텐츠의 저작권은 주식회사 LG생활건강에 있습니다.
+                </span>
+                <div class="during">
+                    <h2 class="eng_write">LGHH portfolio</h2>
+                    <div>
+                        <p>학습기간 : 2021.06.16~2021.12.08</p>
+                        <p>1차 제작기간 : 2021.08.05~2021.10.29</p>
+                        <p>2차 제작기간 : 2021.12.09~중단</p>
+                        <p>핵심목표 : HTML, CSS(FLEX & root), J-Query Library</p>
+                        <p>반응형 구간 : 768, 325 예정</p>
+                    </div>
+                    <div class="port_link">
+                        <a href="#">기획안 (리뉴얼중)</a>
+                        <a href="https://www.figma.com/file/yVRa4kcyjpGCIZKF7zNiKH/LGHH_full?node-id=2%3A2">Figma</a>
+                    </div>
+                </div>
+                <div class="pop_desc">
+                    <h3>구현페이지(진행중)</h3>
+                    <ul>
+                        <li><a href="index.html">Main</a></li>
+                        <!-- <li><a href="sub-high.html">Category</a></li>
+                        <li><a href="join.html">Join</a></li>
+                        <li><a href="login.html">Login</a></li> -->
+                    </ul>
+                    <div class="contact">
+                        <h3 class="eng_write">contact</h3>
+                        <p>배수지 | thetititle@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <label for="nomore">오늘 하루 안보기</label>
+            <input type="checkbox" id="nomore">
+            <button class="sprite close_white">close</button>
+
+        </div>
+        
+        <section id="section1" class="section fp-noscroll" data-tooltip="BANNER">
+            <h1 class="hidden">banner</h1>
+            <div class="banner_warpper">
+                <video 
+                src="https://res.cloudinary.com/di5uu0xrm/video/upload/v1640781839/2nd_portfolio/portvideo_woklys.mp4" 
+                data-autoplay muted loop>
+                Your browser does not support the video tag.
+                </video>
+                <ul class="side_nav_sns">
+                    <li><a href="https://www.youtube.com/user/LGCAREAD/featured" target="_blank" class="sprite youtube">youtube</a></li>
+                    <li><a href="https://twitter.com/lgtalks" target="_blank" class="sprite twitter">twitter</a></li>
+                    <li><a href="https://www.facebook.com/LGCARE.Korea" target="_blank" class="sprite facebook">facebook</a></li>
+                    <li><a href="#" target="_blank" class="sprite instagram">instagram</a></li>
+                </ul>
+                <div class="banner_title eng_write">
+                    <p>make your beautyful life</p>
+                    <span>LGHH<em>.</em></span>
+                </div>
+            </div>
+            <div class="scroll_event">
+                <p class="eng_write">scroll</p>
+                <span class="sprite mouse"></span>
+            </div>
+        </section>
+
+        <section id="section2" class="container section" data-tooltip="BEST ITEM">
+            <h1 class="hidden">poroduct</h1>
+            <div class="product">
+                <div class="product_wrapper">
+                    <div>
+                        <h2 class="eng_write">MOST FAMOUS ITEMS<em>.</em></h2>
+                        <span>
+                            LG생활건강은 고객이 꿈꾸는 건강한 아름다움을 실현해 드립니다.
+                        </span>
+                    </div>
+                    <ul class="product_slick">
+                        <li><a href="#"><img src="img/slide_item1.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/slide_item2.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/slide_item1.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/slide_item2.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/slide_item1.png" alt=""></a></li>
+                        <li><a href="#"><img src="img/slide_item2.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="product_list">
+                    <ul>
+                        <h2>BEST product</h2>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item1.png" alt="숨 SUM 시크릿 에센스">
+                                <div>
+                                    <h4>숨SUM:37 x Reem Acra Edition</h4>
+                                    <p>Summa Elixir Essence</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item2.png" alt="CNP:RX 스킨 레쥬버네이팅 미라클크림">
+                                <div>
+                                    <h4>CNP:RX 스킨 레쥬버네이팅 미라클크림</h4>
+                                    <p>Skin Rejuvenating Miracle Cream</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item1.png" alt="숨 SUM 시크릿 에센스">
+                                <div>
+                                    <h4>숨SUM:37 x Reem Acra Edition</h4>
+                                    <p>Summa Elixir Essence</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item2.png" alt="CNP:RX 스킨 레쥬버네이팅 미라클크림">
+                                <div>
+                                    <h4>CNP:RX 스킨 레쥬버네이팅 미라클크림</h4>
+                                    <p>Skin Rejuvenating Miracle Cream</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h2>BEST BRAND</h2>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item1.png" alt="숨 SUM 시크릿 에센스">
+                                <div>
+                                    <h4>숨SUM:37 x Reem Acra Edition</h4>
+                                    <p>Summa Elixir Essence</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item2.png" alt="CNP:RX 스킨 레쥬버네이팅 미라클크림">
+                                <div>
+                                    <h4>CNP:RX 스킨 레쥬버네이팅 미라클크림</h4>
+                                    <p>Skin Rejuvenating Miracle Cream</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item1.png" alt="숨 SUM 시크릿 에센스">
+                                <div>
+                                    <h4>숨SUM:37 x Reem Acra Edition</h4>
+                                    <p>Summa Elixir Essence</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/slide_item2.png" alt="CNP:RX 스킨 레쥬버네이팅 미라클크림">
+                                <div>
+                                    <h4>CNP:RX 스킨 레쥬버네이팅 미라클크림</h4>
+                                    <p>Skin Rejuvenating Miracle Cream</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="section3" class="section" data-tooltip="INTRO">
+            <h1 class="hidden">summary</h1>
+            <div class="summary container">
+                <div class="summary_wrapper">
+                    <div class="sum_title">
+                        <div class="box">
+                            <h2 class="eng_write">inno<br/>vation<br/>lghh<em>.</em></h2>
+                        </div>
+                        <div class="button">
+                            <button><a href="#">view more</a></button>
+                        </div>
+                    </div>
+                    <img src="img/summary.jpg" alt="엘라스틴">
+                </div>
+                <p>
+                    고객의 아름다움과 꿈을 실현하는 최고의 생활문화 기업.<br/>
+                    건강하고, 아름답고, 활기찬 가치를 제공합니다.<br/>
+                    고객여러분의 아름다운 꿈, LG생활건강이 함께 하겠습니다.
+                </p>
+            </div>
+        </section>
+
+        <section id="section4" class="container section" data-tooltip="INFORMATION">
+            <h1 class="hidden">LGHH INFO</h1>
+            <div class="lghh_info">
+                <h2 class="eng_write">LGHH INFO<em>.</em></h2>
+                <div class="lghh_info_wrapper">
+                    <div class="lghh_art">
+                        <article>
+                            <h3 class="rate" data-rate="73">0</h3>
+                            <div>
+                                <h3 class="eng_write">HISTORY</h3>
+                                <p>LG생활건강 70여년의 긴 역사를 통해 세계 최고의 생활문화 기업을 꿈 꿉니다.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="lghh_art">
+                        <article>
+                            <img src="img/arrows.png" alt="LG WAY">
+                            <div>
+                                <h3 class="eng_write">LG WAY</h3>
+                                <p>LG 고유의 경영철학이자, LG 전 임직원이 지키고 실천해야 할 사고와 행동의 기반입니다.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="lghh_art">
+                        <article>
+                            <img src="img/handshake.png" alt="CSR">
+                            <div>
+                                <h3 class="eng_write">CSR</h3>
+                                <p>사회와 끊임없는 상호 작용을 통해 사회에 필요한 가치를 창출하는 것이 LG의 목표입니다.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="lghh_art">
+                        <article>
+                            <img src="img/lgci.png" alt="lg logo">
+                            <div>
+                                <h3 class="eng_write">CI</h3>
+                                <p>새로운 기술에 대한 끊임없는 도전, 세계최고 지향, 힘찬 젊은이의 얼굴을 그립니다.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section5" class="section" data-tooltip="ADVERTISEMENT">
+            <h1 class="hidden">ADVERTISEMENT</h1>
+            <div class="video_bg">
+                <div class="video_wrapper">
+                    <h2>ADVERTISEMENT<em>.</em></h2>
+                    <div class="video_list">
+                        <div class="videos">
+                            <video src="https://res.cloudinary.com/di5uu0xrm/video/upload/v1639127770/2nd_portfolio/cnp_eioc2y.mp4" data-autoplay controls muted loop>Your browser does not support the video tag.</video>
+                            <div class="video_desc">
+                                <div>
+                                    <span></span>
+                                    <h3>title title</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                                <div class="button">
+                                    <button><a href="#">view more</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="videos">
+                            <video src="https://res.cloudinary.com/di5uu0xrm/video/upload/v1639127770/2nd_portfolio/elastine_cxoysu.mp4" data-autoplay controls muted loop>Your browser does not support the video tag.</video>
+                            <div class="video_desc">
+                                <div>
+                                    <span>BRAND</span>
+                                    <h3>title title</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                                <div class="button">
+                                    <button><a href="#">view more</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="videos">
+                            <video src="https://res.cloudinary.com/di5uu0xrm/video/upload/v1639127770/2nd_portfolio/fu_feuglz.mp4" data-autoplay controls muted loop>Your browser does not support the video tag.</video>
+                            <div class="video_desc">
+                                <div>
+                                    <span>왕후의 비책 FU</span>
+                                    <h3>title title</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                                <div class="button">
+                                    <button><a href="#">view more</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="go_top container">
+                <h2 class="eng_write">GO TOP<span class="sprite .arw_gotop"></span></h2>
+            </div>
+        </section>
+        
+        <footer id="footer" class="section fp-auto-height">
+            <div class="container">
+                <div class="footer_left">
+                    <div class="footer_logo">
+                        <h1><a href="index.html" class="sprite logo2">logo</a></h1>
+                        <div>
+                            <span>㈜LG생활건강 대표이사 : 차석용</span>
+                            <span>사업자등록번호 : 107-81-98143</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>서울시 종로구 새문안로 58 LG광화문빌딩 LG생활건강</p>
+                        <p>COPYRIGHT © LG HOUSEHOLD & HEALTH CARE LTD. ALL RIGHTS RESERVED.</p>
+                    </div>
+                    <ul>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보 처리방침</a></li>
+                        <li><a href="#">이메일 무단수집 거부</a></li>
+                    </ul>
+                </div>
+                <div class="footer_right">
+                    <div class="customer_center">
+                        <span>고객센터</span>
+                        <span class="tell_num">080-023-7007</span>
+                    </div>
+                    <div class="center_date">
+                        <span>월-목요일  09:00 ~ 18:00</span>
+                        <span>금요일  09:00 ~ 15:00</span>
+                    </div>
+                    <div>
+                        <img src="img/webAccess.png" alt="공정거래">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,399 @@
+@import url('../../normalize.css');
+@import url('../../reset.css');
+
+/* WEBFONTS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&family=Roboto:wght@100;300;400&display=swap');
+
+@font-face {
+    font-family: 'Beach Front';
+    src: url('../webfonts/BeachFrontRegular.woff2') format('woff2'),
+        url('../webfonts/BeachFrontRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fashion Fetish';
+    src: url('../webfonts/FashionFetishLight.woff2') format('woff2'),
+        url('../webfonts/FashionFetishLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fashion Fetish';
+    src: url('../webfonts/FashionFetish.woff2') format('woff2'),
+        url('../webfonts/FashionFetish.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fashion Fetish';
+    src: url('../webfonts/Fashion-Fetish-Bold.woff2') format('woff2'),
+        url('../webfonts/Fashion-Fetish-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* COMMON STYLE */
+:root{
+    --body-color:#2d2d2d;
+    --body-sec-color:#F2F2F2;
+    --primary-color:#EA4558;
+    --primary-sec-color:#F4A2AB;
+    --primary-sec2-color:#FFEEF0;
+}
+body{
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+.logo{
+    font-family: 'Beach Front';
+    font-size: 54px;
+    line-height: 54px;
+    color: var(--primary-color);
+}
+.menu_logo{
+    font-family: 'Fashion Fetish';
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--body-color);
+    background: url('../images/category_header1.png') no-repeat 0 0 / 267px 97px;
+    width: 267px; height: 97px;
+    text-align: center;
+    line-height: 100px;
+}
+.cate_logo{
+    font-family: 'Fashion Fetish';
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 100px;
+    font-weight: 500;
+    color: var(--body-color);
+    text-align: center;
+}
+h2,h3,h4,h4{
+    font-family: 'Fashion Fetish';
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.hidden{
+    display: none;
+}
+.btn{
+    background: var(--primary-color);
+    line-height: 36px;
+    height: 36px;
+    border-radius: 50px;
+    padding: 0 15px;
+}
+.sprite{
+    background: url('../images/sprite-icon.png') no-repeat 0 0 / 332px 152px;
+    display: inline-block;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+}
+.sprite.toggle{background-position: 0 -96px;}
+.sprite.search{background-position: -264px -32px;}
+.sprite.cart{background-position: -264px -64px;}
+.sprite.user{background-position: -264px 0;}
+.sprite.search_btn{background-position: -88px -32px;}
+.sprite.close{background-position: -220px -96px;}
+.sprite.home{background-position: -132px -64px;}
+.sprite.order_check{background-position: -308px -64px;}
+.sprite.order_write{background-position: -308px 0;}
+.sprite.order_send{background-position: -308px -32px;}
+.sprite.chevron_left{background-position: -176px -128px;}
+.sprite.price{background-position: -264px -96px;}
+.sprite.count_left{background-position: -264px -128px;}
+.sprite.count_right{background-position: -308px -128px;}
+.sprite.cart_close{background-position: -220px 0;}
+.sprite.heart{background-position: -88px 0;}
+.sprite.heart_full{background-position: -44px 0;}
+.sprite.coffee{background-position: 0 0;}
+.sprite.cupcake{background-position: 0 -32px;}
+.sprite.cookie{background-position: 0 -64px;}
+.sprite.arrow_up{background-position: -86px -64px;}
+.sprite.close_aside{background-position: -132px -32px;}
+.sprite.refresh_bottom{background-position: 0 -128px;}
+.sprite.home_bottom{background-position: -132px -128px;}
+.sprite.lacation_bottom{background-position: -44px -128px;}
+.sprite.share_bottom{background-position: -88px -128px;}
+.sprite.arrow{background-position: -44px -64px;}
+.sprite.instagram{background-position: -176px -96px;}
+.sprite.facebook{background-position: -132px -96px;}
+.sprite.link{background-position: -132px 0;}
+.sprite.basket{background-position: -308px -96px;}
+
+header .qick_link .cart{
+    position: relative;
+    overflow: visible;
+}
+header .qick_link .cart:after{
+    content: attr(data-count);
+    position: absolute;
+    width: 16px; height: 16px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    left: 50%; bottom: 18px;
+    transform: translateX(-50%);
+    text-indent: 0;
+    color: var(--body-sec-color);
+    line-height: 16px;
+    font-size: 10px;
+    text-align: center;
+}
+/* ASIDE */
+aside{
+    position: relative;
+    z-index: 100;
+}
+aside > .aside_bg{
+    position: fixed;
+    background: #fff;
+    z-index:1;
+    padding: 0 30px;
+    top: 0; left: -100%; bottom: 0;
+    width: 100%;
+    /* height: 100%; */
+    box-sizing: border-box;
+    overflow-y:hidden;
+    transition: left 0.3s;
+}
+aside > .aside_bg.active{
+    left: 0;
+}
+.aside_top .logo{
+    position: absolute;
+    left: 38.6vw;
+    top: 7.4vh;
+    transform: translateY(-50%);
+}
+.aside_top .close_aside{
+    position: absolute;
+    right: 8vw;
+    top: 6.1vh;
+}
+.aside_category{
+    display: flex;
+    flex-direction: column;
+    margin-top: 18vh;
+}
+.aside_category h2{
+    line-height: 60px;
+    border-bottom: 1px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+.aside_category h2 a{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.aside_category h2 i{
+    color: var(--primary-color);
+}
+.ui-state-active i{
+    transform: rotate(180deg);
+}
+.ui-accordion-content-active{
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 30px;
+    text-indent: 15px;
+}
+.ui-accordion-content-active ul{
+    padding: 30px 0;
+}
+.ui-accordion-content#ui-id-8{
+    padding-bottom: 30px;
+}
+.aside_quick_links{
+    padding-top: 6.1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.aside_quick_links li{
+    display: flex;
+    align-items: center;
+}
+
+/*SLICK*/
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    /* display: inline-block; */
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: url('../images/sprite-icon.png') no-repeat 0 0 / 332px 152px;
+}
+.slick-prev{background-position: -220px -128px; left: 0;}
+.slick-next{background-position: -176px -128px; right: 0;}
+.slick-prev:before, .slick-next:before{
+    display: none;
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    outline: none;
+}
+
+/* FORM */
+.modal{
+    position: fixed;
+    top: 0; right: 0; left: 0; bottom: 0;
+    background: rgba(45, 45, 45, 0.8);
+    z-index: 2;
+    display: none;
+    transform: 0.3s;
+    width: 100%;
+}
+.search_form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 30vh; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal.visible{
+    display: block;
+}
+
+.search_form input{
+    background: transparent;
+    height: 36px;
+    max-width: 74.6vw;
+    outline: none;
+    border-bottom: 1px solid var(--body-sec-color);
+    transition: border-color 0.3s;
+    color: var(--body-sec-color);
+}
+.search_form input::placeholder{
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    color: var(--body-sec-color);
+    font-size: 16px;
+    line-height: 36px;
+    text-indent: 15px;
+}
+.search_form button{
+    border: none;
+    background: none;
+    color: var(--body-sec-color);
+    line-height: 36px;
+    cursor: pointer;
+}
+.modal .close{
+    position: relative;
+    top: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 37vw;
+}
+
+/* LAYOUT */
+.container{
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+body{
+    color: var(--body-color);
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    overflow-y: scroll;
+    width: 100%; height: 100%;
+}
+nav{
+    top: 6vh;
+    width: 100%;
+}
+
+/*BOTTOM MENU*/
+.bottom_menu{
+    position: fixed;
+    bottom: 0; right: 0; left: 0;
+    height: 81px;
+    padding: 0 35px;
+    background-color: var(--primary-sec-color);
+    z-index: 1;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+.bottom_menu ul{
+    display: flex;
+    justify-content: space-around;
+    line-height: 81px;
+    font-size: 24px;
+}
+
+
+/*FOOTER*/
+footer{
+    background: var(--primary-sec2-color);
+}
+footer > div{
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+footer .footer_nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.7vh;
+    font-size: 12px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+footer #accordion1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+footer #accordion1 h4{
+    font-size: 14px;
+    line-height: 14px;
+}
+footer #accordion1 h4 i{
+    color: var(--primary-color);
+}
+footer #accordion1 div p{
+    font-size: 12px;
+    line-height: 16px;
+}
+footer .sns, footer .legal{
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 12px;
+}
+footer .sns{
+    margin-bottom: 1.7vh;
+}
+footer > div span{
+    text-align: center;
+    font-size: 10px;
+    line-height: 10px;
+}
