@@ -155,13 +155,16 @@
             <div class="row no-wrap items-end g30">
               <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
               <div class="btnWrap q-gutter-sm">
+                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
+                  SORRY, WAIT PLZ🖤 <br>
+                  IT'S NOT WORKING
+                </q-tooltip>
                 <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-left" id="btnNext"/>
                 <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-right" id="btnPrev"/>
               </div>
             </div>
             <swiper
               id="swipers"
-              :modules="modules"
               :slides-per-view="3.5"
               :autoHeight="true"
               :loop="true"
@@ -189,15 +192,7 @@
 import { defineComponent } from "vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// import Swiper core and required modules
-import { Navigation, Pagination, A11y } from 'swiper/modules';
-// Import Swiper styles
-import 'swiper/swiper-bundle.css';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
+import 'swiper/css';
 
 export default defineComponent({
   name: "IndexPage",
@@ -207,14 +202,12 @@ export default defineComponent({
     SwiperSlide,
   },
   mounted() {
-    this.swiper = new Swiper('.swiper-container', {
-      // Swiper options here
-      navigation: {
-      nextEl: '#btnNext',
-      prevEl: '#btnPrev',
-      },
-      // Add more options as needed
-    });
+    // this.swiper = new Swiper('.swiper-container', {
+    //   navigation: {
+    //   nextEl: '#btnNext',
+    //   prevEl: '#btnPrev',
+    //   },
+    // });
   },
   setup() {
     const onSwiper = (swiper) => {
@@ -224,7 +217,6 @@ export default defineComponent({
     return {
       onSwiper,
       // onSlideChange,
-      modules: [Navigation, Pagination, A11y],
     };
   }
 });

@@ -54,7 +54,6 @@ export default defineComponent({
       } else {
         indexHeader.value = false
       }
-      console.log('indexHeader', indexHeader.value)
     })
 
     window.onscroll = () => {
