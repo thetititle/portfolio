@@ -157,7 +157,7 @@
               <div class="btnWrap q-gutter-sm">
                 <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
                   SORRY, WAIT PLZ🖤 <br>
-                  IT'S NOT WORKING
+                  IT'S NOT WORKING YET
                 </q-tooltip>
                 <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-left" id="btnNext"/>
                 <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-right" id="btnPrev"/>
@@ -166,22 +166,70 @@
             <swiper
               id="swipers"
               :slides-per-view="3.5"
-              :autoHeight="true"
-              :loop="true"
+              :space-between="20"
               @swiper="onSwiper"
             >
-              <swiper-slide>Slide 1</swiper-slide>
-              <swiper-slide>Slide 2</swiper-slide>
-              <swiper-slide>Slide 3</swiper-slide>
-              <swiper-slide>Slide 4</swiper-slide>
-              <swiper-slide>Slide 5</swiper-slide>
-              <swiper-slide>Slide 6</swiper-slide>
+              <swiper-slide @click="openWindow('react')">
+                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
+                  GET READY FOR PRESENTATION<br>
+                  RESPONSIVE<br>
+                  💙USEING REACT💙
+                </q-tooltip>
+                <span class="slides react">23_design</span>
+              </swiper-slide>
+              <swiper-slide @click="openWindow('aestetic')">
+                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
+                  MADE IN 2023<br>
+                  PC<br>
+                  USED HTML,CSS,JAVASCRIPT
+                </q-tooltip>
+                <span class="slides aestetic">23_aestetic</span>
+              </swiper-slide>
+              <swiper-slide @click="openWindow('knotted')">
+                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
+                  MADE IN 2021<br>
+                  MOBILE<br>
+                  USED HTML,CSS,J-QUERY
+                </q-tooltip>
+                <span class="slides knotted">21_knotted</span>
+              </swiper-slide>
+              <swiper-slide @click="openWindow('manyo')">
+                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
+                  MADE IN 2021<br>
+                  PC<br>
+                  USED HTML,CSS,JAVASCRIPT
+                </q-tooltip>
+                <span class="slides manyo">21_manyo</span>
+              </swiper-slide>
             </swiper>
           </article>
         </div>
       </section>
       <section id="thisPage">
-        <div class="container">
+        <div class="container column g160 justify-center item-center">
+          <p class="tc fontB">
+            This is a summary description for this page.
+          </p>
+          <div class="row no-wrap g40">
+            <div class="flex1 imgWrap">
+              <img src="../assets/img/localhost_8080_.png" alt="localhost">
+            </div>
+            <div class="flex1 column g10">
+              <h1 class="title">
+                This Page<em>.</em>
+              </h1>
+              <p>
+                VUE3 기반의 프레임워크인 QUASAR로 만들었습니다.<br>
+                현재 TABLET 사이즈까지 반응형으로 구현되어있으며, MOBILE 버전도 작업중에 있습니다.<br>
+                API호출을 위한 데이터를 만들고 있고, 이또한 빠른 시일내로 업데이트 될 예정입니다.<br>
+              </p>
+              <p class="mt20">📌<br>아래 링크를 통해 피그마 디자인과 깃헙 리포지토리를 방문할 수 있습니다.</p>
+              <div class="q-gutter-sm mb20">
+                <q-btn flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16%3A56&mode=design&t=5NoGOyxB9vPfutVu-1"/>
+                <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -208,14 +256,46 @@ export default defineComponent({
     //   prevEl: '#btnPrev',
     //   },
     // });
+    this.setSlideWidth();
   },
   setup() {
     const onSwiper = (swiper) => {
       console.log(swiper);
     };
 
+    const setSlideWidth = () => {
+      const slides = document.querySelectorAll('.swiper-slide');
+      var slideWrap = document.querySelector('.swiper-wrapper');
+      const slideWidth = 285;
+      const slideCount = slides.length;
+      console.log('slideCount', slideCount)
+      for (var i = 0; i < slideCount; i++){
+        var slideAllWidth = slides[i].style.width = slideWidth + 'px';
+        console.log('slideAllWidth', slideAllWidth)
+      }
+      slideWrap = slideAllWidth
+    };
+
+    const openWindow = (e) => {
+      if (e === 'react'){
+        console.log('react')
+        alert('준비중이에요!')
+      } else if ( e === 'aestetic') {
+        console.log('aestetic')
+        window.open("http://thetititle.com/aestetic/index.html","blank");
+      } else if ( e === 'manyo') {
+        console.log('manyo')
+        window.open("http://thetititle.com/products/manyo_21/index.html/","blank");
+      } else if ( e === 'knotted') {
+        console.log('knotted')
+        window.open("http://thetititle.com/products/knotted_21/index.html","blank");
+      }
+    };
+
     return {
+      setSlideWidth,
       onSwiper,
+      openWindow
       // onSlideChange,
     };
   }
