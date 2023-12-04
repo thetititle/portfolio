@@ -282,7 +282,7 @@ export default defineComponent({
         alert('준비중이에요!')
       } else if ( e === 'aestetic') {
         console.log('aestetic')
-        window.open("http://thetititle.com/aestetic/index.html","blank");
+        window.open("http://thetititle.com/products/aestetic_23/index.html","blank");
       } else if ( e === 'manyo') {
         console.log('manyo')
         window.open("http://thetititle.com/products/manyo_21/index.html/","blank");
