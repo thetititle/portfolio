@@ -60,10 +60,10 @@
               </ul>
             </article>
             <div class="articleWrap row item-center g30 flex5">
-              <article class="timeLineWrapper column g10">
-                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
+              <article class="timeLineWrapper column g10 flex1">
+                <!-- <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
                   SCROLL ME(ʘᴥʘ)
-                </q-tooltip>
+                </q-tooltip> -->
                 <p class="conTt">TIME LINE</p>
                 <div class="timeLineWrap">
                   <ul class="timeLines">
@@ -71,18 +71,6 @@
                       <ul class="timeLine">
                         <li class="fontB"><span><em>NOW</em></span></li>
                         <li>Ready for NEW NEST!</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2023.11</span></li>
-                        <li>공무원연금공단 확인시스템 관리자Web 퍼블리싱</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2023.08</span></li>
-                        <li>통일부 ADM 퍼블리싱</li>
                       </ul>
                     </li>
                     <li>
@@ -149,7 +137,7 @@
       <section id="project">
         <div class="container">
           <p class="tc fontB">
-            and Now i show you my projects.🖤
+            and Now i show you my products.🖤
           </p>
           <article class="slideWrap">
             <div class="row no-wrap items-end g30">
