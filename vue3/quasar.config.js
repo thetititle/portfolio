@@ -152,8 +152,8 @@ module.exports = configure(function (ctx) {
 
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
+        name: `Thetititle's PORTFOLIO`,
+        short_name: `Thetititle`,
         description: `a project used by quasar vue3`,
         display: 'standalone',
         orientation: 'portrait',
@@ -161,30 +161,20 @@ module.exports = configure(function (ctx) {
         theme_color: '#027be3',
         icons: [
           {
-            src: 'icons/icon-128x128.png',
-            sizes: '128x128',
+            src: 'icons/apple-icon-120x120.png',
+            sizes: '120x120',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-192x192.png',
-            sizes: '192x192',
+            src: 'icons/apple-icon-144x144.png',
+            sizes: '144x144',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-256x256.png',
-            sizes: '256x256',
+            src: 'icons/apple-icon-152x152.png',
+            sizes: '152x152',
             type: 'image/png'
           },
-          {
-            src: 'icons/icon-384x384.png',
-            sizes: '384x384',
-            type: 'image/png'
-          },
-          {
-            src: 'icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
         ]
       }
     },
