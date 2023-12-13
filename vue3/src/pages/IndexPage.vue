@@ -141,6 +141,13 @@
           </p>
           <article class="slideWrap">
             <div class="row no-wrap items-end g30">
+              <!-- <router-link to="/product">
+                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
+                  IF YOU WANT SEE MORE,<br>
+                  CLICK ME✨
+                </q-tooltip>
+                <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
+              </router-link> -->
               <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
               <div class="btnWrap q-gutter-sm">
                 <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">

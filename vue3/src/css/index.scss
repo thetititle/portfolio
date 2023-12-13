@@ -7,16 +7,16 @@
 @import url(./common.scss);
 
 section{
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 160px;
-
+  margin-bottom: 160px;
   &:last-child{
-    height: auto;
+    margin-bottom: 0;
   }
   &#hello{
     position: relative;
+    height: 100vh;
     &::before, &::after{
       content: '';
       position: absolute;
@@ -46,6 +46,9 @@ section{
       z-index: 1;
       width: 370px;
       height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
       h1{
         opacity: 0.8;
       }
