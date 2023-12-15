@@ -33,7 +33,7 @@
       </div>
     </div>
   </div>
-  <div v-else>
+  <div v-else-if="indexHeader === false">
     <q-header elevated>
       <div class="container row justify-between">
         <router-link to="/" class="logoWrap">
@@ -76,36 +76,40 @@ export default defineComponent({
   setup() {
     const indexHeader = ref(true);
     onMounted (() => {
-      if (window.location.pathname === ''){
-        indexHeader.value = true
-        console.log('indexHeader', indexHeader.value);
-      } else {
+      if (window.location.href.includes('/product')){
         indexHeader.value = false
         console.log('indexHeader', indexHeader.value);
+        // window.location.reload(true);
+      } else {
+        indexHeader.value = true
+        console.log('indexHeader', indexHeader.value);
+        // window.location.reload(true);
       }
+      // location.reload();
     })
 
     window.onscroll = () => {
       const qHeader = document.querySelector('header');
       const navBar = document.getElementById('navBar');
       const scrollHtml = document.querySelector('html');
-      const section1 = document.querySelector('section#hello');
-      const section2 = document.querySelector('section#introduce');
-      const section3 = document.querySelector('section#project');
-      const section4 = document.querySelector('section#thisPage');
-      if (scrollHtml.scrollTop > 60) {
+      // const section1 = document.querySelector('section#hello');
+      const section2 = document.querySelector('section#introduce').offsetTop;
+      const section3 = document.querySelector('section#project').offsetTop;
+      const section4 = document.querySelector('section#thisPage').offsetTop;
+      if (scrollHtml.scrollTop >= 60 ) {
         navBar.classList.add('active');
         qHeader.classList.add('active');
-      } else {
+      } else if (scrollHtml.scrollTop <= section2 && scrollHtml.scrollTop > section3) {
+        console.log('section2', section2);
+      } else if (scrollHtml.scrollTop == section3 || scrollHtml.scrollTop > section4) {
+        console.log('section3', section3);
+      } else if (scrollHtml.scrollTop == section4) {
+        console.log('section4', section4);
+      } else if (scrollHtml.scrollTop <= 60) {
         navBar.classList.remove('active');
         qHeader.classList.remove('active');
       };
       // 각 섹션의 높이 가져오기
-      console.log('section1, 0', section1.offsetTop)
-      console.log('section1, 2', section1.scrollTop)
-      // console.log('section2, 1091', section2.offsetTop)
-      // console.log('section3, 1978', section3.offsetTop)
-      // console.log('section4, 2829', section4.offsetTop)
       // 섹션의 높이에 도달하면 nav의 tab에 addClass q-tab--active
     }
 

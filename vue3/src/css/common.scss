@@ -6,8 +6,6 @@
 
 @import url(./reset.scss);
 @import url(./nomalize.scss);
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;600;900&display=swap');
-
 /* **************************************** *
  * color
  * **************************************** */
@@ -21,6 +19,8 @@
 /* **************************************** *
  * font
  * **************************************** */
+ @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap');
+
 @font-face {
   font-family: 'against';
   src: url('../assets/font/against-Regular.woff2') format('woff2'),
@@ -67,7 +67,8 @@
 }
 
 h1{
-  font-family: 'AppleSDGothicNeoH00','Noto Sans KR', 'sans-serif';
+  font-family: 'AppleSDGothicNeoH00','Gothic A1','Noto Sans KR', 'sans-serif';
+  font-weight: 500;
   font-size: 4rem !important; //64px
   line-height: 5.25rem !important;
   margin: 0;
@@ -76,11 +77,12 @@ h1{
     line-height: 4rem !important;
   }
   &.title{
-    font-family: 'against','Noto Sans KR', 'sans-serif';
+    font-family: 'against','Gothic A1','Noto Sans KR', 'sans-serif';
   }
 }
 .subTt{
-  font-family: 'AppleSDGothicNeoEB00','Noto Sans KR', 'sans-serif';
+  font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
+  font-weight: 500;
   font-size: 2.75rem !important; //44px
   line-height: 4rem !important;
   @media (min-width:768px) and (max-width: 1023px) {
@@ -89,7 +91,8 @@ h1{
   }
 }
 .conTt{
-  font-family: 'AppleSDGothicNeoEB00','Noto Sans KR', 'sans-serif';
+  font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
+  font-weight: 500;
   text-transform: uppercase;
   font-size: 1.25rem !important; //20px
   line-height: 2.5rem !important;
@@ -100,10 +103,12 @@ h1{
 }
 
 .fontB{
-  font-family: 'AppleSDGothicNeoB00','Noto Sans KR', 'sans-serif';
+  font-family: 'AppleSDGothicNeoB00','Gothic A1','Noto Sans KR', 'sans-serif';
+  font-weight: 500;
 }
 .fontEB{
-  font-family: 'AppleSDGothicNeoEB00','Noto Sans KR', 'sans-serif';
+  font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
+  font-weight: 500;
 }
 // h1,
 // h2 {
@@ -112,8 +117,8 @@ h1{
 // }
 
 body {
-  font-family: 'AppleSDGothicNeoR00','Noto Sans KR', 'sans-serif';
-  font-weight: normal;
+  font-family: 'AppleSDGothicNeoR00','Gothic A1','Noto Sans KR', 'sans-serif';
+  font-weight: 300;
   font-style: normal;
   color: var(--fontBasic);
   font-size: 1rem !important;
