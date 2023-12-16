@@ -140,7 +140,7 @@
             and Now i show you my products.🖤
           </p>
           <article class="slideWrap">
-            <div class="row no-wrap items-end g30">
+            <div class="row no-wrap items-end">
               <!-- <router-link to="/product">
                 <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
                   IF YOU WANT SEE MORE,<br>
@@ -149,21 +149,20 @@
                 <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
               </router-link> -->
               <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
-              <div class="btnWrap q-gutter-sm">
-                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
-                  SORRY, WAIT PLZ🖤 <br>
-                  IT'S NOT WORKING YET
-                </q-tooltip>
-                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-left" id="btnNext"/>
-                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-right" id="btnPrev"/>
-              </div>
             </div>
             <swiper
               id="swipers"
               :slides-per-view="3.5"
               :space-between="20"
-              @swiper="onSwiper"
             >
+              <div class="btnWrap">
+                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
+                  SORRY, WAIT PLZ🖤 <br>
+                  IT'S NOT WORKING YET
+                </q-tooltip>
+                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-left" id="btnNext" @click="this.swiper.slideNext()"/>
+                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-right" id="btnPrev" @click="this.swiper.slidePrev()"/>
+              </div>
               <swiper-slide @click="openWindow('react')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
                   GET READY FOR PRESENTATION<br>
@@ -220,8 +219,8 @@
               </p>
               <p class="mt20">📌<br>아래 링크를 통해 피그마 디자인과 깃헙 리포지토리를 방문할 수 있습니다.</p>
               <div class="q-gutter-sm mb20">
-                <q-btn flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16%3A56&mode=design&t=5NoGOyxB9vPfutVu-1"/>
-                <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
+                <q-btn id="btnNext" flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16%3A56&mode=design&t=5NoGOyxB9vPfutVu-1"/>
+                <q-btn id="btnPrev"  flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
               </div>
             </div>
           </div>
@@ -234,7 +233,7 @@
 <script>
 import { defineComponent } from "vue";
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
 import 'swiper/css';
 
 export default defineComponent({
@@ -245,30 +244,31 @@ export default defineComponent({
     SwiperSlide,
   },
   mounted() {
-    // this.swiper = new Swiper('.swiper-container', {
+    // const Swiper = new Swiper('.swiper', {
     //   navigation: {
-    //   nextEl: '#btnNext',
-    //   prevEl: '#btnPrev',
+    //     nextEl: document.querySelector('#btnNext'),
+    //     prevEl: document.querySelector('#btnPrev'),
     //   },
     // });
     this.setSlideWidth();
   },
   setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
+    const swiper = useSwiper();
+
+    // const onSwiper = (swiper) => {
+    //   console.log(swiper);
+    // };
 
     const setSlideWidth = () => {
       const slides = document.querySelectorAll('.swiper-slide');
       var slideWrap = document.querySelector('.swiper-wrapper');
       const slideWidth = 285;
       const slideCount = slides.length;
-      console.log('slideCount', slideCount)
+
       for (var i = 0; i < slideCount; i++){
         var slideAllWidth = slides[i].style.width = slideWidth + 'px';
-        console.log('slideAllWidth', slideAllWidth)
       }
-      slideWrap = slideAllWidth
+      slideWrap = slideAllWidth;
     };
 
     const openWindow = (e) => {
@@ -288,8 +288,9 @@ export default defineComponent({
     };
 
     return {
+      swiper,
       setSlideWidth,
-      onSwiper,
+      // onSwiper,
       openWindow
       // onSlideChange,
     };
