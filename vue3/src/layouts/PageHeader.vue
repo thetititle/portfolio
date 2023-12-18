@@ -25,10 +25,10 @@
         </router-link>
 
         <q-tabs v-model="tab" @click="moveSection($event)">
-          <q-tab name="hello" label="hello"/>
-          <q-tab name="introduce" label="introduce"/>
-          <q-tab name="project" label="project"/>
-          <q-tab name="this page" label="this page"/>
+          <q-tab name="hello" label="hello" class="hello"/>
+          <q-tab name="introduce" label="introduce" class="introduce"/>
+          <q-tab name="project" label="project" class="project"/>
+          <q-tab name="this page" label="this page" class="thisPage"/>
         </q-tabs>
       </div>
     </div>
@@ -91,26 +91,40 @@ export default defineComponent({
     window.onscroll = () => {
       const qHeader = document.querySelector('header');
       const navBar = document.getElementById('navBar');
-      const scrollHtml = document.querySelector('html');
-      // const section1 = document.querySelector('section#hello');
+      const scrollHtml = document.querySelector('html').scrollTop;
+
+      const section1 = document.querySelector('section#hello').offsetTop;
       const section2 = document.querySelector('section#introduce').offsetTop;
       const section3 = document.querySelector('section#project').offsetTop;
       const section4 = document.querySelector('section#thisPage').offsetTop;
-      if (scrollHtml.scrollTop >= 60 ) {
+      const tabIntroduce = document.querySelector('.q-tab.introduce');
+      const tabProject = document.querySelector('.q-tab.project');
+      const tabThisPage = document.querySelector('.q-tab.thisPage');
+
+      if (scrollHtml >= 60 ) {
         navBar.classList.add('active');
         qHeader.classList.add('active');
-      } else if (scrollHtml.scrollTop <= section2 && scrollHtml.scrollTop > section3) {
-        console.log('section2', section2);
-      } else if (scrollHtml.scrollTop == section3 || scrollHtml.scrollTop > section4) {
-        console.log('section3', section3);
-      } else if (scrollHtml.scrollTop == section4) {
-        console.log('section4', section4);
-      } else if (scrollHtml.scrollTop <= 60) {
+        if (scrollHtml > section2 && scrollHtml < section3) {
+          tabIntroduce.classList.add('q-tab--active');
+          tabIntroduce.previousSibling.classList.remove('q-tab--active');
+          tabIntroduce.nextSibling.classList.remove('q-tab--active');
+          tabIntroduce.previousSibling.classList.add('q-tab--inactive');
+          tabIntroduce.nextSibling.classList.add('q-tab--inactive');
+        } else if (scrollHtml > section3 && scrollHtml < section4) {
+          tabProject.classList.add('q-tab--active');
+          tabProject.previousSibling.classList.remove('q-tab--active');
+          tabProject.nextSibling.classList.remove('q-tab--active');
+          tabProject.previousSibling.classList.add('q-tab--inactive');
+          tabProject.nextSibling.classList.add('q-tab--inactive');
+        } else if (scrollHtml > section4 && scrollHtml > section3) {
+          tabThisPage.classList.add('q-tab--active');
+          tabThisPage.previousSibling.classList.remove('q-tab--active');
+          tabThisPage.previousSibling.classList.add('q-tab--inactive');
+        };
+      } else {
         navBar.classList.remove('active');
         qHeader.classList.remove('active');
       };
-      // 각 섹션의 높이 가져오기
-      // 섹션의 높이에 도달하면 nav의 tab에 addClass q-tab--active
     }
 
     const moveSection = (e) => {

@@ -60,12 +60,12 @@
               </ul>
             </article>
             <div class="articleWrap row item-center g30 flex5">
-              <article class="timeLineWrapper column g10 flex1">
+              <article class="timeLineWrapper column g10">
                 <!-- <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
                   SCROLL ME(ʘᴥʘ)
                 </q-tooltip> -->
                 <p class="conTt">TIME LINE</p>
-                <div class="timeLineWrap">
+                <div class="timeLineWrap flex1">
                   <ul class="timeLines">
                     <li>
                       <ul class="timeLine">
@@ -149,27 +149,29 @@
                 <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
               </router-link> -->
               <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
-            </div>
-            <swiper
-              id="swipers"
-              :slides-per-view="3.5"
-              :space-between="20"
-            >
               <div class="btnWrap">
                 <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
                   SORRY, WAIT PLZ🖤 <br>
                   IT'S NOT WORKING YET
                 </q-tooltip>
-                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-left" id="btnNext" @click="this.swiper.slideNext()"/>
-                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-right" id="btnPrev" @click="this.swiper.slidePrev()"/>
+                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-left" id="btnNext" @click="swiper.slideNext()"/>
+                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-right" id="btnPrev" @click="swiper.slidePrev()"/>
               </div>
+            </div>
+            <swiper
+              id="swipers"
+              :slides-per-view="3.5"
+              :space-between="20"
+              @swiper="onSwiper"
+            >
               <swiper-slide @click="openWindow('react')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
                   GET READY FOR PRESENTATION<br>
                   RESPONSIVE<br>
                   💙USEING REACT💙
                 </q-tooltip>
-                <span class="slides react">23_design</span>
+                <img src="../assets/img/23_design.jpg" alt="23_design">
+                <!-- <span class="slides react">23_design</span> -->
               </swiper-slide>
               <swiper-slide @click="openWindow('aestetic')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
@@ -177,7 +179,8 @@
                   PC<br>
                   USED HTML,CSS,JAVASCRIPT
                 </q-tooltip>
-                <span class="slides aestetic">23_aestetic</span>
+                <img src="../assets/img/23_aestetic.jpg" alt="23_aestetic">
+                <!-- <span class="slides aestetic">23_aestetic</span> -->
               </swiper-slide>
               <swiper-slide @click="openWindow('knotted')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
@@ -185,7 +188,8 @@
                   MOBILE<br>
                   USED HTML,CSS,J-QUERY
                 </q-tooltip>
-                <span class="slides knotted">21_knotted</span>
+                <img src="../assets/img/21_knotted.jpg" alt="21_knotted">
+                <!-- <span class="slides knotted">21_knotted</span> -->
               </swiper-slide>
               <swiper-slide @click="openWindow('manyo')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
@@ -193,7 +197,8 @@
                   PC<br>
                   USED HTML,CSS,JAVASCRIPT
                 </q-tooltip>
-                <span class="slides manyo">21_manyo</span>
+                <img src="../assets/img/21_manyo.jpg" alt="21_manyo">
+                <!-- <span class="slides manyo">21_manyo</span> -->
               </swiper-slide>
             </swiper>
           </article>
@@ -217,11 +222,52 @@
                 현재 TABLET 사이즈까지 반응형으로 구현되어있으며, MOBILE 버전도 작업중에 있습니다.<br>
                 API호출을 위한 데이터를 만들고 있고, 이또한 빠른 시일내로 업데이트 될 예정입니다.<br>
               </p>
-              <p class="mt20">📌<br>아래 링크를 통해 피그마 디자인과 깃헙 리포지토리를 방문할 수 있습니다.</p>
+              <p class="mt20">아래 링크를 통해 피그마 디자인과 깃헙 리포지토리를 방문할 수 있습니다.</p>
               <div class="q-gutter-sm mb20">
-                <q-btn id="btnNext" flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16%3A56&mode=design&t=5NoGOyxB9vPfutVu-1"/>
-                <q-btn id="btnPrev"  flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
+                <q-btn flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16%3A56&mode=design&t=5NoGOyxB9vPfutVu-1"/>
+                <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
               </div>
+              <article class="timeLineWrapper column g10">
+                <!-- <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
+                  SCROLL ME(ʘᴥʘ)
+                </q-tooltip> -->
+                <p class="conTt">📌Issue check list</p>
+                <div class="timeLineWrap flex1">
+                  <ul class="timeLines">
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span><em>NOW</em></span></li>
+                        <li>Swiper Initialize issue in VUE3 CHECKING</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span>2023.12.18</span></li>
+                        <li>Nav scroll Event issue </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span>2023.12.18</span></li>
+                        <li>Nav scroll Event issue POST</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="timeLine yet">
+                        <li class="fontB"><span>PRE</span></li>
+                        <li>Product manyo_21 CSS Broken issue</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="timeLine yet">
+                        <li class="fontB"><span>PRE</span></li>
+                        <li>Mobile ver Responsive</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+              <hr>
             </div>
           </div>
         </div>
@@ -233,7 +279,7 @@
 <script>
 import { defineComponent } from "vue";
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
 export default defineComponent({
@@ -244,32 +290,34 @@ export default defineComponent({
     SwiperSlide,
   },
   mounted() {
-    // const Swiper = new Swiper('.swiper', {
-    //   navigation: {
-    //     nextEl: document.querySelector('#btnNext'),
-    //     prevEl: document.querySelector('#btnPrev'),
-    //   },
-    // });
-    this.setSlideWidth();
+    // this.setSlideWidth();
   },
+  // computed() {
+  //   const Swiper = new Swiper('.swiper', {
+  //     navigation: {
+  //       nextEl: document.querySelector('#btnNext'),
+  //       prevEl: document.querySelector('#btnPrev'),
+  //     },
+  //   });
+  // },
   setup() {
-    const swiper = useSwiper();
+    // const swiper = useSwiper();
 
-    // const onSwiper = (swiper) => {
-    //   console.log(swiper);
-    // };
-
-    const setSlideWidth = () => {
-      const slides = document.querySelectorAll('.swiper-slide');
-      var slideWrap = document.querySelector('.swiper-wrapper');
-      const slideWidth = 285;
-      const slideCount = slides.length;
-
-      for (var i = 0; i < slideCount; i++){
-        var slideAllWidth = slides[i].style.width = slideWidth + 'px';
-      }
-      slideWrap = slideAllWidth;
+    const onSwiper = (swiper) => {
+      console.log(swiper);
     };
+
+    // const setSlideWidth = () => {
+    //   const slides = document.querySelectorAll('.swiper-slide');
+    //   var slideWrap = document.querySelector('.swiper-wrapper');
+    //   const slideWidth = 285;
+    //   const slideCount = slides.length;
+
+    //   for (var i = 0; i < slideCount; i++){
+    //     var slideAllWidth = slides[i].style.width = slideWidth + 'px';
+    //   }
+    //   slideWrap = slideAllWidth;
+    // };
 
     const openWindow = (e) => {
       if (e === 'react'){
@@ -288,9 +336,9 @@ export default defineComponent({
     };
 
     return {
-      swiper,
-      setSlideWidth,
-      // onSwiper,
+      // swiper,
+      // setSlideWidth,
+      onSwiper,
       openWindow
       // onSlideChange,
     };
