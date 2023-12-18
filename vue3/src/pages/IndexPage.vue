@@ -249,13 +249,13 @@
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span>2023.12.15</span></li>
-                        <li>Nav scroll Event issue POST</li>
+                        <li>Nav scroll Event issue CLEAR</li>
                       </ul>
                     </li>
                     <li>
                       <ul class="timeLine yet">
                         <li class="fontB"><span>PRE</span></li>
-                        <li>Product manyo_21 CSS Broken issue</li>
+                        <li>Product manyo_21 CSS Broken issue CLEAR</li>
                       </ul>
                     </li>
                     <li>

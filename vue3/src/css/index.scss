@@ -77,6 +77,9 @@ section{
         }
       }
     }
+    .timeLineWrap{
+      height: 30rem;
+    }
     .articleWrap {
       @media (min-width:768px) and (max-width: 1023px){
         flex: 2;
@@ -154,10 +157,13 @@ section{
         background: linear-gradient(180deg, transparent 15%, rgba(252,252,245,1) 100%);
       }
     }
-    .timeLine{
-      > li{
-        &:nth-child(1){
-          width: 74px;
+    .timeLineWrap{
+      height: 15rem;
+      .timeLine{
+        > li{
+          &:nth-child(1){
+            width: 74px;
+          }
         }
       }
     }

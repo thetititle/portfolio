@@ -382,7 +382,7 @@ footer{
  * **************************************** */
 .timeLineWrapper{
   .timeLineWrap{
-    height: 30rem;
+    // height: 30rem;
     padding: 10px 0;
     overflow: hidden;
     position: relative;
@@ -403,7 +403,7 @@ footer{
       line-height: 1;
     }
     .timeLines{
-      height: 100%;
+      height: inherit;
       display: flex;
       flex-direction: column;
       gap: 30px;
