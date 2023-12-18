@@ -248,7 +248,7 @@
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2023.12.18</span></li>
+                        <li class="fontB"><span>2023.12.15</span></li>
                         <li>Nav scroll Event issue POST</li>
                       </ul>
                     </li>
