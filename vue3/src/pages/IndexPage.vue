@@ -61,9 +61,9 @@
             </article>
             <div class="articleWrap row item-center g30 flex5">
               <article class="timeLineWrapper column g10">
-                <!-- <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
+                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
                   SCROLL ME(ʘᴥʘ)
-                </q-tooltip> -->
+                </q-tooltip>
                 <p class="conTt">TIME LINE</p>
                 <div class="timeLineWrap flex1">
                   <ul class="timeLines">
@@ -75,7 +75,19 @@
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2023.03</span></li>
+                        <li class="fontB"><span>2023.10</span></li>
+                        <li>공무원연금공단 퍼블리싱</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span>2023.08</span></li>
+                        <li>통일부 퍼블리싱</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span>2023.0</span></li>
                         <li>화재보험협회 FIND UI/UX 개발</li>
                       </ul>
                     </li>
@@ -168,7 +180,7 @@
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
                   GET READY FOR PRESENTATION<br>
                   RESPONSIVE<br>
-                  💙USEING REACT💙
+                  💙USING NEXT.JS & TYPE SCRIPT💙
                 </q-tooltip>
                 <img src="../assets/img/23_design.jpg" alt="23_design">
                 <!-- <span class="slides react">23_design</span> -->
@@ -213,37 +225,46 @@
             <div class="flex1 imgWrap">
               <img src="../assets/img/localhost_8080_.png" alt="localhost">
             </div>
-            <div class="flex1 column g10">
+            <div class="flex1 column g15">
               <h1 class="title">
                 This Page<em>.</em>
               </h1>
-              <p>
-                VUE3 기반의 프레임워크인 QUASAR로 만들었습니다.<br>
-                현재 TABLET 사이즈까지 반응형으로 구현되어있으며, MOBILE 버전도 작업중에 있습니다.<br>
-                API호출을 위한 데이터를 만들고 있고, 이또한 빠른 시일내로 업데이트 될 예정입니다.<br>
-              </p>
+              <ul class="list_desc">
+                <li>▪Responsive</li>
+                <li>
+                  <ul class="descs">
+                    <li>@media (min-width:768px) and (max-width: 1023px)</li>
+                    <li>@media all and (max-width: 767px)</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="list_desc">
+                <li>▪Data</li>
+                <li>
+                  <ul class="descs">
+                    <li>simple server used json</li>
+                  </ul>
+                </li>
+              </ul>
               <p class="mt20">아래 링크를 통해 피그마 디자인과 깃헙 리포지토리를 방문할 수 있습니다.</p>
               <div class="q-gutter-sm mb20">
                 <q-btn flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16%3A56&mode=design&t=5NoGOyxB9vPfutVu-1"/>
                 <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
               </div>
               <article class="timeLineWrapper column g10">
-                <!-- <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
-                  SCROLL ME(ʘᴥʘ)
-                </q-tooltip> -->
                 <p class="conTt">📌Issue check list</p>
                 <div class="timeLineWrap flex1">
                   <ul class="timeLines">
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span><em>NOW</em></span></li>
-                        <li>Swiper Initialize issue in VUE3 CHECKING</li>
+                        <li>Creat NEXT.js ver using Typescript</li>
                       </ul>
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2023.12.18</span></li>
-                        <li>Nav scroll Event issue </li>
+                        <li class="fontB"><span>2024.01.16</span></li>
+                        <li>Responsive  CLEAR</li>
                       </ul>
                     </li>
                     <li>
@@ -255,13 +276,13 @@
                     <li>
                       <ul class="timeLine yet">
                         <li class="fontB"><span>PRE</span></li>
-                        <li>Product manyo_21 CSS Broken issue CLEAR</li>
+                        <li>Product manyo_21 CSS Broken issue</li>
                       </ul>
                     </li>
                     <li>
                       <ul class="timeLine yet">
                         <li class="fontB"><span>PRE</span></li>
-                        <li>Mobile ver Responsive</li>
+                        <li>Swiper Initialize issue in VUE3 CHECKING</li>
                       </ul>
                     </li>
                   </ul>
