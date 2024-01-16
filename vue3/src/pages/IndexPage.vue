@@ -61,9 +61,6 @@
             </article>
             <div class="articleWrap row item-center g30 flex5">
               <article class="timeLineWrapper column g10">
-                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
-                  SCROLL ME(ʘᴥʘ)
-                </q-tooltip>
                 <p class="conTt">TIME LINE</p>
                 <div class="timeLineWrap flex1">
                   <ul class="timeLines">
@@ -76,7 +73,7 @@
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span>2023.10</span></li>
-                        <li>공무원연금공단 퍼블리싱</li>
+                        <li>공무원연금공단 연금수급권 확인서비스 퍼블리싱</li>
                       </ul>
                     </li>
                     <li>
@@ -87,7 +84,7 @@
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2023.0</span></li>
+                        <li class="fontB"><span>2023.03</span></li>
                         <li>화재보험협회 FIND UI/UX 개발</li>
                       </ul>
                     </li>
@@ -98,6 +95,19 @@
                       </ul>
                     </li>
                     <li>
+                      <q-tooltip anchor="center end" self="top right" :offset="[0,0]">
+                        ❗ISSUE <br/>
+                        project가 단일 branch로 이루어져 있어서 고객사GA들의 니즈를 맞출 수 없었음<br/>
+                        ex) design, data...<br/>
+                        <br/>
+                        ❕SOLUTION<br/>
+                        모든 data와 style이 하나로 뭉쳐져 있는 상태로 배포가 되어있는 상태였고<br/>
+                        시니어와 사수가 없는 상태에서 주니어인 본인이 할 수 있는 최선의 방법은<br/>
+                        1, Mount하거나 reat할 때 url을 가져온 후<br/>
+                        2, 각GA의 인식자가 url에 포함이 되면, 해당 GA가 원하는 style과 data를 보여줌<br/>
+                        <br/>
+                        👉🏻1년도 안된 주니어가 할 수 있는 최선의 선택이었고, 고객사들의 needs는 충족됨.
+                      </q-tooltip>
                       <ul class="timeLine">
                         <li class="fontB"><span>2022~</span></li>
                         <ul>
@@ -183,7 +193,6 @@
                   💙USING NEXT.JS & TYPE SCRIPT💙
                 </q-tooltip>
                 <img src="../assets/img/23_design.jpg" alt="23_design">
-                <!-- <span class="slides react">23_design</span> -->
               </swiper-slide>
               <swiper-slide @click="openWindow('aestetic')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
@@ -192,7 +201,6 @@
                   USED HTML,CSS,JAVASCRIPT
                 </q-tooltip>
                 <img src="../assets/img/23_aestetic.jpg" alt="23_aestetic">
-                <!-- <span class="slides aestetic">23_aestetic</span> -->
               </swiper-slide>
               <swiper-slide @click="openWindow('knotted')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
@@ -201,7 +209,6 @@
                   USED HTML,CSS,J-QUERY
                 </q-tooltip>
                 <img src="../assets/img/21_knotted.jpg" alt="21_knotted">
-                <!-- <span class="slides knotted">21_knotted</span> -->
               </swiper-slide>
               <swiper-slide @click="openWindow('manyo')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
@@ -210,7 +217,6 @@
                   USED HTML,CSS,JAVASCRIPT
                 </q-tooltip>
                 <img src="../assets/img/21_manyo.jpg" alt="21_manyo">
-                <!-- <span class="slides manyo">21_manyo</span> -->
               </swiper-slide>
             </swiper>
           </article>
@@ -263,8 +269,8 @@
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2024.01.16</span></li>
-                        <li>Responsive  CLEAR</li>
+                        <li class="fontB"><span>2024.01.17</span></li>
+                        <li>Responsive CLEAR</li>
                       </ul>
                     </li>
                     <li>
@@ -355,6 +361,17 @@ export default defineComponent({
         window.open("http://thetititle.com/products/knotted_21/index.html","blank");
       }
     };
+
+    window.onresize = () => {
+      // window.innerWidth에 따라 클래스명 추가제거
+      if(window.innerWidth < 768) {
+        console.log('mobile responsive');
+      } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
+        console.log('tablet responsive');
+      } else if (window.innerWidth > 1024) {
+        console.log('pc responsive');
+      };
+    }
 
     return {
       // swiper,
