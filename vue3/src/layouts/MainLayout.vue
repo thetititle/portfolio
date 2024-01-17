@@ -1,10 +1,10 @@
 <template>
   <q-layout>
 
-    <PageHeader/>
+    <PageHeader :resWidth="resWidth"/>
 
     <q-page-container>
-      <router-view/>
+      <router-view :resWidth="resWidth"/>
     </q-page-container>
 
     <q-footer class="row shadow-up-1">
@@ -23,7 +23,7 @@
 
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, onBeforeMount} from "vue";
 import PageHeader from "./PageHeader.vue"
 
 export default defineComponent({
@@ -32,12 +32,44 @@ export default defineComponent({
   components: {
     PageHeader
   },
-
+  // props:,
+  // emits:
+  // setup(props, {emit}) {
   setup() {
-    return {
+    onBeforeMount(() => {
+      checkScreen();
+    })
+
+    const resWidth = ref('');
+    const checkScreen = () => {
+      const isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
+      const isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches;
+      const isPc = window.matchMedia("only screen and (min-width: 1024px)").matches;
+      if (isMobile) {
+        resWidth.value = 'mobile';
+        console.log('mobile responsive1', resWidth.value);
+      } else if (isTablet) {
+        resWidth.value = 'tablet';
+        console.log('tablet responsive1', resWidth.value);
+      } else if (isPc) {
+        resWidth.value = 'pc';
+        console.log('pc responsive1', resWidth.value);
+      }
+    };
+    window.onresize = () => {
+      if(window.innerWidth < 768) {
+        resWidth.value = 'mobile';
+      } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
+        resWidth.value = 'tablet';
+      } else if (window.innerWidth > 1024) {
+        resWidth.value = 'pc';
+      };
     };
 
-
+    return {
+      resWidth,
+      checkScreen
+    };
   },
 });
 </script>

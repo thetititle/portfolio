@@ -231,7 +231,7 @@
             <div class="flex1 imgWrap">
               <img src="../assets/img/localhost_8080_.png" alt="localhost">
             </div>
-            <div class="flex1 column g15">
+            <div class="flex1 column g15 mAbsolute">
               <h1 class="title">
                 This Page<em>.</em>
               </h1>
@@ -239,8 +239,9 @@
                 <li>▪Responsive</li>
                 <li>
                   <ul class="descs">
-                    <li>@media (min-width:768px) and (max-width: 1023px)</li>
-                    <li>@media all and (max-width: 767px)</li>
+                    <li>@media</li>
+                    <li>(min-width:768px) and (max-width: 1023px)</li>
+                    <li>all and (max-width: 767px)</li>
                   </ul>
                 </li>
               </ul>
@@ -311,7 +312,11 @@ import 'swiper/css';
 
 export default defineComponent({
   name: "IndexPage",
-
+  props: {
+    resWidth: {
+      type : String
+    }
+  },
   components: {
     Swiper,
     SwiperSlide,
@@ -327,7 +332,7 @@ export default defineComponent({
   //     },
   //   });
   // },
-  setup() {
+  setup(props) {
     // const swiper = useSwiper();
 
     const onSwiper = (swiper) => {
@@ -362,16 +367,10 @@ export default defineComponent({
       }
     };
 
-    window.onresize = () => {
-      // window.innerWidth에 따라 클래스명 추가제거
-      if(window.innerWidth < 768) {
-        console.log('mobile responsive');
-      } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
-        console.log('tablet responsive');
-      } else if (window.innerWidth > 1024) {
-        console.log('pc responsive');
-      };
-    }
+    // if(props.resWidth === 'mobile') {
+
+    // }
+
 
     return {
       // swiper,
