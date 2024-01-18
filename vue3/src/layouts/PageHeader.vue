@@ -1,5 +1,5 @@
 <template>
-  <div v-if="resWidth !== 'mobile'">
+  <div v-if="resWidth === 'pc'">
     <div v-show="indexHeader === true">
       <q-header elevated>
         <div class="container row justify-between">
@@ -141,7 +141,7 @@ export default defineComponent({
       const tabProject = document.querySelector('.q-tab.project');
       const tabThisPage = document.querySelector('.q-tab.thisPage');
 
-      if (props.resWidth !== 'mobile') {
+      if (props.resWidth === 'pc') {
         if (scrollHtml >= 60 ) {
           navBar.classList.add('active');
           qHeader.classList.add('active');

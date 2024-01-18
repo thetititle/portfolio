@@ -60,10 +60,10 @@ section{
   &#introduce{
     .userInfoWrap{
       img{
-        @media all and (max-width: 767px){
-          width: 50%;
-          height: auto;
-        }
+        // @media all and (max-width: 500px){
+        //   width: 50%;
+        //   height: auto;
+        // }
       }
       .userInfo{
         // @media (min-width:768px) and (max-width: 1023px){
@@ -89,12 +89,12 @@ section{
         height: 22rem;
       }
     }
-    .articleWrap {
-      @media (min-width:768px) and (max-width: 1023px){
-        flex: 2;
-        flex-direction: column;
-      }
-    }
+    // .articleWrap {
+    //   @media (min-width:768px) and (max-width: 1023px){
+    //     flex: 2;
+    //     flex-direction: column;
+    //   }
+    // }
   }
   &#project{
     .container{

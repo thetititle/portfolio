@@ -24,10 +24,10 @@
           <p class="tc fontB">
             Let me introduce my self!
           </p>
-          <div class="row justify-between item-center g60">
-            <article class="userInfoWrap column g30 flex1">
+          <div class="row justify-between item-center g60" id="userInfoWrapper">
+            <article class="userInfoWrap column g30 flex1" id="userInfoWrap">
               <img src="../assets/img/self.png" alt="mimoticon" class="flex1">
-              <ul class="userInfo column justify-between flex3">
+              <ul class="userInfo column justify-between flex3" id="userInfo">
                 <li>
                   <ul class="nameBirth column g5">
                     <li class="conTt">suji bae</li>
@@ -59,7 +59,7 @@
                 </li>
               </ul>
             </article>
-            <div class="articleWrap row item-center g30 flex5">
+            <div class="articleWrap row item-center g30 flex5" id="articleWrap">
               <article class="timeLineWrapper column g10">
                 <p class="conTt">TIME LINE</p>
                 <div class="timeLineWrap flex1">
@@ -305,7 +305,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref} from "vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -321,17 +321,7 @@ export default defineComponent({
     Swiper,
     SwiperSlide,
   },
-  mounted() {
-    // this.setSlideWidth();
-  },
-  // computed() {
-  //   const Swiper = new Swiper('.swiper', {
-  //     navigation: {
-  //       nextEl: document.querySelector('#btnNext'),
-  //       prevEl: document.querySelector('#btnPrev'),
-  //     },
-  //   });
-  // },
+
   setup(props) {
     // const swiper = useSwiper();
 
@@ -339,17 +329,40 @@ export default defineComponent({
       console.log(swiper);
     };
 
-    // const setSlideWidth = () => {
-    //   const slides = document.querySelectorAll('.swiper-slide');
-    //   var slideWrap = document.querySelector('.swiper-wrapper');
-    //   const slideWidth = 285;
-    //   const slideCount = slides.length;
+    onMounted (async()=> {
+      await responseFunc();
+    });
 
-    //   for (var i = 0; i < slideCount; i++){
-    //     var slideAllWidth = slides[i].style.width = slideWidth + 'px';
-    //   }
-    //   slideWrap = slideAllWidth;
-    // };
+    const resWidth2 = ref(props.resWidth);
+    const responseFunc = () => {
+      const userInfoWrapper = document.getElementById('userInfoWrapper');
+      const userInfoWrap = userInfoWrapper.querySelector('#userInfoWrap');
+      const articleWrap = userInfoWrapper.querySelector('.articleWrap');
+      const userInfo = userInfoWrap.querySelector('.userInfo');
+      const userImg = userInfoWrap.querySelector('img');
+
+      const introduce = document.getElementById('introduce');
+      const thisPage = document.getElementById('thisPage');
+      const introduceTime = introduce.querySelector('.timeLineWrap');
+      const thisPageTime = thisPage.querySelector('.timeLineWrap');
+
+      if(resWidth2.value !== 'pc') {
+        articleWrap.classList.remove('row');
+        articleWrap.classList.add('column');
+        userInfo.classList.remove('justify-between');
+        userInfo.classList.add('justify-start');
+        if (resWidth2.value === 'tablet') {
+          console.log('tablet');
+        } else if (resWidth2.value === 'mobile') {
+          articleWrap.classList.remove('flex5');
+          articleWrap.classList.add('flex2');
+        } else if (resWidth2.value === 'mobileColumn') {
+          userInfoWrapper.classList.remove('row');
+          userInfoWrapper.classList.add('column', 'no-wrap');
+        }
+      }
+
+    };
 
     const openWindow = (e) => {
       if (e === 'react'){
@@ -367,17 +380,11 @@ export default defineComponent({
       }
     };
 
-    // if(props.resWidth === 'mobile') {
-
-    // }
-
-
     return {
-      // swiper,
-      // setSlideWidth,
       onSwiper,
-      openWindow
-      // onSlideChange,
+      openWindow,
+      responseFunc,
+      resWidth2
     };
   }
 });

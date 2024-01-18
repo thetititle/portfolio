@@ -42,22 +42,25 @@ export default defineComponent({
 
     const resWidth = ref('');
     const checkScreen = () => {
-      const isMobile = window.matchMedia("only screen and (max-width: 767px)").matches;
+      const isMobile = window.matchMedia("only screen and (max-width: 500px)").matches;
+      const isMobile2 = window.matchMedia("(min-width: 501px) and (max-width: 767px)").matches;
       const isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches;
       const isPc = window.matchMedia("only screen and (min-width: 1024px)").matches;
+
       if (isMobile) {
+        resWidth.value = 'mobileColumn';
+      } else if (isMobile2) {
         resWidth.value = 'mobile';
-        console.log('mobile responsive1', resWidth.value);
       } else if (isTablet) {
         resWidth.value = 'tablet';
-        console.log('tablet responsive1', resWidth.value);
       } else if (isPc) {
         resWidth.value = 'pc';
-        console.log('pc responsive1', resWidth.value);
       }
     };
     window.onresize = () => {
-      if(window.innerWidth < 768) {
+      if (window.innerWidth <= 500) {
+        resWidth.value = 'mobileColumn';
+      } else if(window.innerWidth > 500 && window.innerWidth < 768) {
         resWidth.value = 'mobile';
       } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
         resWidth.value = 'tablet';
