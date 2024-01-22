@@ -236,17 +236,19 @@
                 This Page<em>.</em>
               </h1>
               <ul class="list_desc">
-                <li>▪Responsive</li>
+                <li class="fontB">Responsive</li>
                 <li>
                   <ul class="descs">
                     <li>@media</li>
-                    <li>(min-width:768px) and (max-width: 1023px)</li>
-                    <li>all and (max-width: 767px)</li>
+                    <li>all and (max-width: 500px)</li>
+                    <li>(min-width: 501px) and (max-width: 767px)</li>
+                    <li>(min-width: 768px) and (max-width: 1023px)</li>
+                    <li>all and (min-width: 1024px)</li>
                   </ul>
                 </li>
               </ul>
               <ul class="list_desc">
-                <li>▪Data</li>
+                <li class="fontB">Data</li>
                 <li>
                   <ul class="descs">
                     <li>simple server used json</li>
@@ -265,12 +267,12 @@
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span><em>NOW</em></span></li>
-                        <li>Creat NEXT.js ver using Typescript</li>
+                        <li>Creat simple-server use by json</li>
                       </ul>
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2024.01.17</span></li>
+                        <li class="fontB"><span>2024.01.22</span></li>
                         <li>Responsive CLEAR</li>
                       </ul>
                     </li>
@@ -340,11 +342,7 @@ export default defineComponent({
       const articleWrap = userInfoWrapper.querySelector('.articleWrap');
       const userInfo = userInfoWrap.querySelector('.userInfo');
       const userImg = userInfoWrap.querySelector('img');
-
-      const introduce = document.getElementById('introduce');
-      const thisPage = document.getElementById('thisPage');
-      const introduceTime = introduce.querySelector('.timeLineWrap');
-      const thisPageTime = thisPage.querySelector('.timeLineWrap');
+      const projectSection = document.getElementById('project');
 
       if(resWidth2.value !== 'pc') {
         articleWrap.classList.remove('row');
@@ -356,9 +354,19 @@ export default defineComponent({
         } else if (resWidth2.value === 'mobile') {
           articleWrap.classList.remove('flex5');
           articleWrap.classList.add('flex2');
+          userInfo.classList.remove('justify-between');
+          userInfo.classList.add('justify-start');
+          userImg.style.width='50%';
+          // swiper issue 해결 후 주석
+          projectSection.style.display='none';
         } else if (resWidth2.value === 'mobileColumn') {
           userInfoWrapper.classList.remove('row');
           userInfoWrapper.classList.add('column', 'no-wrap');
+          userInfo.classList.remove('justify-between');
+          userInfo.classList.add('justify-start');
+          userImg.style.width='50%';
+          // swiper issue 해결 후 주석
+          projectSection.style.display='none';
         }
       }
 

@@ -179,10 +179,17 @@ section{
         background: linear-gradient(180deg, transparent 0%, #fcfcf5 2.5%, #fcfcf5 100%);
       }
     }
+    .list_desc{
+      @media all and (max-width: 320px) {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+    }
     .timeLineWrap{
       height: 15rem;
       @media (min-width:768px) and (max-width: 1023px) {
-        height: 8rem;
+        height: 6rem;
       }
       // @media all and (max-width: 767px){
       //   height: 920px;
