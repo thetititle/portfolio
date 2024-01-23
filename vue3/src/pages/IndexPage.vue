@@ -79,7 +79,7 @@
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span>2023.08</span></li>
-                        <li>통일부 퍼블리싱</li>
+                        <li>통일부 통합지원시스템 퍼블리싱</li>
                       </ul>
                     </li>
                     <li>
@@ -272,14 +272,14 @@
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2024.01.22</span></li>
-                        <li>Responsive CLEAR</li>
+                        <li class="fontB"><span>FINISH</span></li>
+                        <li>Responsive</li>
                       </ul>
                     </li>
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span>2023.12.15</span></li>
-                        <li>Nav scroll Event issue CLEAR</li>
+                        <li class="fontB"><span>FINISH</span></li>
+                        <li>Nav scroll Event issue</li>
                       </ul>
                     </li>
                     <li>
