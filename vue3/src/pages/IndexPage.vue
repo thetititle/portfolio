@@ -58,15 +58,58 @@
                   </ul>
                 </li>
               </ul>
+              <!-- <ul class="userInfo column justify-between flex3" id="userInfo">
+                <li>
+                  <ul class="nameBirth column g5">
+                    <li class="conTt">{{ownerInfo.enName}}</li>
+                    <li>{{ownerInfo.koName}}</li>
+                    <li>{{ownerInfo.birthDay}}</li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="column g10">
+                    <li>
+                      <ul class="phone">
+                        <li class="fontEB">Phone.</li>
+                        <li>{{ownerInfo.phoneNum}}</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="eAdd">
+                        <li class="fontEB">Email.</li>
+                        <li>{{ownerInfo.emailAdd}}</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul class="hAdd">
+                        <li class="fontEB">Based in.</li>
+                        <li>{{ownerInfo.baseAdd}}</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul> -->
             </article>
             <div class="articleWrap row item-center g30 flex5" id="articleWrap">
               <article class="timeLineWrapper column g10">
                 <p class="conTt">TIME LINE</p>
                 <div class="timeLineWrap flex1">
+                  <!-- <ul class="timeLines" v-for="(item, index) in timeLine" :key="index">
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span>{{ item.date }}</span></li>
+                        <li>
+                          <ul v-for="(descItem, descIndex) in timeLine.desc" :key="descIndex">
+                            <li>{{ descItem }}</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul> -->
                   <ul class="timeLines">
                     <li>
                       <ul class="timeLine">
-                        <li class="fontB"><span><em>NOW</em></span></li>
+                        <li class="fontB"><span>NOW</span></li>
                         <li>Ready for NEW NEST!</li>
                       </ul>
                     </li>
@@ -251,7 +294,7 @@
                 <li class="fontB">Data</li>
                 <li>
                   <ul class="descs">
-                    <li>simple server used json</li>
+                    <li>json</li>
                   </ul>
                 </li>
               </ul>
@@ -264,12 +307,6 @@
                 <p class="conTt">📌Issue check list</p>
                 <div class="timeLineWrap flex1">
                   <ul class="timeLines">
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span><em>NOW</em></span></li>
-                        <li>Creat simple-server use by json</li>
-                      </ul>
-                    </li>
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span>FINISH</span></li>
@@ -295,6 +332,14 @@
                       </ul>
                     </li>
                   </ul>
+                  <!-- <ul class="timeLines" v-for="(item, index) in issueCheck" :key="index">
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span>{{ item.complate }}</span></li>
+                        <li>{{item.desc}}</li>
+                      </ul>
+                    </li>
+                  </ul> -->
                 </div>
               </article>
               <hr>
@@ -307,7 +352,8 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref} from "vue";
+import { defineComponent, onBeforeMount, onMounted, reactive, ref} from "vue";
+import { api } from "boot/axios.js";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -331,6 +377,9 @@ export default defineComponent({
       console.log(swiper);
     };
 
+    onBeforeMount(() => {
+      getData();
+    });
     onMounted (async()=> {
       await responseFunc();
     });
@@ -388,11 +437,30 @@ export default defineComponent({
       }
     };
 
+    const ownerInfo = ref({});
+    const timeLine = ref({});
+    const issueCheck = ref({});
+    const getData = () => {
+      api.get(`allData`).then((result) => {
+        ownerInfo.value = result.data[0].ownerInfo
+        timeLine.value = result.data[0].timeLine
+        issueCheck.value = result.data[0].issueCheck
+        console.log('ownerInfo', ownerInfo.value);
+        console.log('timeLine', timeLine.value);
+        console.log('issueCheck', issueCheck.value);
+      });
+    };
+
     return {
       onSwiper,
       openWindow,
       responseFunc,
-      resWidth2
+      resWidth2,
+      getData,
+      ownerInfo,
+      timeLine,
+      issueCheck
+
     };
   }
 });

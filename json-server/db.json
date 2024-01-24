@@ -1,0 +1,73 @@
+{
+  "allData" : [
+    {
+      "id" : "00",
+      "ownerInfo": {
+        "enName" : "suji bae",
+        "koName" : "배수지",
+        "birthDay" : "1990.01.09",
+        "phoneNum" : "010-8316-2942",
+        "emailAdd" : "business.thetititle@gmail.com",
+        "baseAdd" : "Seoul, Korea"
+      },
+      "timeLine" : [
+        {
+          "date" : "NOW",
+          "desc" : ["Ready for NEW NEST!"]
+        },
+        {
+          "date" : "2023.10",
+          "desc" : ["공무원연금공단 연금수급권 확인서비스 퍼블리싱"]
+        },
+        {
+          "date" : "2023.08",
+          "desc" : ["통일부 통합지원시스템 퍼블리싱"]
+        },
+        {
+          "date" : "2023.03",
+          "desc" : ["화재보험협회 FIND(가제) UI/UX 초기 개발참여"]
+        },
+        {
+          "date" : "2023.01",
+          "desc" : ["화재보험협회 FIND(가제) UI/UX 초기 디자인"]
+        },
+        {
+          "date" : "2022~",
+          "desc" : [
+            "가이랩주식회사 RPA UI/UX 디자인 및 개발","가이랩주식회사 ERP UI/UX 디자인 및 개발","가이랩주식회사 ADM UI/UX 디자인"
+          ]
+        },
+        {
+          "date" : "2022.02",
+          "desc" : ["가이랩주식회사 주니어 FE 입사"]
+        },
+        {
+          "date" : "2022.12",
+          "desc" : ["그린아트컴퓨터학원 React.js 수료"]
+        }
+      ],
+      "issueCheck" : [
+        {
+          "complate" : "NOW",
+          "desc" : "Creat Json-server & call a data use by api, axio"
+        },
+        {
+          "complate" : "FINISH",
+          "desc" : "Responsive"
+        },
+        {
+          "complate" : "FINISH",
+          "desc" : "Nav scroll Event issue"
+        },
+        {
+          "complate" : "PRE",
+          "desc" : "Product manyo_21 CSS Broken issue"
+        },
+        {
+          "complate" : "PRE",
+          "desc" : "Swiper Initialize issue in VUE3 check"
+        }
+      ]
+    }
+  ]
+}
