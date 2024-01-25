@@ -84,6 +84,15 @@ module.exports = configure(function (ctx) {
       server: {
         type: 'http'
       },
+      proxy: {
+        '/api': {
+          target: '',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': ''
+          }
+        }
+      },
       port: 8080,
       open: true // opens browser window automatically
     },

@@ -294,7 +294,7 @@
                 <li class="fontB">Data</li>
                 <li>
                   <ul class="descs">
-                    <li>json</li>
+                    <li>json (localhost에서만 axio.api로 호출가능)</li>
                   </ul>
                 </li>
               </ul>
@@ -307,6 +307,12 @@
                 <p class="conTt">📌Issue check list</p>
                 <div class="timeLineWrap flex1">
                   <ul class="timeLines">
+                    <li>
+                      <ul class="timeLine">
+                        <li class="fontB"><span>NOW</span></li>
+                        <li>DOTHOME 외부서버 리퀘스트 응답불가에 대한 대체강구</li>
+                      </ul>
+                    </li>
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span>FINISH</span></li>
