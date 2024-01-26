@@ -85,13 +85,13 @@
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span>2023.03</span></li>
-                        <li>화재보험협회 FIND UI/UX 개발</li>
+                        <li>화재보험협회 FIND(가제) UI/UX 초기 개발 참여</li>
                       </ul>
                     </li>
                     <li>
                       <ul class="timeLine">
                         <li class="fontB"><span>2023.01</span></li>
-                        <li>화재보험협회 FIND UI/UX 디자인</li>
+                        <li>화재보험협회 FIND(가제) UI/UX 초기 디자인 참여</li>
                       </ul>
                     </li>
                     <li>
