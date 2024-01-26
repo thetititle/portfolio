@@ -118,11 +118,11 @@ export default defineComponent({
     onBeforeMount (() => {
       if (window.location.href.includes('product')){
         indexHeader.value = false;
-        console.log('indexHeader', indexHeader.value);
+        // console.log('indexHeader', indexHeader.value);
         // window.location.reload(true);
       } else {
         indexHeader.value = true;
-        console.log('indexHeader', indexHeader.value);
+        // console.log('indexHeader', indexHeader.value);
         // window.location.reload(true);
       }
       // location.reload();

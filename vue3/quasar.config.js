@@ -84,6 +84,9 @@ module.exports = configure(function (ctx) {
       server: {
         type: 'http'
       },
+      headers: {
+        'Access-Control-Allow-Origin' : 'http://thetititle.com'
+      },
       proxy: {
         '/api': {
           target: '',

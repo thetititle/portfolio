@@ -167,7 +167,12 @@ img{
     margin: 0;
   }
 }
-
+.fHighlight{
+  color: var(--pointClolr1);
+}
+.fblur{
+  opacity: 0.5;
+}
 /* **************************************** *
  * flex & padding & margin
  * **************************************** */
@@ -404,7 +409,7 @@ footer{
 .timeLineWrapper{
   .timeLineWrap{
     // height: 30rem;
-    padding: 10px 0;
+    padding: 5px 0;
     overflow: hidden;
     position: relative;
     &::after{
@@ -413,8 +418,7 @@ footer{
       top: 0;
       left: 0;
       bottom: 0;
-      height: calc(100% + 20px);
-      transform: translateY(-10px);
+      height: 100%;
       border-left: 1px dashed var(--fontBasic);
       opacity: 0.7;
     }
@@ -424,26 +428,13 @@ footer{
       line-height: 1;
     }
     .timeLines{
-      height: inherit;
+      // height: inherit;
       display: flex;
       flex-direction: column;
       gap: 30px;
       position: relative;
       overflow-y: scroll;
       -ms-overflow-style: none;
-      > li{
-        &:first-child{
-          .timeLine{
-            > li{
-              &:first-child{
-                span{
-                  color: var(--pointClolr1);
-                }
-              }
-            }
-          }
-        }
-      }
       @media (min-width:768px) and (max-width: 1023px) {
         gap: 20px;
       }

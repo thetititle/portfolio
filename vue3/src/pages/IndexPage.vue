@@ -27,38 +27,7 @@
           <div class="row justify-between item-center g60" id="userInfoWrapper">
             <article class="userInfoWrap column g30 flex1" id="userInfoWrap">
               <img src="../assets/img/self.png" alt="mimoticon" class="flex1">
-              <ul class="userInfo column justify-between flex3" id="userInfo">
-                <li>
-                  <ul class="nameBirth column g5">
-                    <li class="conTt">suji bae</li>
-                    <li>배수지</li>
-                    <li>1990.01.09</li>
-                  </ul>
-                </li>
-                <li>
-                  <ul class="column g10">
-                    <li>
-                      <ul class="phone">
-                        <li class="fontEB">Phone.</li>
-                        <li>010-8316-2942</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="eAdd">
-                        <li class="fontEB">Email.</li>
-                        <li>business.thetititle@gmail.com</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="hAdd">
-                        <li class="fontEB">Based in.</li>
-                        <li>Seoul, Korea</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <!-- <ul class="userInfo column justify-between flex3" id="userInfo">
+              <ul class="userInfo column justify-between flex1" id="userInfo">
                 <li>
                   <ul class="nameBirth column g5">
                     <li class="conTt">{{ownerInfo.enName}}</li>
@@ -88,24 +57,12 @@
                     </li>
                   </ul>
                 </li>
-              </ul> -->
+              </ul>
             </article>
             <div class="articleWrap row item-center g30 flex5" id="articleWrap">
               <article class="timeLineWrapper column g10">
                 <p class="conTt">TIME LINE</p>
                 <div class="timeLineWrap flex1">
-                  <!-- <ul class="timeLines" v-for="(item, index) in timeLine" :key="index">
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>{{ item.date }}</span></li>
-                        <li>
-                          <ul v-for="(descItem, descIndex) in timeLine.desc" :key="descIndex">
-                            <li>{{ descItem }}</li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul> -->
                   <ul class="timeLines">
                     <li>
                       <ul class="timeLine">
@@ -199,7 +156,7 @@
           </div>
         </div>
       </section>
-      <section id="project">
+      <section id="project" v-show="resWidth2 === 'pc' || resWidth2 === 'tablet'">
         <div class="container">
           <p class="tc fontB">
             and Now i show you my products.🖤
@@ -284,9 +241,9 @@
                   <ul class="descs">
                     <li>@media</li>
                     <li>all and (max-width: 500px)</li>
-                    <li>(min-width: 501px) and (max-width: 767px)</li>
-                    <li>(min-width: 768px) and (max-width: 1023px)</li>
-                    <li>all and (min-width: 1024px)</li>
+                    <li>(min-width: 501px) and (max-width: 768px)</li>
+                    <li>(min-width: 769px) and (max-width: 1024px)</li>
+                    <!-- <li>all and (min-width: 1025px)</li> -->
                   </ul>
                 </li>
               </ul>
@@ -294,7 +251,7 @@
                 <li class="fontB">Data</li>
                 <li>
                   <ul class="descs">
-                    <li>json (localhost에서만 axio.api로 호출가능)</li>
+                    <li>json (console 확인가능)</li>
                   </ul>
                 </li>
               </ul>
@@ -308,44 +265,12 @@
                 <div class="timeLineWrap flex1">
                   <ul class="timeLines">
                     <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>NOW</span></li>
-                        <li>DOTHOME 외부서버 리퀘스트 응답불가에 대한 대체강구</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>FINISH</span></li>
-                        <li>Responsive</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>FINISH</span></li>
-                        <li>Nav scroll Event issue</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine yet">
-                        <li class="fontB"><span>PRE</span></li>
-                        <li>Product manyo_21 CSS Broken issue</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine yet">
-                        <li class="fontB"><span>PRE</span></li>
-                        <li>Swiper Initialize issue in VUE3 CHECKING</li>
+                      <ul class="timeLine" v-for="(item, index) in issueCheck" :key="index">
+                        <li class="fontB"><span :class="item.complate === 'NOW'? 'fHighlight' : ''|| item.complate === 'PRE'? 'fblur' : ''">{{item.complate}}</span></li>
+                        <li>{{item.desc}} </li>
                       </ul>
                     </li>
                   </ul>
-                  <!-- <ul class="timeLines" v-for="(item, index) in issueCheck" :key="index">
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>{{ item.complate }}</span></li>
-                        <li>{{item.desc}}</li>
-                      </ul>
-                    </li>
-                  </ul> -->
                 </div>
               </article>
               <hr>
@@ -358,7 +283,7 @@
 </template>
 
 <script>
-import { defineComponent, onBeforeMount, onMounted, reactive, ref} from "vue";
+import { defineComponent, onBeforeMount, onMounted, watch, ref} from "vue";
 import { api } from "boot/axios.js";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -405,27 +330,40 @@ export default defineComponent({
         userInfo.classList.remove('justify-between');
         userInfo.classList.add('justify-start');
         if (resWidth2.value === 'tablet') {
-          console.log('tablet');
+          userInfo.classList.remove('justify-between', 'flex1');
+          userInfo.classList.add('justify-start', 'flex2');
         } else if (resWidth2.value === 'mobile') {
           articleWrap.classList.remove('flex5');
           articleWrap.classList.add('flex2');
           userInfo.classList.remove('justify-between');
           userInfo.classList.add('justify-start');
           userImg.style.width='50%';
-          // swiper issue 해결 후 주석
-          projectSection.style.display='none';
         } else if (resWidth2.value === 'mobileColumn') {
           userInfoWrapper.classList.remove('row');
           userInfoWrapper.classList.add('column', 'no-wrap');
           userInfo.classList.remove('justify-between');
           userInfo.classList.add('justify-start');
           userImg.style.width='50%';
-          // swiper issue 해결 후 주석
-          projectSection.style.display='none';
         }
       }
-
     };
+
+    window.onresize = () => {
+      if (window.innerWidth <= 500) {
+        resWidth2.value = 'mobileColumn';
+      } else if(window.innerWidth > 500 && window.innerWidth < 768) {
+        resWidth2.value = 'mobile';
+      } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
+        resWidth2.value = 'tablet';
+      } else if (window.innerWidth > 1024) {
+        resWidth2.value = 'pc';
+      };
+    };
+    watch(resWidth2.value, (newValue) => {
+      if(newValue === 'pc' || newValue === 'tablet'){
+        console.log('true');
+      }
+    });
 
     const openWindow = (e) => {
       if (e === 'react'){
@@ -445,16 +383,24 @@ export default defineComponent({
 
     const ownerInfo = ref({});
     const timeLine = ref({});
+    const timeDesc = ref([]);
     const issueCheck = ref({});
     const getData = () => {
       api.get(`allData`).then((result) => {
         ownerInfo.value = result.data[0].ownerInfo
         timeLine.value = result.data[0].timeLine
         issueCheck.value = result.data[0].issueCheck
-        console.log('ownerInfo', ownerInfo.value);
-        console.log('timeLine', timeLine.value);
-        console.log('issueCheck', issueCheck.value);
+        console.log(typeof timeLine.value);
       });
+      // api.get(`http://thetititle.com/db.json`).then((result) => {
+      //   const data1 = result.data.allData[0];
+      //   ownerInfo.value = data1.ownerInfo;
+      //   timeLine.value = data1.timeLine;
+      //   issueCheck.value = data1.issueCheck;
+      //   console.log('ownerInfo', ownerInfo.value);
+      //   console.log('timeLine', timeLine.value);
+      //   console.log('issueCheck', issueCheck.value);
+      // });
     };
 
     return {
@@ -465,6 +411,7 @@ export default defineComponent({
       getData,
       ownerInfo,
       timeLine,
+      timeDesc,
       issueCheck
 
     };
