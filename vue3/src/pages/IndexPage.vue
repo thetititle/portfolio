@@ -182,7 +182,7 @@
             </div>
             <swiper
               id="swipers"
-              :slides-per-view="3.5"
+              :slides-per-view="2.5"
               :space-between="20"
               @swiper="onSwiper"
             >
@@ -193,14 +193,6 @@
                   💙USING NEXT.JS & TYPE SCRIPT💙
                 </q-tooltip>
                 <img src="../assets/img/23_design.jpg" alt="23_design">
-              </swiper-slide>
-              <swiper-slide @click="openWindow('aestetic')">
-                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
-                  MADE IN 2023<br>
-                  PC<br>
-                  USED HTML,CSS,JAVASCRIPT
-                </q-tooltip>
-                <img src="../assets/img/23_aestetic.jpg" alt="23_aestetic">
               </swiper-slide>
               <swiper-slide @click="openWindow('knotted')">
                 <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
@@ -369,9 +361,6 @@ export default defineComponent({
       if (e === 'react'){
         console.log('react')
         alert('준비중이에요!')
-      } else if ( e === 'aestetic') {
-        console.log('aestetic')
-        window.open("http://thetititle.com/products/aestetic_23/index.html","blank");
       } else if ( e === 'manyo') {
         console.log('manyo')
         window.open("http://thetititle.com/products/manyo_21/index.html/","blank");
