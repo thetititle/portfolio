@@ -20,14 +20,14 @@
         </div>
       </section>
       <section id="introduce">
-        <div class="container column g160 justify-center item-center">
+        <div class="container column g160 justify-center items-center">
           <p class="tc fontB">
             Let me introduce my self!
           </p>
-          <div class="row justify-between item-center g60" id="userInfoWrapper">
+          <div class="row justify-between items-center g60" id="userInfoWrapper">
             <article class="userInfoWrap column g30 flex1" id="userInfoWrap">
               <img src="../assets/img/self.png" alt="mimoticon" class="flex1">
-              <ul class="userInfo column justify-between flex1" id="userInfo">
+              <ul class="userInfo column justify-between flex2" id="userInfo">
                 <li>
                   <ul class="nameBirth column g5">
                     <li class="conTt">{{ownerInfo.enName}}</li>
@@ -59,83 +59,35 @@
                 </li>
               </ul>
             </article>
-            <div class="articleWrap row item-center g30 flex5" id="articleWrap">
-              <article class="timeLineWrapper column g10">
+            <div class="articleWrap row g30 flex3" id="articleWrap">
+              <article class="timeLineWrapper column g10 flex1">
                 <p class="conTt">TIME LINE</p>
-                <div class="timeLineWrap flex1">
+                <div class="timeLineWrap items-center flex1">
                   <ul class="timeLines">
                     <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>NOW</span></li>
-                        <li>Ready for NEW NEST!</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2023.10</span></li>
-                        <li>공무원연금공단 연금수급권 확인서비스 퍼블리싱</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2023.08</span></li>
-                        <li>통일부 통합지원시스템 퍼블리싱</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2023.03</span></li>
-                        <li>화재보험협회 FIND(가제) UI/UX 초기 개발 참여</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2023.01</span></li>
-                        <li>화재보험협회 FIND(가제) UI/UX 초기 디자인 참여</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <q-tooltip anchor="center end" self="top right" :offset="[0,0]">
-                        ❗ISSUE <br/>
-                        project가 단일 branch로 이루어져 있어서 고객사GA들의 니즈를 맞출 수 없었음<br/>
-                        ex) design, data...<br/>
-                        <br/>
-                        ❕SOLUTION<br/>
-                        모든 data와 style이 하나로 뭉쳐져 있는 상태로 배포가 되어있는 상태였고<br/>
-                        시니어와 사수가 없는 상태에서 주니어인 본인이 할 수 있는 최선의 방법은<br/>
-                        1, Mount하거나 reat할 때 url을 가져온 후<br/>
-                        2, 각GA의 인식자가 url에 포함이 되면, 해당 GA가 원하는 style과 data를 보여줌<br/>
-                        <br/>
-                        👉🏻1년도 안된 주니어가 할 수 있는 최선의 선택이었고, 고객사들의 needs는 충족됨.
-                      </q-tooltip>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2022~</span></li>
-                        <ul>
-                          <li>가이랩주식회사 RPA UI/UX 디자인 및 개발</li>
-                          <li>가이랩주식회사 ERP UI/UX 디자인 및 개발</li>
-                          <li>가이랩주식회사 ADM UI/UX 디자인</li>
-                        </ul>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2022.01</span></li>
-                        <li>가이랩주식회사 주니어 FE 입사</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2021.12</span></li>
-                        <li>그린아트컴퓨터학원 React.js 수료</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="timeLine">
-                        <li class="fontB"><span>2021.11</span></li>
-                        <li>그린아트컴퓨터학원 UI/UX 퍼블리싱 프론트앤드 과정 수료</li>
+                      <ul class="timeLine" v-for="(item, index) in timeLine" :key="index">
+                        <li class="fontB"><span :class="item.date === 'NOW' ? 'fHighlight' : ''">{{ item.date }}</span></li>
+                        <li>
+                          <ul v-for="(item, index) in item.desc" :key="index">
+                            <li>{{ item }}</li>
+                          </ul>
+                        </li>
                       </ul>
                     </li>
                   </ul>
+                  <!-- <q-tooltip anchor="center end" self="top right" :offset="[0,0]">
+                    ❗ISSUE <br/>
+                    project가 단일 branch로 이루어져 있어서 고객사GA들의 니즈를 맞출 수 없었음<br/>
+                    ex) design, data...<br/>
+                    <br/>
+                    ❕SOLUTION<br/>
+                    모든 data와 style이 하나로 뭉쳐져 있는 상태로 배포가 되어있는 상태였고<br/>
+                    시니어와 사수가 없는 상태에서 주니어인 본인이 할 수 있는 최선의 방법은<br/>
+                    1, Mount하거나 reat할 때 url을 가져온 후<br/>
+                    2, 각GA의 인식자가 url에 포함이 되면, 해당 GA가 원하는 style과 data를 보여줌<br/>
+                    <br/>
+                    👉🏻1년도 안된 주니어가 할 수 있는 최선의 선택이었고, 고객사들의 needs는 충족됨.
+                  </q-tooltip> -->
                 </div>
               </article>
               <div class="column g30 flex1">
@@ -215,7 +167,7 @@
         </div>
       </section>
       <section id="thisPage">
-        <div class="container column g160 justify-center item-center">
+        <div class="container column g160 justify-center items-center">
           <p class="tc fontB">
             This is a summary description for this page.
           </p>
@@ -231,7 +183,7 @@
                 <li class="fontB">Responsive</li>
                 <li>
                   <ul class="descs">
-                    <li>@media</li>
+                    <li>@media (수정중)</li>
                     <li>all and (max-width: 500px)</li>
                     <li>(min-width: 501px) and (max-width: 768px)</li>
                     <li>(min-width: 769px) and (max-width: 1024px)</li>
@@ -275,7 +227,7 @@
 </template>
 
 <script>
-import { defineComponent, onBeforeMount, onMounted, watch, ref} from "vue";
+import { defineComponent, onBeforeMount, onMounted, ref} from "vue";
 import { api } from "boot/axios.js";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -303,59 +255,68 @@ export default defineComponent({
     onBeforeMount(() => {
       getData();
     });
-    onMounted (async()=> {
-      await responseFunc();
-    });
-
+    // onMounted (async()=> {
+    //   await responseFunc();
+    // });
     const resWidth2 = ref(props.resWidth);
-    const responseFunc = () => {
+    window.onresize = () => {
       const userInfoWrapper = document.getElementById('userInfoWrapper');
       const userInfoWrap = userInfoWrapper.querySelector('#userInfoWrap');
       const articleWrap = userInfoWrapper.querySelector('.articleWrap');
       const userInfo = userInfoWrap.querySelector('.userInfo');
-      const userImg = userInfoWrap.querySelector('img');
       const projectSection = document.getElementById('project');
 
-      if(resWidth2.value !== 'pc') {
+      if (window.innerWidth < 501) {
+        resWidth2.value = 'mobileColumn';
+        console.log('mobileColumn');
+        userInfoWrapper.classList.remove('row','items-center','justify-between','g60');
+        userInfoWrapper.classList.add('column','items-start','justify-around','g0');
         articleWrap.classList.remove('row');
         articleWrap.classList.add('column');
-        userInfo.classList.remove('justify-between');
-        userInfo.classList.add('justify-start');
-        if (resWidth2.value === 'tablet') {
-          userInfo.classList.remove('justify-between', 'flex1');
-          userInfo.classList.add('justify-start', 'flex2');
-        } else if (resWidth2.value === 'mobile') {
-          articleWrap.classList.remove('flex5');
-          articleWrap.classList.add('flex2');
-          userInfo.classList.remove('justify-between');
-          userInfo.classList.add('justify-start');
-          userImg.style.width='50%';
-        } else if (resWidth2.value === 'mobileColumn') {
-          userInfoWrapper.classList.remove('row');
-          userInfoWrapper.classList.add('column', 'no-wrap');
-          userInfo.classList.remove('justify-between');
-          userInfo.classList.add('justify-start');
-          userImg.style.width='50%';
-        }
-      }
-    };
-
-    window.onresize = () => {
-      if (window.innerWidth <= 500) {
-        resWidth2.value = 'mobileColumn';
-      } else if(window.innerWidth > 500 && window.innerWidth < 768) {
+      } else if(window.innerWidth >= 500 && window.innerWidth == 767) {
         resWidth2.value = 'mobile';
-      } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
+        console.log('mobile');
+        userInfoWrapper.classList.remove('column','items-center','justify-around', 'g60');
+        userInfoWrapper.classList.add('row','items-start','justify-between','g0');
+        articleWrap.classList.remove('row','flex3');
+        articleWrap.classList.add('column','flex2');
+      } else if (window.innerWidth >= 768 && window.innerWidth == 1023) {
         resWidth2.value = 'tablet';
-      } else if (window.innerWidth > 1024) {
+        console.log('tablet');
+        userInfoWrapper.classList.remove('g60');
+        userInfoWrapper.classList.add('g0');
+      } else if (window.innerWidth >= 1024) {
         resWidth2.value = 'pc';
       };
     };
-    watch(resWidth2.value, (newValue) => {
-      if(newValue === 'pc' || newValue === 'tablet'){
-        console.log('true');
-      }
-    });
+
+    // const responseFunc = () => {
+    //   const userInfoWrapper = document.getElementById('userInfoWrapper');
+    //   const userInfoWrap = userInfoWrapper.querySelector('#userInfoWrap');
+    //   const articleWrap = userInfoWrapper.querySelector('.articleWrap');
+    //   const userInfo = userInfoWrap.querySelector('.userInfo');
+    //   const projectSection = document.getElementById('project');
+
+    //   if (resWidth2.value === 'mobileColumn') {
+    //     console.log('mobileColumn');
+    //     userInfoWrapper.classList.remove('row','items-center','justify-between','g60');
+    //     userInfoWrapper.classList.add('column','items-start','justify-around','g0');
+    //     articleWrap.classList.remove('row');
+    //     articleWrap.classList.add('column');
+    //   } else if (resWidth2.value === 'mobile') {
+    //     console.log('mobile');
+    //     userInfoWrapper.classList.remove('column','items-center','justify-around', 'g60');
+    //     userInfoWrapper.classList.add('row','items-start','justify-between','g0');
+    //     articleWrap.classList.remove('row','flex3');
+    //     articleWrap.classList.add('column','flex2');
+    //   } else if (resWidth2.value === 'tablet') {
+    //     console.log('tablet');
+    //     userInfoWrapper.classList.remove('g60');
+    //     userInfoWrapper.classList.add('g0');
+    //   } else if (resWidth2.value === 'pc') {
+    //     console.log('pc');
+    //   }
+    // };
 
     const openWindow = (e) => {
       if (e === 'react'){
@@ -379,7 +340,6 @@ export default defineComponent({
         ownerInfo.value = result.data[0].ownerInfo
         timeLine.value = result.data[0].timeLine
         issueCheck.value = result.data[0].issueCheck
-        console.log(typeof timeLine.value);
       });
       // api.get(`http://thetititle.com/db.json`).then((result) => {
       //   const data1 = result.data.allData[0];
@@ -395,7 +355,7 @@ export default defineComponent({
     return {
       onSwiper,
       openWindow,
-      responseFunc,
+      // responseFunc,
       resWidth2,
       getData,
       ownerInfo,

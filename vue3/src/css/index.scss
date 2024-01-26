@@ -60,6 +60,7 @@ section{
   &#introduce{
     .userInfoWrap{
       img{
+        width: 50%;
         // @media all and (max-width: 500px){
         //   width: 50%;
         //   height: auto;
@@ -198,16 +199,6 @@ section{
       // @media all and (max-width: 767px){
       //   height: 920px;
       // }
-      .timeLines{
-        > li{
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-          @media all and (max-width: 500px){
-            gap: 10px;
-          }
-        }
-      }
       .timeLine{
         > li{
           &:nth-child(1){

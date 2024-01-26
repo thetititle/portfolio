@@ -428,13 +428,20 @@ footer{
       line-height: 1;
     }
     .timeLines{
-      // height: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+      // display: flex;
+      // flex-direction: column;
+      // gap: 30px;
       position: relative;
       overflow-y: scroll;
       -ms-overflow-style: none;
+      > li{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media all and (max-width: 500px){
+          gap: 10px;
+        }
+      }
       @media (min-width:768px) and (max-width: 1023px) {
         gap: 20px;
       }

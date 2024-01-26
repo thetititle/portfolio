@@ -116,12 +116,12 @@ export default defineComponent({
   setup(props) {
     const indexHeader = ref(true);
     onBeforeMount (() => {
-      if (window.location.href.includes('product')){
-        indexHeader.value = false;
+      if (window.location.href.includes('#')){
+        indexHeader.value = true;
         // console.log('indexHeader', indexHeader.value);
         // window.location.reload(true);
       } else {
-        indexHeader.value = true;
+        indexHeader.value = false;
         // console.log('indexHeader', indexHeader.value);
         // window.location.reload(true);
       }

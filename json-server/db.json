@@ -13,7 +13,7 @@
       "timeLine" : [
         {
           "date" : "NOW",
-          "desc" : "Ready for NEW NEST!"
+          "desc" : ["Ready for NEW NEST!"]
         },
         {
           "date" : "2023.10",
@@ -46,11 +46,19 @@
         {
           "date" : "2022.12",
           "desc" : ["그린아트컴퓨터학원 React.js 수료"]
+        },
+        {
+          "date" : "2022.12",
+          "desc" : ["그린아트컴퓨터학원 React.js 수료"]
         }
       ],
       "issueCheck" : [
         {
           "complate" : "NOW",
+          "desc" : "Responsive modify"
+        },
+        {
+          "complate" : "FINISH",
           "desc" : "Data binding"
         },
         {
