@@ -215,9 +215,9 @@ export default defineComponent({
       const windowUrl = e.href
       if (windowUrl.includes('#')){
         alert('준비중이에요!')
-      } else if (windowUrl.includes('manyo_21')) {
+      } else if (windowUrl.includes('manyo')) {
         window.open(windowUrl,"blank");
-      } else if (windowUrl.includes('knotted_21')) {
+      } else if (windowUrl.includes('knotted')) {
         window.open(windowUrl,"blank");
       }
     };
@@ -228,37 +228,37 @@ export default defineComponent({
     const issueCheck = ref({});
     const productData = ref({});
     const getData = () => {
-      api.get(`allData`).then((result) => {
-        ownerInfo.value = result.data[0].ownerInfo
-        timeLine.value = result.data[0].timeLine.sort(function(a,b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
-        });
-        issueCheck.value = result.data[0].issueCheck
-        productData.value = result.data[0].product.sort(function(a,b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
-        });
-        console.log('timeLine.value',timeLine.value)
-      });
-      // api.get(`http://thetititle.com/db.json`).then((result) => {
-      //   const data1 = result.data.allData[0];
-      //   ownerInfo.value = data1.ownerInfo;
-      //   timeLine.value = data1.timeLine.sort(function(a,b) {
+      // api.get(`allData`).then((result) => {
+      //   ownerInfo.value = result.data[0].ownerInfo
+      //   timeLine.value = result.data[0].timeLine.sort(function(a,b) {
       //     if (a.id < b.id) return 1;
       //     if (a.id > b.id) return -1;
       //   });
-      //   issueCheck.value = data1.issueCheck;
-      //   productData.value = data1.product.sort(function(a,b) {
+      //   issueCheck.value = result.data[0].issueCheck
+      //   productData.value = result.data[0].product.sort(function(a,b) {
       //     if (a.id < b.id) return 1;
       //     if (a.id > b.id) return -1;
       //   });
-      //   console.log('allData', data1);
-      //   console.log('ownerInfo', ownerInfo.value);
-      //   console.log('timeLine', timeLine.value);
-      //   console.log('issueCheck', issueCheck.value);
-      //   console.log('productData', productData.value);
+      //   console.log('timeLine.value',timeLine.value)
       // });
+      api.get(`http://thetititle.com/db.json`).then((result) => {
+        const data1 = result.data.allData[0];
+        ownerInfo.value = data1.ownerInfo;
+        timeLine.value = data1.timeLine.sort(function(a,b) {
+          if (a.id < b.id) return 1;
+          if (a.id > b.id) return -1;
+        });
+        issueCheck.value = data1.issueCheck;
+        productData.value = data1.product.sort(function(a,b) {
+          if (a.id < b.id) return 1;
+          if (a.id > b.id) return -1;
+        });
+        console.log('allData', data1);
+        console.log('ownerInfo', ownerInfo.value);
+        console.log('timeLine', timeLine.value);
+        console.log('issueCheck', issueCheck.value);
+        console.log('productData', productData.value);
+      });
     };
 
 

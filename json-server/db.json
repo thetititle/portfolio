@@ -97,7 +97,7 @@
           "skills" : ["HTML","JavaScript","css"],
           "imgUrl" : "http://thetititle.com/img/21_manyo.jpg",
           "desc" : "made in 2022, Academy project",
-          "href" : "http://thetititle.com/products/manyo_21/index.html/"
+          "href" : "http://thetititle.com/products/manyo_22/index.html/"
         },
         {
           "id" : "1",
@@ -105,7 +105,7 @@
           "skills" : ["HTML","jQuery","css"],
           "imgUrl" : "http://thetititle.com/img/21_knotted.jpg",
           "desc" : "made in 2022, Academy project",
-          "href" : "http://thetititle.com/products/knotted_21/index.html"
+          "href" : "http://thetititle.com/products/knotted_22/index.html"
         },
         {
           "id" : "2",

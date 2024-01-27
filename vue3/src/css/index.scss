@@ -148,6 +148,13 @@ section{
           flex-direction: column;
           align-items: center;
         }
+        > div{
+          &:first-child{
+            @media (max-width: 500px){
+              align-items: center;
+            }
+          }
+        }
         .productWrapper{
           display: flex;
           gap: 20px;
