@@ -1,6 +1,6 @@
 <template>
   <div v-if="resWidth === 'pc'">
-    <div v-show="indexHeader === true">
+    <div>
       <q-header elevated>
         <div class="container row justify-between">
           <router-link to="/" class="logoWrap">
@@ -30,36 +30,6 @@
             <q-tab name="introduce" label="introduce" class="introduce"/>
             <q-tab name="project" label="project" class="project"/>
             <q-tab name="this page" label="this page" class="thisPage"/>
-          </q-tabs>
-        </div>
-      </div>
-    </div>
-    <div v-show="indexHeader === false">
-      <q-header elevated>
-        <div class="container row justify-between">
-          <router-link to="/" class="logoWrap">
-            <q-avatar>
-              <span class="ico logoDark">로고</span>
-            </q-avatar>
-          </router-link>
-
-          <q-tabs v-model="tab2" @click="moveSection($event)">
-            <q-tab name="2024" label="2024"/>
-            <q-tab name="before2024" label="before2024"/>
-          </q-tabs>
-        </div>
-      </q-header>
-      <div id="navBar">
-        <div class="container row justify-between">
-          <router-link to="/" class="logoWrap">
-            <q-avatar class="logo">
-              <span class="ico logoWhite">로고</span>
-            </q-avatar>
-          </router-link>
-
-          <q-tabs v-model="tab2" @click="moveSection($event)">
-            <q-tab name="2024" label="2024"/>
-            <q-tab name="before2024" label="before2024"/>
           </q-tabs>
         </div>
       </div>
@@ -114,19 +84,6 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const indexHeader = ref(true);
-    onBeforeMount (() => {
-      if (window.location.href.includes('#')){
-        indexHeader.value = true;
-        // console.log('indexHeader', indexHeader.value);
-        // window.location.reload(true);
-      } else {
-        indexHeader.value = false;
-        // console.log('indexHeader', indexHeader.value);
-        // window.location.reload(true);
-      }
-      // location.reload();
-    });
 
     window.onscroll = () => {
       const qHeader = document.querySelector('header');
@@ -185,7 +142,6 @@ export default defineComponent({
       tab: ref('hello'),
       tab2: ref('2024'),
       moveSection,
-      indexHeader,
     };
 
 

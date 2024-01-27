@@ -11,21 +11,21 @@
               portfolio<em>.</em>
 
             </h1>
-            <p class="desc tc">
-              This is my main works archive website.<br/>
-              I hope we can have the opportunity to work together.<br/>
-              Thank you. God bless you and have a beautiful day :)
-            </p>
+            <ul class="desc tc">
+              <li>This is my main works archive website.</li>
+              <li>I hope we can have the opportunity to work together.</li>
+              <li>God bless you and have a beautiful day :)</li>
+            </ul>
           </article>
         </div>
       </section>
       <section id="introduce">
-        <div class="container column g160 justify-center items-center">
+        <div class="container">
           <p class="tc fontB">
             Let me introduce my self!
           </p>
-          <div class="row justify-between items-center g60" id="userInfoWrapper">
-            <article class="userInfoWrap column g30 flex1" id="userInfoWrap">
+          <div class="userInfoWrapper g60">
+            <article class="userInfoWrap g30">
               <img src="../assets/img/self.png" alt="mimoticon" class="flex1">
               <ul class="userInfo column justify-between flex2" id="userInfo">
                 <li>
@@ -59,7 +59,7 @@
                 </li>
               </ul>
             </article>
-            <div class="articleWrap row g30 flex3" id="articleWrap">
+            <div class="articleWrap g30" id="articleWrap">
               <article class="timeLineWrapper column g10 flex1">
                 <p class="conTt">TIME LINE</p>
                 <div class="timeLineWrap items-center flex1">
@@ -99,8 +99,8 @@
                   <p class="conTt">LINKS</p>
                   <span>Please visit this link for more information about me!</span>
                   <div class="q-gutter-sm">
-                    <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
-                    <q-btn flat color="secondary" icon="fa-solid fa-code" label="velog" target="blank" href="https://velog.io/@thetitle"/>
+                    <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" :href="ownerInfo.gitHub"/>
+                    <q-btn flat color="secondary" icon="fa-solid fa-code" label="velog" target="blank" :href="ownerInfo.veLog"/>
                   </div>
                 </article>
               </div>
@@ -108,61 +108,27 @@
           </div>
         </div>
       </section>
-      <section id="project" v-show="resWidth2 === 'pc' || resWidth2 === 'tablet'">
+      <section id="project">
         <div class="container">
-          <p class="tc fontB">
-            and Now i show you my products.🖤
-          </p>
-          <article class="slideWrap">
-            <div class="row no-wrap items-end">
-              <!-- <router-link to="/product">
-                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
-                  IF YOU WANT SEE MORE,<br>
-                  CLICK ME✨
-                </q-tooltip>
-                <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
-              </router-link> -->
-              <img src="../assets/img/title_project_col.png" alt="project" class="projectSection">
-              <div class="btnWrap">
-                <q-tooltip anchor="top middle" self="bottom middle" :offset="[0, 0]">
-                  SORRY, WAIT PLZ🖤 <br>
-                  IT'S NOT WORKING YET
-                </q-tooltip>
-                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-left" id="btnNext" @click="swiper.slideNext()"/>
-                <q-btn unelevated round color="pink-13" icon="fa-solid fa-angle-right" id="btnPrev" @click="swiper.slidePrev()"/>
-              </div>
+          <article>
+            <div class="column">
+              <p>and Now i show you my products.🖤</p>
+              <h1 class="title">Product</h1>
             </div>
-            <swiper
-              id="swipers"
-              :slides-per-view="2.5"
-              :space-between="20"
-              @swiper="onSwiper"
-            >
-              <swiper-slide @click="openWindow('react')">
-                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
-                  GET READY FOR PRESENTATION<br>
-                  RESPONSIVE<br>
-                  💙USING NEXT.JS & TYPE SCRIPT💙
-                </q-tooltip>
-                <img src="../assets/img/23_design.jpg" alt="23_design">
-              </swiper-slide>
-              <swiper-slide @click="openWindow('knotted')">
-                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
-                  MADE IN 2021<br>
-                  MOBILE<br>
-                  USED HTML,CSS,J-QUERY
-                </q-tooltip>
-                <img src="../assets/img/21_knotted.jpg" alt="21_knotted">
-              </swiper-slide>
-              <swiper-slide @click="openWindow('manyo')">
-                <q-tooltip class="bg-light-green-1 text-grey-10 tc" anchor="top middle" self="bottom middle" :offset="[0, -100]">
-                  MADE IN 2021<br>
-                  PC<br>
-                  USED HTML,CSS,JAVASCRIPT
-                </q-tooltip>
-                <img src="../assets/img/21_manyo.jpg" alt="21_manyo">
-              </swiper-slide>
-            </swiper>
+            <div class="productWrapper">
+              <ul class="productWrap" v-for="(item, index) in productData" :key="index" @click="openWindow(item)" data-aos="fade-up">
+                <li>
+                  <img :src="item.imgUrl" alt="포트폴리오">
+                </li>
+                <li class="fontEB"><p>{{item.title}}</p></li>
+                <li class="row g10">
+                  <ul v-for="(item, index) in item.skills" :key="index">
+                    <li>{{ item }}</li>
+                  </ul>
+                </li>
+                <li><span>{{item.desc}}</span></li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
@@ -171,11 +137,11 @@
           <p class="tc fontB">
             This is a summary description for this page.
           </p>
-          <div class="row no-wrap g40">
-            <div class="flex1 imgWrap">
+          <div class="pageWrapper no-wrap g40 mb90">
+            <div class="imgWrap">
               <img src="../assets/img/localhost_8080_.png" alt="localhost">
             </div>
-            <div class="flex1 column g15 mAbsolute">
+            <div class="descWrap g15">
               <h1 class="title">
                 This Page<em>.</em>
               </h1>
@@ -183,11 +149,11 @@
                 <li class="fontB">Responsive</li>
                 <li>
                   <ul class="descs">
-                    <li>@media (수정중)</li>
-                    <li>all and (max-width: 500px)</li>
+                    <li>@media</li>
+                    <li>(max-width: 320px)</li>
+                    <li>(min-width: 321px) and (max-width: 500px)</li>
                     <li>(min-width: 501px) and (max-width: 768px)</li>
                     <li>(min-width: 769px) and (max-width: 1024px)</li>
-                    <!-- <li>all and (min-width: 1025px)</li> -->
                   </ul>
                 </li>
               </ul>
@@ -201,8 +167,8 @@
               </ul>
               <p class="mt20">아래 링크를 통해 피그마 디자인과 깃헙 리포지토리를 방문할 수 있습니다.</p>
               <div class="q-gutter-sm mb20">
-                <q-btn flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16%3A56&mode=design&t=5NoGOyxB9vPfutVu-1"/>
-                <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" href="https://github.com/thetititle"/>
+                <q-btn flat color="pink-13" icon="fa-brands fa-figma" label="FIGMA" target="blank" :href="ownerInfo.figma"/>
+                <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" :href="ownerInfo.gitHub"/>
               </div>
               <article class="timeLineWrapper column g10">
                 <p class="conTt">📌Issue check list</p>
@@ -229,9 +195,6 @@
 <script>
 import { defineComponent, onBeforeMount, onMounted, ref} from "vue";
 import { api } from "boot/axios.js";
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
 
 export default defineComponent({
   name: "IndexPage",
@@ -241,93 +204,21 @@ export default defineComponent({
     }
   },
   components: {
-    Swiper,
-    SwiperSlide,
   },
 
   setup(props) {
-    // const swiper = useSwiper();
-
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-
     onBeforeMount(() => {
       getData();
     });
-    // onMounted (async()=> {
-    //   await responseFunc();
-    // });
-    const resWidth2 = ref(props.resWidth);
-    window.onresize = () => {
-      const userInfoWrapper = document.getElementById('userInfoWrapper');
-      const userInfoWrap = userInfoWrapper.querySelector('#userInfoWrap');
-      const articleWrap = userInfoWrapper.querySelector('.articleWrap');
-      const userInfo = userInfoWrap.querySelector('.userInfo');
-      const projectSection = document.getElementById('project');
-
-      if (window.innerWidth < 501) {
-        resWidth2.value = 'mobileColumn';
-        console.log('mobileColumn');
-        userInfoWrapper.classList.remove('row','items-center','justify-between','g60');
-        userInfoWrapper.classList.add('column','items-start','justify-around','g0');
-        articleWrap.classList.remove('row');
-        articleWrap.classList.add('column');
-      } else if(window.innerWidth >= 500 && window.innerWidth == 767) {
-        resWidth2.value = 'mobile';
-        console.log('mobile');
-        userInfoWrapper.classList.remove('column','items-center','justify-around', 'g60');
-        userInfoWrapper.classList.add('row','items-start','justify-between','g0');
-        articleWrap.classList.remove('row','flex3');
-        articleWrap.classList.add('column','flex2');
-      } else if (window.innerWidth >= 768 && window.innerWidth == 1023) {
-        resWidth2.value = 'tablet';
-        console.log('tablet');
-        userInfoWrapper.classList.remove('g60');
-        userInfoWrapper.classList.add('g0');
-      } else if (window.innerWidth >= 1024) {
-        resWidth2.value = 'pc';
-      };
-    };
-
-    // const responseFunc = () => {
-    //   const userInfoWrapper = document.getElementById('userInfoWrapper');
-    //   const userInfoWrap = userInfoWrapper.querySelector('#userInfoWrap');
-    //   const articleWrap = userInfoWrapper.querySelector('.articleWrap');
-    //   const userInfo = userInfoWrap.querySelector('.userInfo');
-    //   const projectSection = document.getElementById('project');
-
-    //   if (resWidth2.value === 'mobileColumn') {
-    //     console.log('mobileColumn');
-    //     userInfoWrapper.classList.remove('row','items-center','justify-between','g60');
-    //     userInfoWrapper.classList.add('column','items-start','justify-around','g0');
-    //     articleWrap.classList.remove('row');
-    //     articleWrap.classList.add('column');
-    //   } else if (resWidth2.value === 'mobile') {
-    //     console.log('mobile');
-    //     userInfoWrapper.classList.remove('column','items-center','justify-around', 'g60');
-    //     userInfoWrapper.classList.add('row','items-start','justify-between','g0');
-    //     articleWrap.classList.remove('row','flex3');
-    //     articleWrap.classList.add('column','flex2');
-    //   } else if (resWidth2.value === 'tablet') {
-    //     console.log('tablet');
-    //     userInfoWrapper.classList.remove('g60');
-    //     userInfoWrapper.classList.add('g0');
-    //   } else if (resWidth2.value === 'pc') {
-    //     console.log('pc');
-    //   }
-    // };
 
     const openWindow = (e) => {
-      if (e === 'react'){
-        console.log('react')
+      const windowUrl = e.href
+      if (windowUrl.includes('#')){
         alert('준비중이에요!')
-      } else if ( e === 'manyo') {
-        console.log('manyo')
-        window.open("http://thetititle.com/products/manyo_21/index.html/","blank");
-      } else if ( e === 'knotted') {
-        console.log('knotted')
-        window.open("http://thetititle.com/products/knotted_21/index.html","blank");
+      } else if (windowUrl.includes('manyo_21')) {
+        window.open(windowUrl,"blank");
+      } else if (windowUrl.includes('knotted_21')) {
+        window.open(windowUrl,"blank");
       }
     };
 
@@ -335,34 +226,51 @@ export default defineComponent({
     const timeLine = ref({});
     const timeDesc = ref([]);
     const issueCheck = ref({});
+    const productData = ref({});
     const getData = () => {
       api.get(`allData`).then((result) => {
         ownerInfo.value = result.data[0].ownerInfo
-        timeLine.value = result.data[0].timeLine
+        timeLine.value = result.data[0].timeLine.sort(function(a,b) {
+          if (a.id < b.id) return 1;
+          if (a.id > b.id) return -1;
+        });
         issueCheck.value = result.data[0].issueCheck
+        productData.value = result.data[0].product.sort(function(a,b) {
+          if (a.id < b.id) return 1;
+          if (a.id > b.id) return -1;
+        });
+        console.log('timeLine.value',timeLine.value)
       });
       // api.get(`http://thetititle.com/db.json`).then((result) => {
       //   const data1 = result.data.allData[0];
       //   ownerInfo.value = data1.ownerInfo;
-      //   timeLine.value = data1.timeLine;
+      //   timeLine.value = data1.timeLine.sort(function(a,b) {
+      //     if (a.id < b.id) return 1;
+      //     if (a.id > b.id) return -1;
+      //   });
       //   issueCheck.value = data1.issueCheck;
+      //   productData.value = data1.product.sort(function(a,b) {
+      //     if (a.id < b.id) return 1;
+      //     if (a.id > b.id) return -1;
+      //   });
+      //   console.log('allData', data1);
       //   console.log('ownerInfo', ownerInfo.value);
       //   console.log('timeLine', timeLine.value);
       //   console.log('issueCheck', issueCheck.value);
+      //   console.log('productData', productData.value);
       // });
     };
 
+
     return {
-      onSwiper,
       openWindow,
-      // responseFunc,
-      resWidth2,
+      // resWidth2,
       getData,
       ownerInfo,
       timeLine,
       timeDesc,
-      issueCheck
-
+      issueCheck,
+      productData
     };
   }
 });

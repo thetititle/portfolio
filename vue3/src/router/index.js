@@ -1,7 +1,8 @@
 import { route } from 'quasar/wrappers'
 import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
 import routes from './routes'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 /*
  * If not building with SSR mode, you can
  * directly export the Router instantiation;
@@ -10,6 +11,7 @@ import routes from './routes'
  * async/await or return a Promise which resolves
  * with the Router instance.
  */
+AOS.init();
 
 export default route(function (/* { store, ssrContext } */) {
   const createHistory = process.env.SERVER

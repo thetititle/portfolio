@@ -76,7 +76,7 @@ h1{
     font-size: 3rem;
     line-height: 4rem ;
   }
-  @media all and (max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
@@ -87,22 +87,22 @@ h1{
 .subTt{
   font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
   font-weight: 500;
-  font-size: 2.75rem !important; //44px
-  line-height: 4rem !important;
+  font-size: 2.75rem; //44px
+  line-height: 4rem;
   @media (min-width:768px) and (max-width: 1023px) {
-    font-size: 1.25 !important;
-    line-height: 2.5rem !important;
+    font-size: 1.25;
+    line-height: 2.5rem;
   }
 }
 .conTt{
   font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 1.25rem !important; //20px
-  line-height: 2.5rem !important;
-  @media (min-width:768px) and (max-width: 1023px) {
-    font-size: 0.8rem !important;
-    line-height: 1.25rem !important;
+  font-size: 1.25rem;
+  line-height: 2.5rem;;
+  @media (max-width: 500px) {
+    font-size: 1rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -129,12 +129,12 @@ body {
   line-height: 1.5;
   background-color: var(--bgColor);
   word-break: keep-all;
-  @media (min-width:768px) and (max-width: 1023px) {
-    font-size: 0.875rem;
-    line-height: 1.2;
-  }
-  @media all and (max-width: 767px) {
-    font-size: 0.75rem;
+  // @media (min-width:768px) and (max-width: 1023px) {
+  //   font-size: 0.875rem;
+  //   line-height: 1.2;
+  // }
+  @media (max-width: 320px) {
+    font-size: 0.85rem;
   }
 }
 
@@ -393,7 +393,7 @@ footer{
   .q-layout__shadow:after {
     box-shadow: none;
   }
-  @media all and (max-width: 767px) {
+  @media (max-width: 767px) {
     .logoWrap{
       display: none;
     }
@@ -428,9 +428,6 @@ footer{
       line-height: 1;
     }
     .timeLines{
-      // display: flex;
-      // flex-direction: column;
-      // gap: 30px;
       position: relative;
       overflow-y: scroll;
       -ms-overflow-style: none;
@@ -438,8 +435,8 @@ footer{
         display: flex;
         flex-direction: column;
         gap: 20px;
-        @media all and (max-width: 500px){
-          gap: 10px;
+        @media (max-width: 500px){
+          gap: 15px;
         }
       }
       @media (min-width:768px) and (max-width: 1023px) {
@@ -457,13 +454,16 @@ footer{
         }
         > li{
           &:nth-child(1){
-            width: 60px;
-            @media all and (max-width: 767px) {
+            width: 80px;
+            @media (max-width: 320px){
               width: 50px;
             }
           }
           &:nth-child(2){
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
           }
         }
         .fontB{
@@ -520,7 +520,7 @@ footer{
       width: 80px;
     }
   }
-  @media all and (max-width: 767px){
+  @media (max-width: 767px){
     gap: 10px;
     > li{
       &:first-child{

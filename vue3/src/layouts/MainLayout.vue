@@ -59,13 +59,13 @@ export default defineComponent({
     };
     window.onresize = () => {
       if (window.innerWidth < 501) {
-        resWidth2.value = 'mobileColumn';
+        resWidth.value = 'mobileColumn';
       } else if(window.innerWidth >= 500 && window.innerWidth == 767) {
-        resWidth2.value = 'mobile';
+        resWidth.value = 'mobile';
       } else if (window.innerWidth >= 768 && window.innerWidth == 1023) {
-        resWidth2.value = 'tablet';
+        resWidth.value = 'tablet';
       } else if (window.innerWidth >= 1024) {
-        resWidth2.value = 'pc';
+        resWidth.value = 'pc';
       };
     };
 
