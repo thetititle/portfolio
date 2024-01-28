@@ -241,7 +241,7 @@ export default defineComponent({
       //   });
       //   console.log('timeLine.value',timeLine.value)
       // });
-      api.get(`http://thetititle.com/db.json`).then((result) => {
+      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
         const data1 = result.data.allData[0];
         ownerInfo.value = data1.ownerInfo;
         timeLine.value = data1.timeLine.sort(function(a,b) {
