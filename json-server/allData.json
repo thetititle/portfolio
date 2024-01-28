@@ -71,6 +71,10 @@
         },
         {
           "complate" : "FINISH",
+          "desc" : "Product 마녀팩토리 Unexpected token '<' 에러 체크"
+        },
+        {
+          "complate" : "FINISH",
           "desc" : "반응형 구현 2차(수정)"
         },
         {
@@ -84,10 +88,6 @@
         {
           "complate" : "FINISH",
           "desc" : "반응형 구현 1차"
-        },
-        {
-          "complate" : "PRE",
-          "desc" : "Product 마녀팩토리 COLS에러로 인한 CSS Broken 이슈 체크"
         }
       ],
       "product" : [
