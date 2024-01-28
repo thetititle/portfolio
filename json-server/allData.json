@@ -83,7 +83,7 @@
         },
         {
           "complate" : "FINISH",
-          "desc" : "Json-server를 사용한 data생성 및 axios, api를 통한 data호출"
+          "desc" : "Json data생성 및 axios, api를 통한 data호출"
         },
         {
           "complate" : "FINISH",
@@ -97,15 +97,15 @@
           "skills" : ["HTML","JavaScript","css"],
           "imgUrl" : "http://thetititle.com/img/21_manyo.jpg",
           "desc" : "made in 2021, Academy project",
-          "href" : "http://thetititle.com/products/manyo_22/index.html/"
+          "href" : "http://thetititle.com/products/manyo/index.html/"
         },
         {
           "id" : "1",
-          "title" : "🍩Knotted doughnut Mobile site",
+          "title" : "🍩Knotted Mobile site",
           "skills" : ["HTML","jQuery","css"],
           "imgUrl" : "http://thetititle.com/img/21_knotted.jpg",
           "desc" : "made in 2021, Academy project",
-          "href" : "http://thetititle.com/products/knotted_22/index.html"
+          "href" : "http://thetititle.com/products/knotted/index.html"
         },
         {
           "id" : "2",
