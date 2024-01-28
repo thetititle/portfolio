@@ -267,6 +267,9 @@ section{
           > li{
             &:nth-child(1){
               width: 74px;
+              @media (max-width: 320px){
+                width: 50px;
+              }
             }
           }
         }

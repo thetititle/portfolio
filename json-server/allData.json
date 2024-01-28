@@ -67,11 +67,11 @@
       "issueCheck" : [
         {
           "complate" : "NOW",
-          "desc" : "Nav scroll Event issue"
+          "desc" : "PC화면 스크롤시 NAV Highlight 분기점 체크"
         },
         {
           "complate" : "FINISH",
-          "desc" : "Responsive modify"
+          "desc" : "반응형 구현 2차(수정)"
         },
         {
           "complate" : "FINISH",
@@ -79,15 +79,15 @@
         },
         {
           "complate" : "FINISH",
-          "desc" : "Creat Json-server & call a data use by api, axios"
+          "desc" : "Json-server를 사용한 data생성 및 axios, api를 통한 data호출"
         },
         {
           "complate" : "FINISH",
-          "desc" : "Responsive"
+          "desc" : "반응형 구현 1차"
         },
         {
           "complate" : "PRE",
-          "desc" : "Product manyo_21 CSS Broken issue"
+          "desc" : "Product 마녀팩토리 COLS에러로 인한 CSS Broken 이슈 체크"
         }
       ],
       "product" : [

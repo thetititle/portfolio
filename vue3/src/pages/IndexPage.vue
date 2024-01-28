@@ -61,7 +61,7 @@
             </article>
             <div class="articleWrap g30" id="articleWrap">
               <article class="timeLineWrapper column g10 flex1">
-                <p class="conTt">TIME LINE</p>
+                <p class="conTt">⏰TIME LINE</p>
                 <div class="timeLineWrap items-center flex1">
                   <ul class="timeLines">
                     <li>
@@ -92,11 +92,11 @@
               </article>
               <div class="column g30 flex1">
                 <article class="skills column g10">
-                  <p class="conTt">SKILLS</p>
+                  <p class="conTt">🎮SKILLS</p>
                   <img src="../assets/img/skills.png" alt="스킬">
                 </article>
                 <article class="links column g10">
-                  <p class="conTt">LINKS</p>
+                  <p class="conTt">🔗LINKS</p>
                   <span>Please visit this link for more information about me!</span>
                   <div class="q-gutter-sm">
                     <q-btn flat color="black" icon="fa-brands fa-github" label="github" target="blank" :href="ownerInfo.gitHub"/>
