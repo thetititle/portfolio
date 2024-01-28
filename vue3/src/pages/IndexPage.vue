@@ -209,24 +209,27 @@ export default defineComponent({
   setup(props) {
     onBeforeMount(() => {
       getData();
-      checkDevice();
     });
 
     const openWindow = (e) => {
       const windowUrl = e.href
       if (windowUrl.includes('#1')){
-        alert('준비중이에요!')
+        alert('준비중 이에요!')
       } else if (windowUrl.includes('manyo')) {
         window.open(windowUrl,"blank");
       } else if (windowUrl.includes('knotted')) {
-        if (isMobile.value = true) {
-          window.open(windowUrl,"blank");
+        // User-Agent 문자열 가져오기
+        var userAgent = navigator.userAgent;
+        // 모바일 여부 확인
+        var isMobile = userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i);
+        if (userAgent = isMobile){
+          alert('PC에서 볼 수 있어요!');
         } else {
-          alert('PC에서 볼수있어요.');
+          window.open(windowUrl,"blank");
         }
       } else if (windowUrl.includes('vue3'))  {
         // window.open(windowUrl,"blank");
-        alert('현재 보고계시는 페이지에요!')
+        alert('현재 페이지에요!')
       }
       console.log('window.location', window.location.href)
     };
@@ -248,7 +251,6 @@ export default defineComponent({
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
         });
-        console.log('timeLine.value',timeLine.value)
       });
       // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
       //   const data1 = result.data.allData[0];
@@ -270,25 +272,9 @@ export default defineComponent({
       // });
     };
 
-    const isMobile = ref(false);
-    const checkDevice = () => {
-      // User-Agent 문자열 가져오기
-      var userAgent = navigator.userAgent;
-      // 모바일 여부 확인
-      var isMobile = userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i);
-
-      if (userAgent = isMobile){
-        isMobile.value = true;
-      }else{
-        isMobile.value = false;
-      }
-
-    };
     return {
       openWindow,
       getData,
-      checkDevice,
-      isMobile,
       ownerInfo,
       timeLine,
       timeDesc,
