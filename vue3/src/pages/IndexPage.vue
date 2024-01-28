@@ -209,6 +209,7 @@ export default defineComponent({
   setup(props) {
     onBeforeMount(() => {
       getData();
+      checkDevice();
     });
 
     const openWindow = (e) => {
@@ -218,7 +219,11 @@ export default defineComponent({
       } else if (windowUrl.includes('manyo')) {
         window.open(windowUrl,"blank");
       } else if (windowUrl.includes('knotted')) {
-        window.open(windowUrl,"blank");
+        if (isMobile.value = true) {
+          window.open(windowUrl,"blank");
+        } else {
+          alert('PC에서 볼수있어요.');
+        }
       } else if (windowUrl.includes('vue3'))  {
         // window.open(windowUrl,"blank");
         alert('현재 보고계시는 페이지에요!')
@@ -265,11 +270,25 @@ export default defineComponent({
       // });
     };
 
+    const isMobile = ref(false);
+    const checkDevice = () => {
+      // User-Agent 문자열 가져오기
+      var userAgent = navigator.userAgent;
+      // 모바일 여부 확인
+      var isMobile = userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i);
 
+      if (userAgent = isMobile){
+        isMobile.value = true;
+      }else{
+        isMobile.value = false;
+      }
+
+    };
     return {
       openWindow,
-      // resWidth2,
       getData,
+      checkDevice,
+      isMobile,
       ownerInfo,
       timeLine,
       timeDesc,

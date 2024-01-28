@@ -109,7 +109,7 @@
         },
         {
           "id" : "2",
-          "title" : "PORTFOLIO💚VUE3-Quasar",
+          "title" : "PORTFOLIO💚 VUE3-Quasar",
           "skills" : ["VUE3","JavaScript","scss"],
           "imgUrl" : "http://thetititle.com/img/23_design.jpg",
           "desc" : "made in 2023, Archive website",
@@ -117,7 +117,7 @@
         },
         {
           "id" : "3",
-          "title" : "PORTFOLIO💙REACT-Next.js",
+          "title" : "PORTFOLIO💙 REACT-Next.js",
           "skills" : ["REACT","TypeScript","scss"],
           "imgUrl" : "http://thetititle.com/img/23_design.jpg",
           "desc" : "get ready for presentation",
