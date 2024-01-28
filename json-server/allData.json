@@ -93,27 +93,35 @@
       "product" : [
         {
           "id" : "0",
-          "title" : "Manyo Factory site",
+          "title" : "🔮Manyo Factory site",
           "skills" : ["HTML","JavaScript","css"],
           "imgUrl" : "http://thetititle.com/img/21_manyo.jpg",
-          "desc" : "made in 2022, Academy project",
+          "desc" : "made in 2021, Academy project",
           "href" : "http://thetititle.com/products/manyo_22/index.html/"
         },
         {
           "id" : "1",
-          "title" : "Knotted doughnut Mobile site",
+          "title" : "🍩Knotted doughnut Mobile site",
           "skills" : ["HTML","jQuery","css"],
           "imgUrl" : "http://thetititle.com/img/21_knotted.jpg",
-          "desc" : "made in 2022, Academy project",
+          "desc" : "made in 2021, Academy project",
           "href" : "http://thetititle.com/products/knotted_22/index.html"
         },
         {
           "id" : "2",
-          "title" : "PORTFOLIO, VER.REACT",
-          "skills" : ["Next.js","TypeScript","scss"],
+          "title" : "PORTFOLIO💚VUE3-Quasar",
+          "skills" : ["VUE3","JavaScript","scss"],
+          "imgUrl" : "http://thetititle.com/img/23_design.jpg",
+          "desc" : "made in 2023, Archive website",
+          "href" : "http://thetititle.com/products/vue3/index.html"
+        },
+        {
+          "id" : "3",
+          "title" : "PORTFOLIO💙REACT-Next.js",
+          "skills" : ["REACT","TypeScript","scss"],
           "imgUrl" : "http://thetititle.com/img/23_design.jpg",
           "desc" : "get ready for presentation",
-          "href" : "#"
+          "href" : "#1"
         }
       ]
     }
