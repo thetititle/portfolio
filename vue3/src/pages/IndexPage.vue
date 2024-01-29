@@ -19,11 +19,11 @@
           </article>
         </div>
       </section>
+      <p class="tc fontB">
+        Let me introduce my self!
+      </p>
       <section id="introduce">
         <div class="container">
-          <p class="tc fontB">
-            Let me introduce my self!
-          </p>
           <div class="userInfoWrapper g60">
             <article class="userInfoWrap g30">
               <img src="../assets/img/self.png" alt="mimoticon" class="flex1">
@@ -60,40 +60,33 @@
               </ul>
             </article>
             <div class="articleWrap g30" id="articleWrap">
-              <article class="timeLineWrapper column g10 flex1">
-                <p class="conTt">⏰TIME LINE</p>
-                <div class="timeLineWrap items-center flex1">
-                  <ul class="timeLines">
-                    <li>
+              <div class="column g30 flex1">
+                <article class="timeLineWrapper column g10 flex1">
+                  <p class="conTt">⏰TIME LINE</p>
+                  <div class="timeLineWrap items-center flex1">
+                    <div class="timeLines">
                       <ul class="timeLine" v-for="(item, index) in timeLine" :key="index">
-                        <li class="fontB"><span :class="item.date === 'NOW' ? 'fHighlight' : ''">{{ item.date }}</span></li>
+                        <li class="fontB">
+                          <span :class="item.date === 'NOW' ? 'fHighlight' : ''">{{ item.date }}</span>
+                        </li>
                         <li>
                           <ul v-for="(item, index) in item.desc" :key="index">
                             <li>{{ item }}</li>
                           </ul>
                         </li>
                       </ul>
-                    </li>
-                  </ul>
-                  <!-- <q-tooltip anchor="center end" self="top right" :offset="[0,0]">
-                    ❗ISSUE <br/>
-                    project가 단일 branch로 이루어져 있어서 고객사GA들의 니즈를 맞출 수 없었음<br/>
-                    ex) design, data...<br/>
-                    <br/>
-                    ❕SOLUTION<br/>
-                    모든 data와 style이 하나로 뭉쳐져 있는 상태로 배포가 되어있는 상태였고<br/>
-                    시니어와 사수가 없는 상태에서 주니어인 본인이 할 수 있는 최선의 방법은<br/>
-                    1, Mount하거나 reat할 때 url을 가져온 후<br/>
-                    2, 각GA의 인식자가 url에 포함이 되면, 해당 GA가 원하는 style과 data를 보여줌<br/>
-                    <br/>
-                    👉🏻1년도 안된 주니어가 할 수 있는 최선의 선택이었고, 고객사들의 needs는 충족됨.
-                  </q-tooltip> -->
-                </div>
-              </article>
+                    </div>
+                  </div>
+                </article>
+              </div>
               <div class="column g30 flex1">
                 <article class="skills column g10">
                   <p class="conTt">🎮SKILLS</p>
-                  <img src="../assets/img/skills.png" alt="스킬">
+                  <div class="sillsWrap row g10">
+                    <ul v-for="(item, index) in skills" :key="index">
+                      <li><img :src="item.imgUrl" :alt="item.name"></li>
+                    </ul>
+                  </div>
                 </article>
                 <article class="links column g10">
                   <p class="conTt">🔗LINKS</p>
@@ -132,11 +125,11 @@
           </article>
         </div>
       </section>
+      <p class="tc fontB">
+        This is a summary description for this page.
+      </p>
       <section id="thisPage">
         <div class="container column g160 justify-center items-center">
-          <p class="tc fontB">
-            This is a summary description for this page.
-          </p>
           <div class="pageWrapper no-wrap g40 mb90">
             <div class="imgWrap">
               <img src="../assets/img/localhost_8080_.png" alt="localhost">
@@ -173,14 +166,12 @@
               <article class="timeLineWrapper column g10">
                 <p class="conTt">📌Issue check list</p>
                 <div class="timeLineWrap flex1">
-                  <ul class="timeLines">
-                    <li>
-                      <ul class="timeLine" v-for="(item, index) in issueCheck" :key="index">
-                        <li class="fontB"><span :class="item.complate === 'NOW'? 'fHighlight' : ''|| item.complate === 'PRE'? 'fblur' : ''">{{item.complate}}</span></li>
-                        <li>{{item.desc}} </li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <div class="timeLines">
+                    <ul class="timeLine" v-for="(item, index) in issueCheck" :key="index">
+                      <li class="fontB"><span :class="item.complate === 'NOW'? 'fHighlight' : ''|| item.complate === 'PRE'? 'fblur' : ''">{{item.complate}}</span></li>
+                      <li>{{item.desc}} </li>
+                    </ul>
+                  </div>
                 </div>
               </article>
               <hr>
@@ -213,7 +204,7 @@ export default defineComponent({
 
     const openWindow = (e) => {
       const windowUrl = e.href
-      if (windowUrl.includes('#1')){
+      if (windowUrl.includes('#')){
         alert('준비중 이에요!')
       } else if (windowUrl.includes('manyo')) {
         window.open(windowUrl,"blank");
@@ -235,18 +226,23 @@ export default defineComponent({
     };
 
     const ownerInfo = ref({});
+    const skills = ref([]);
     const timeLine = ref({});
     const timeDesc = ref([]);
     const issueCheck = ref({});
+    const trbleSht = ref([]);
     const productData = ref({});
     const getData = () => {
       api.get(`allData`).then((result) => {
-        ownerInfo.value = result.data[0].ownerInfo
+        ownerInfo.value = result.data[0].ownerInfo;
+        skills.value =  ownerInfo.value.skills;
+        console.log('skills.value', skills.value);
         timeLine.value = result.data[0].timeLine.sort(function(a,b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
         });
-        issueCheck.value = result.data[0].issueCheck
+        issueCheck.value = result.data[0].issueCheck;
+        trbleSht.value = result.data[0].troubleShooting;
         productData.value = result.data[0].product.sort(function(a,b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
@@ -255,11 +251,16 @@ export default defineComponent({
       // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
       //   const data1 = result.data.allData[0];
       //   ownerInfo.value = data1.ownerInfo;
+      //   skills.value = ownerInfo.value.skills;
       //   timeLine.value = data1.timeLine.sort(function(a,b) {
       //     if (a.id < b.id) return 1;
       //     if (a.id > b.id) return -1;
       //   });
       //   issueCheck.value = data1.issueCheck;
+      //   trbleSht.value = data1.troubleShooting.sort(function(a,b) {
+      //     if (a.id < b.id) return 1;
+      //     if (a.id > b.id) return -1;
+      //   });
       //   productData.value = data1.product.sort(function(a,b) {
       //     if (a.id < b.id) return 1;
       //     if (a.id > b.id) return -1;
@@ -276,9 +277,11 @@ export default defineComponent({
       openWindow,
       getData,
       ownerInfo,
+      skills,
       timeLine,
       timeDesc,
       issueCheck,
+      trbleSht,
       productData
     };
   }

@@ -76,7 +76,7 @@ h1{
     font-size: 3rem;
     line-height: 4rem ;
   }
-  @media (max-width: 767px) {
+  @media all and (max-width: 767px) {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
@@ -100,7 +100,7 @@ h1{
   text-transform: uppercase;
   font-size: 1.25rem;
   line-height: 2.5rem;;
-  @media (max-width: 500px) {
+  @media all and (max-width: 500px) {
     font-size: 1rem;
     line-height: 1.25rem;
   }
@@ -133,7 +133,7 @@ body {
   //   font-size: 0.875rem;
   //   line-height: 1.2;
   // }
-  @media (max-width: 320px) {
+  @media only screen and (max-width: 320px) {
     font-size: 0.85rem;
   }
 }
@@ -393,7 +393,7 @@ footer{
   .q-layout__shadow:after {
     box-shadow: none;
   }
-  @media (max-width: 767px) {
+  @media all and (max-width: 767px) {
     .logoWrap{
       display: none;
     }
@@ -408,9 +408,7 @@ footer{
  * **************************************** */
 .timeLineWrapper{
   .timeLineWrap{
-    // height: 30rem;
     padding: 5px 0;
-    overflow: hidden;
     position: relative;
     &::after{
       content: "";
@@ -423,22 +421,17 @@ footer{
       opacity: 0.7;
     }
     @media (min-width:768px) and (max-width: 1023px){
-      height: 12rem;
       font-size: 0.875rem !important;
       line-height: 1;
     }
     .timeLines{
       position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      // height: 30rem;
       overflow-y: scroll;
       -ms-overflow-style: none;
-      > li{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        @media (max-width: 500px){
-          gap: 15px;
-        }
-      }
       @media (min-width:768px) and (max-width: 1023px) {
         gap: 20px;
       }
@@ -455,7 +448,7 @@ footer{
         > li{
           &:nth-child(1){
             width: 80px;
-            @media (max-width: 320px){
+            @media only screen and (max-width: 320px){
               width: 50px;
             }
           }
@@ -520,7 +513,7 @@ footer{
       width: 80px;
     }
   }
-  @media (max-width: 767px){
+  @media all and (max-width: 767px){
     gap: 10px;
     > li{
       &:first-child{

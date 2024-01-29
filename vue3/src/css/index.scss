@@ -10,9 +10,13 @@ section{
   height: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 160px;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  &:first-child{
+    padding-top: 0;
+  }
   &:last-child{
-    margin-bottom: 0;
+    padding-bottom: 0;
   }
   &#hello{
     position: relative;
@@ -55,7 +59,7 @@ section{
       }
       .desc{
         word-break: keep-all;
-        @media (max-width: 500px){
+        @media all and (max-width: 500px){
           width: 90%;
         }
       }
@@ -75,16 +79,9 @@ section{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        @media (max-width: 500px){
+        align-items: flex-start;
+        @media all and (max-width: 500px){
           flex-direction: column;
-          align-items: flex-start;
-        }
-        @media (min-width:501px) and (max-width: 768px){
-          align-items: flex-start;
-        }
-        @media (min-width:769px) and (max-width: 1024px){
-          align-items: flex-start;
         }
         .userInfoWrap{
           display: flex;
@@ -106,7 +103,7 @@ section{
                   font-family: 'AppleSDGothicNeoH00','Gothic A1','Noto Sans KR', 'sans-serif';
                   font-weight: 500;
                   font-size: 3rem;
-                  @media (max-width: 767px){
+                  @media all and (max-width: 767px){
                     font-size: 2rem;
                   }
                 }
@@ -119,13 +116,23 @@ section{
         display: flex;
         flex-direction: row;
         flex: 3;
-        @media (max-width: 1024px){
+        @media all and (max-width: 1024px){
           flex-direction: column;
         }
         .timeLineWrap{
           height: 30rem;
           @media (min-width:768px) and (max-width: 1023px){
             height: 22rem;
+          }
+        }
+        .sillsWrap{
+          ul{
+            @media all and (max-width: 320px){
+              width: calc(25% - 12%);
+            }
+            @media (min-width: 321px) and (max-width: 500px){
+              width: calc(25% - 58px);
+            }
           }
         }
       }
@@ -140,17 +147,13 @@ section{
         display: flex;
         gap: 60px;
         flex-direction: row;
-        @media (max-width: 500px){
-          flex-direction: column;
-          align-items: center;
-        }
-        @media (min-width: 501px) and (max-width: 768px){
+        @media all and (min-width: 500px) and (max-width: 768px){
           flex-direction: column;
           align-items: center;
         }
         > div{
           &:first-child{
-            @media (max-width: 500px){
+            @media all and (max-width: 768px){
               align-items: center;
             }
           }
@@ -160,7 +163,8 @@ section{
           gap: 20px;
           flex-wrap: wrap;
           @media (min-width:501px) and (max-width: 768px){
-            justify-content: flex-end;
+            // justify-content: flex-end;
+            justify-content: flex-start;
           }
           .productWrap{
             cursor: pointer;
@@ -168,10 +172,10 @@ section{
             @media (min-width:501px) and (max-width: 768px){
               width: calc(33% - 11px);
             }
-            @media (min-width:321px) and (max-width: 500px), (min-width:769px) and (max-width: 1024px){
+            @media (min-width:321px) and (max-width: 500px){
               width: calc(50% - 10px);
             }
-            @media (max-width: 320px){
+            @media all and (max-width: 320px){
               width: 100%;
             }
           }
@@ -184,7 +188,7 @@ section{
       display: flex;
       flex-direction: row;
       width: 100%;
-      @media (max-width: 500px) {
+      @media all and (max-width: 500px) {
         position: relative;
         margin-top: 100px;
       }
@@ -204,7 +208,7 @@ section{
           -ms-border-radius: 5px;
           -o-border-radius: 5px;
         }
-        @media (max-width: 500px) {
+        @media all and (max-width: 500px) {
           position: absolute;
           width: 100%;
           left: 0;
@@ -252,7 +256,7 @@ section{
           flex: none;
         }
         .list_desc{
-          @media (max-width: 500px) {
+          @media all and (max-width: 500px) {
             flex-direction: column;
             gap: 0;
           }
@@ -267,7 +271,7 @@ section{
           > li{
             &:nth-child(1){
               width: 74px;
-              @media (max-width: 320px){
+              @media all and (max-width: 320px){
                 width: 50px;
               }
             }

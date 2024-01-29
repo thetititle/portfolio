@@ -11,7 +11,53 @@
         "baseAdd" : "Seoul, Korea",
         "gitHub" : "https://github.com/thetititle",
         "veLog" : "https://velog.io/@thetitle/posts",
-        "figma" : "https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16-56&mode=design"
+        "figma" : "https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=16-56&mode=design",
+        "skills" : [
+          {
+            "name": "VScode",
+            "imgUrl" : "http://thetititle.com/img/skills/vscode.png"
+          },
+          {
+            "name": "html5",
+            "imgUrl" : "http://thetititle.com/img/skills/html5.png"
+          },
+          {
+            "name": "css3",
+            "imgUrl" : "http://thetititle.com/img/skills/css3.png"
+          },
+          {
+            "name": "scss",
+            "imgUrl" : "http://thetititle.com/img/skills/sass.png"
+          },
+          {
+            "name": "javascript",
+            "imgUrl" : "http://thetititle.com/img/skills/javascript.png"
+          },
+          {
+            "name": "vue3",
+            "imgUrl" : "http://thetititle.com/img/skills/vue.png"
+          },
+          {
+            "name": "quasar",
+            "imgUrl" : "http://thetititle.com/img/skills/quasar.png"
+          },
+          {
+            "name": "figma",
+            "imgUrl" : "http://thetititle.com/img/skills/figma.png"
+          },
+          {
+            "name": "photoshop",
+            "imgUrl" : "http://thetititle.com/img/skills/photoshop.png"
+          },
+          {
+            "name": "github",
+            "imgUrl" : "http://thetititle.com/img/skills/github.png"
+          },
+          {
+            "name": "gitlab",
+            "imgUrl" : "http://thetititle.com/img/skills/gitlab.png"
+          }
+        ]
       },
       "timeLine" : [
         {
@@ -33,9 +79,9 @@
           "id" : "3",
           "date" : "2022~",
           "desc" :[
-            "사내 RPA UI/UX 디자인 및 개발",
-            "사내 ERP UI/UX 디자인 및 개발",
-            "사내 ADM UI/UX 디자인 및 개발"
+            "가이랩 김총무 RPA UI/UX 디자인 및 개발",
+            "가이랩 김총무 ERP UI/UX 디자인 및 개발",
+            "가이랩 김총무 ADM UI/UX 디자인 및 개발"
           ]
         },
         {
@@ -64,9 +110,25 @@
           "desc" : ["Ready for NEW NEST!"]
         }
       ],
+      "troubleShooting" : [
+        {
+          "id" : "0",
+          "date" : "~2023.03",
+          "issue" : ["GA를 위한 RPA,EPT등의 project가 단일 branch로 이루어져 있어서 design이나 data를 각 고객사들의 needs를 맞출 수 없었음"],
+          "situation" : [
+            "사수는 물론 시니어가 1명도 없는 사무실 상황",
+            "모든 data와 style이 하나의 Branch로 뭉쳐져 배포된 상태"
+          ],
+          "solution" : [
+            "1, Mount하거나 Creat할 때 url을 가져온 후",
+            "2, 각GA의 인식자가 url에 포함이 되면, 해당 GA가 원하는 style과 data를 보여줌"
+          ],
+          "result" : ["data 호출까지 시간이 다소 소요되었으나 고객의 needs는 충족됨"]
+        }
+      ],
       "issueCheck" : [
         {
-          "complate" : "NOW",
+          "complate" : "FINISH",
           "desc" : "PC화면 스크롤시 NAV Highlight 분기점 체크"
         },
         {
@@ -109,19 +171,19 @@
         },
         {
           "id" : "2",
-          "title" : "PORTFOLIO💚 VUE3-Quasar",
+          "title" : "Archive website💚 VUE3-Quasar",
           "skills" : ["VUE3","JavaScript","scss"],
           "imgUrl" : "http://thetititle.com/img/23_design.jpg",
-          "desc" : "made in 2023, Archive website",
+          "desc" : "made in 2023",
           "href" : "http://thetititle.com/products/vue3/index.html"
         },
         {
           "id" : "3",
-          "title" : "PORTFOLIO💙 REACT-Next.js",
+          "title" : "Archive website💙 REACT-Next.js",
           "skills" : ["REACT","TypeScript","scss"],
           "imgUrl" : "http://thetititle.com/img/23_design.jpg",
-          "desc" : "get ready for presentation",
-          "href" : "#1"
+          "desc" : "made in 2024, get ready for presentation",
+          "href" : "#"
         }
       ]
     }
