@@ -6,7 +6,7 @@
 <img src="http://thetititle.com/img/SECTION1.jpg">
 Pinterest에서 레이아웃 샘플을 뽑아 그를 기반으로 디자인을 하고 있습니다.
 <br/>
-현재 VUE3기반의 QUASAR로 구현되어있으며, TABLET까지의 반응형이 적용되고 있고 TMOBILE도 업로드될 것입니다. 곧 REACT 버전도 구현될 것이에요!
+현재 VUE3기반의 QUASAR로 구현되어있으며 반응형 적용 완료되었습니다. 곧 REACT 버전도 구현될 것이에요!
 <br/>
 <a href="https://www.figma.com/file/BppUrWJDWioiMDQ3XMWiPh/framework-ver?type=design&node-id=0%3A1&mode=design&t=IexUMjDJxX4exYlJ-1">🌈go figma</a>
 <br/>
