@@ -12,116 +12,107 @@
 :root {
   --fontBasic: #242020;
   --fontWhite: #fcfcf5;
-  --pointClolr1: #FB0069;
+  --pointClolr1: #fb0069;
   --bgColor: #fcfcf5;
 }
 
 /* **************************************** *
  * font
  * **************************************** */
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap");
 
 @font-face {
-  font-family: 'against';
-  src: url('../assets/font/against-Regular.woff2') format('woff2'),
-      url('../assets/font/against-Regular.woff') format('woff');
+  font-family: "against";
+  src: url("../assets/font/against-Regular.woff2") format("woff2"),
+    url("../assets/font/against-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'AppleSDGothicNeoB00';
-  src:
-    url('../assets/font/AppleSDGothicNeoB00.woff2') format('woff2'),
-    url('../assets/font/AppleSDGothicNeoB00.woff') format('woff');
+  font-family: "AppleSDGothicNeoB00";
+  src: url("../assets/font/AppleSDGothicNeoB00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoB00.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family:'AppleSDGothicNeoEB00';
-  src:
-  url('../assets/font/AppleSDGothicNeoEB00.woff2') format('woff2'),
-  url('../assets/font/AppleSDGothicNeoEB00.woff') format('woff');
+  font-family: "AppleSDGothicNeoEB00";
+  src: url("../assets/font/AppleSDGothicNeoEB00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoEB00.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family:'AppleSDGothicNeoH00';
-  src:
-    url('../assets/font/AppleSDGothicNeoH00.woff2') format('woff2'),
-    url('../assets/font/AppleSDGothicNeoH00.woff') format('woff');
+  font-family: "AppleSDGothicNeoH00";
+  src: url("../assets/font/AppleSDGothicNeoH00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoH00.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family:'AppleSDGothicNeoR00';
-  src:
-    url('../assets/font/AppleSDGothicNeoR00.woff2') format('woff2'),
-    url('../assets/font/AppleSDGothicNeoR00.woff') format('woff');
+  font-family: "AppleSDGothicNeoR00";
+  src: url("../assets/font/AppleSDGothicNeoR00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoR00.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-h1{
-  font-family: 'AppleSDGothicNeoH00','Gothic A1','Noto Sans KR', 'sans-serif';
+h1 {
+  font-family: "AppleSDGothicNeoH00", "Gothic A1", "Noto Sans KR", "sans-serif";
   font-weight: 500;
   font-size: 4rem; //64px
   line-height: 5rem;
   margin: 0;
-  @media (min-width:768px) and (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 3rem;
-    line-height: 4rem ;
+    line-height: 4rem;
   }
   @media all and (max-width: 767px) {
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
-  &.title{
-    font-family: 'against','Gothic A1','Noto Sans KR', 'sans-serif';
+  &.title {
+    font-family: "against", "Gothic A1", "Noto Sans KR", "sans-serif";
   }
 }
-.subTt{
-  font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
+.subTt {
+  font-family: "AppleSDGothicNeoEB00", "Gothic A1", "Noto Sans KR", "sans-serif";
   font-weight: 500;
   font-size: 2.75rem; //44px
   line-height: 4rem;
-  @media (min-width:768px) and (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 1.25;
     line-height: 2.5rem;
   }
 }
-.conTt{
-  font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
+.conTt {
+  font-family: "AppleSDGothicNeoEB00", "Gothic A1", "Noto Sans KR", "sans-serif";
   font-weight: 500;
   text-transform: uppercase;
   font-size: 1.25rem;
-  line-height: 2.5rem;;
+  line-height: 2.5rem;
   @media all and (max-width: 500px) {
     font-size: 1rem;
     line-height: 1.25rem;
   }
 }
 
-.fontB{
-  font-family: 'AppleSDGothicNeoB00','Gothic A1','Noto Sans KR', 'sans-serif';
+.fontB {
+  font-family: "AppleSDGothicNeoB00", "Gothic A1", "Noto Sans KR", "sans-serif";
   font-weight: 500;
 }
-.fontEB{
-  font-family: 'AppleSDGothicNeoEB00','Gothic A1','Noto Sans KR', 'sans-serif';
+.fontEB {
+  font-family: "AppleSDGothicNeoEB00", "Gothic A1", "Noto Sans KR", "sans-serif";
   font-weight: 500;
 }
-// h1,
-// h2 {
-//   font-weight: 700 !important;
-//   margin: 1rem 0 !important;
-// }
 
 body {
-  font-family: 'AppleSDGothicNeoR00','Gothic A1','Noto Sans KR', 'sans-serif';
+  font-family: "AppleSDGothicNeoR00", "Gothic A1", "Noto Sans KR", "sans-serif";
   font-weight: 300;
   font-style: normal;
   color: var(--fontBasic);
@@ -129,10 +120,6 @@ body {
   line-height: 1.5;
   background-color: var(--bgColor);
   word-break: keep-all;
-  // @media (min-width:768px) and (max-width: 1023px) {
-  //   font-size: 0.875rem;
-  //   line-height: 1.2;
-  // }
   @media only screen and (max-width: 320px) {
     font-size: 0.85rem;
   }
@@ -141,38 +128,39 @@ body {
 /* **************************************** *
  * common
  * **************************************** */
-.hidden{
+.hidden {
   display: none !important;
 }
-.tr{
+.tr {
   text-align: right;
 }
-.tl{
+.tl {
   text-align: left;
 }
-.tc{
+.tc {
   text-align: center;
 }
-em{
+em {
   color: var(--pointClolr1);
 }
-img{
+img {
   width: 100%;
 }
-.btnWrap{
+.btnWrap {
   display: flex;
   height: 42px;
   gap: 5px;
-  .q-btn{
+  .q-btn {
     margin: 0;
   }
 }
-.fHighlight{
+.fHighlight {
   color: var(--pointClolr1);
 }
-.fblur{
+.fblur {
   opacity: 0.5;
 }
+
 /* **************************************** *
  * flex & padding & margin
  * **************************************** */
@@ -221,7 +209,8 @@ img{
 /* **************************************** *
  * logo & icon
  * **************************************** */
-.ico, .slides {
+.ico,
+.slides {
   background-size: cover !important;
   display: inline-block;
   text-indent: -999999999999999em;
@@ -229,22 +218,22 @@ img{
 /* **************************************** *
  * logo
  * **************************************** */
-.ico.logoWhite{
+.ico.logoWhite {
   width: 100%;
   height: 100%;
   background-image: url(../assets/img/logo_origin_white.png);
 }
-.ico.logoDark{
+.ico.logoDark {
   width: 100%;
   height: 100%;
   background-image: url(../assets/img/logo_origin_dark.png);
 }
-a.logoWrap{
+a.logoWrap {
   width: 100px;
   height: 60px;
   display: flex;
   align-items: center;
-  .q-avatar{
+  .q-avatar {
     width: inherit;
     height: 55px;
   }
@@ -253,7 +242,7 @@ a.logoWrap{
 /* **************************************** *
  * layout
  * **************************************** */
-.container{
+.container {
   min-width: 320px;
   max-width: 1320px;
   width: 100%;
@@ -267,8 +256,8 @@ a.logoWrap{
 }
 header {
   &.q-layout__section--marginal {
-    color: rgba(45,45,45, 0.8);
-    background-color: rgba(252,252,245,0.25);;
+    color: rgba(45, 45, 45, 0.8);
+    background-color: rgba(252, 252, 245, 0.25);
     height: 60px;
     opacity: 1;
     transition: 1s;
@@ -276,20 +265,20 @@ header {
     -moz-transition: 1s;
     -ms-transition: 1s;
     -o-transition: 1s;
-    .q-tab--active{
-      .q-tab__label{
-        color: rgba(45,45,45, 0.9);
-        font-family: 'AppleSDGothicNeoB00','Noto Sans KR', sans-serif;
+    .q-tab--active {
+      .q-tab__label {
+        color: rgba(45, 45, 45, 0.9);
+        font-family: "AppleSDGothicNeoB00", "Noto Sans KR", sans-serif;
       }
-      .q-tab__indicator{
-        background-color: rgba(251,0,105, 0.8);
+      .q-tab__indicator {
+        background-color: rgba(251, 0, 105, 0.8);
       }
     }
   }
   .q-layout__shadow:after {
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.025), 0 0px 10px rgba(0, 0, 0, 0.1);
   }
-  &.active{
+  &.active {
     opacity: 0;
     transition: 1s;
     -webkit-transition: 1s;
@@ -298,9 +287,9 @@ header {
     -o-transition: 1s;
   }
 }
-div#navBar{
+div#navBar {
   color: var(--fontWhite);
-  background-color: rgba(36,32,32, 0.5);
+  background-color: rgba(36, 32, 32, 0.5);
   position: fixed;
   width: 100%;
   height: 60px;
@@ -314,7 +303,7 @@ div#navBar{
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   z-index: 9999999;
-  &.active{
+  &.active {
     top: 0px;
     opacity: 1;
     transition: 0.5s;
@@ -323,23 +312,23 @@ div#navBar{
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
   }
-  .q-tab{
-    .q-tab__content{
-      .q-tab__label{
-        font-family: 'AppleSDGothicNeoR00','Noto Sans KR', sans-serif;
-        color: rgba(252,252,245,0.9);
+  .q-tab {
+    .q-tab__content {
+      .q-tab__label {
+        font-family: "AppleSDGothicNeoR00", "Noto Sans KR", sans-serif;
+        color: rgba(252, 252, 245, 0.9);
         // color: var(--fontWhite);
       }
     }
-    &.q-tab--active{
-      .q-tab__content{
-        .q-tab__label{
-          font-family: 'AppleSDGothicNeoB00','Noto Sans KR', sans-serif;
+    &.q-tab--active {
+      .q-tab__content {
+        .q-tab__label {
+          font-family: "AppleSDGothicNeoB00", "Noto Sans KR", sans-serif;
           color: var(--fontWhite);
         }
       }
-      .q-tab__indicator{
-        background-color: rgba(251,0,105, 0.8);
+      .q-tab__indicator {
+        background-color: rgba(251, 0, 105, 0.8);
       }
     }
   }
@@ -348,23 +337,23 @@ div#navBar{
 /* **************************************** *
  * header & nav 공통
  * **************************************** */
-.q-tabs{
-  .q-tab{
+.q-tabs {
+  .q-tab {
     height: 60px;
-    .q-tab__content{
+    .q-tab__content {
       padding: 0;
     }
   }
 }
 // pages
-.q-page-container{
+.q-page-container {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 
-  &.index-page{
-
-    .q-splitter{
-      .q-splitter__before, .q-splitter__separator{
+  &.index-page {
+    .q-splitter {
+      .q-splitter__before,
+      .q-splitter__separator {
         display: none !important;
       }
     }
@@ -373,16 +362,17 @@ div#navBar{
 /* **************************************** *
  * q-page-sticky
  * **************************************** */
-.q-page-sticky{
+.q-page-sticky {
   z-index: 999;
 }
 
 /* **************************************** *
  * footer
  * **************************************** */
-footer{
-  &.shadow-up-1{
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.1);
+footer {
+  &.shadow-up-1 {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 rgba(0, 0, 0, 0.1),
+      0 0 0 0 rgba(0, 0, 0, 0.1);
   }
   &.q-layout__section--marginal {
     height: 90px;
@@ -394,10 +384,10 @@ footer{
     box-shadow: none;
   }
   @media all and (max-width: 767px) {
-    .logoWrap{
+    .logoWrap {
       display: none;
     }
-    .q-btn{
+    .q-btn {
       width: 100%;
     }
   }
@@ -406,11 +396,11 @@ footer{
 /* **************************************** *
  * timeline
  * **************************************** */
-.timeLineWrapper{
-  .timeLineWrap{
+.timeLineWrapper {
+  .timeLineWrap {
     padding: 5px 0;
     position: relative;
-    &::after{
+    &::after {
       content: "";
       position: absolute;
       top: 0;
@@ -420,11 +410,11 @@ footer{
       border-left: 1px dashed var(--fontBasic);
       opacity: 0.7;
     }
-    @media (min-width:768px) and (max-width: 1023px){
+    @media (min-width: 768px) and (max-width: 1023px) {
       font-size: 0.875rem !important;
       line-height: 1;
     }
-    .timeLines{
+    .timeLines {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -432,37 +422,37 @@ footer{
       // height: 30rem;
       overflow-y: scroll;
       -ms-overflow-style: none;
-      @media (min-width:768px) and (max-width: 1023px) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         gap: 20px;
       }
-      &::-webkit-scrollbar{
-        display:none;
+      &::-webkit-scrollbar {
+        display: none;
       }
-      .timeLine{
+      .timeLine {
         margin-left: 10px;
         display: flex;
         gap: 15px;
-        &.yet{
+        &.yet {
           opacity: 0.3;
         }
-        > li{
-          &:nth-child(1){
+        > li {
+          &:nth-child(1) {
             width: 80px;
-            @media only screen and (max-width: 320px){
+            @media only screen and (max-width: 320px) {
               width: 50px;
             }
           }
-          &:nth-child(2){
+          &:nth-child(2) {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 5px;
           }
         }
-        .fontB{
-          span{
+        .fontB {
+          span {
             position: relative;
-            &::after{
+            &::after {
               content: "";
               position: absolute;
               width: 0.3rem;
@@ -484,15 +474,15 @@ footer{
             }
           }
         }
-        > ul{
+        > ul {
           display: flex;
           flex-direction: column;
           gap: 5px;
         }
       }
-      .skills{
-        @media (min-width:768px) and (max-width: 1023px){
-          img{
+      .skills {
+        @media (min-width: 768px) and (max-width: 1023px) {
+          img {
             width: 80%;
           }
         }
@@ -504,22 +494,22 @@ footer{
 /* **************************************** *
  * LIST WITH DESC
  * **************************************** */
-.list_desc{
+.list_desc {
   display: flex;
   gap: 15px;
 
-  > li{
-    &:first-child{
+  > li {
+    &:first-child {
       width: 80px;
     }
   }
-  @media all and (max-width: 767px){
+  @media all and (max-width: 767px) {
     gap: 10px;
-    > li{
-      &:first-child{
+    > li {
+      &:first-child {
         width: 70px;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         word-break: break-all;
       }
     }
