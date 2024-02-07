@@ -1,10 +1,46 @@
-.header {
-  height: 60px;
-}
-.container{
+/*
+* File       : header.module.css
+* Date       : 2024. 02. 07.
+* Author     : SUJI BAE (THETITITLE)
+*/
+.container {
   max-width: 1320px;
   min-width: 320px;
+  padding: 0 20px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* **************************************** *
+* TAB MENU
+* **************************************** */
+.tabWrapper ul {
+  display: flex;
+  height: inherit;
+  font-size: 14px;
+}
+.tabWrapper ul li {
+  padding: 0 15px;
+  height: inherit;
+}
+.tabWrapper ul li.active {
+  background-color: rgba(30, 30, 30, 0.5);
+  position: relative;
+}
+.tabWrapper ul li.active::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: var(--HighLight);
+}
+.tabWrapper ul li a {
+  line-height: 60px;
+  height: 60px;
+  color: var(--fontTitle);
 }

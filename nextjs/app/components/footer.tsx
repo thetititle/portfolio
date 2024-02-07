@@ -3,6 +3,7 @@ import Image from 'next/image'
 import LogoW from '~/public/img/logo_origin_white.png'
 import LogoD from '~/public/img/logo_origin_dark.png'
 import styles from '../styles/footer.module.css'
+import fonts from "../styles/fonts.module.css";
 
 export default function Footer() {
   return (
