@@ -213,7 +213,7 @@
                   <div class="timeLines">
                     <ul
                       class="timeLine"
-                      v-for="(item, index) in issueCheck"
+                      v-for="(item, index) in IssueCheck"
                       :key="index"
                     >
                       <li class="fontB">
@@ -285,48 +285,53 @@ export default defineComponent({
     const skills = ref([]);
     const timeLine = ref({});
     const timeDesc = ref([]);
-    const issueCheck = ref({});
     const trbleSht = ref([]);
     const productData = ref({});
+    const IssueCheck = ref([]);
     const getData = () => {
-      // api.get(`allData`).then((result) => {
-      //   ownerInfo.value = result.data[0].ownerInfo;
-      //   skills.value = ownerInfo.value.skills;
-      //   console.log("skills.value", skills.value);
-      //   timeLine.value = result.data[0].timeLine.sort(function (a, b) {
-      //     if (a.id < b.id) return 1;
-      //     if (a.id > b.id) return -1;
-      //   });
-      //   issueCheck.value = result.data[0].issueCheck;
-      //   trbleSht.value = result.data[0].troubleShooting;
-      //   productData.value = result.data[0].product.sort(function (a, b) {
-      //     if (a.id < b.id) return 1;
-      //     if (a.id > b.id) return -1;
-      //   });
-      // });
-      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-        const data1 = result.data.allData[0];
+      api.get(`allData`).then((result) => {
+        const data1 = result.data[0];
         ownerInfo.value = data1.ownerInfo;
         skills.value = ownerInfo.value.skills;
         timeLine.value = data1.timeLine.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
         });
-        issueCheck.value = data1.issueCheck;
-        trbleSht.value = data1.troubleShooting.sort(function (a, b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
-        });
+        trbleSht.value = data1.troubleShooting;
         productData.value = data1.product.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
         });
-        console.log("allData", data1);
-        console.log("ownerInfo", ownerInfo.value);
-        console.log("timeLine", timeLine.value);
-        console.log("issueCheck", issueCheck.value);
-        console.log("productData", productData.value);
+        IssueCheck.value = productData.value[2].issueCheck.sort(function (a, b) {
+          if (a.id < b.id) return 1;
+          if (a.id > b.id) return -1;
+        });
       });
+      // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
+      //   const data1 = result.data.allData[0];
+      //   ownerInfo.value = data1.ownerInfo;
+      //   skills.value = ownerInfo.value.skills;
+      //   timeLine.value = data1.timeLine.sort(function (a, b) {
+      //     if (a.id < b.id) return 1;
+      //     if (a.id > b.id) return -1;
+      //   });
+      //   trbleSht.value = data1.troubleShooting.sort(function (a, b) {
+      //     if (a.id < b.id) return 1;
+      //     if (a.id > b.id) return -1;
+      //   });
+      //   productData.value = data1.product.sort(function (a, b) {
+      //     if (a.id < b.id) return 1;
+      //     if (a.id > b.id) return -1;
+      //   });
+      //   IssueCheck.value = productData.value[2].issueCheck.sort(function (a, b) {
+      //     if (a.id < b.id) return 1;
+      //     if (a.id > b.id) return -1;
+      //   });
+      //   console.log("allData", data1);
+      //   console.log("ownerInfo", ownerInfo.value);
+      //   console.log("timeLine", timeLine.value);
+      //   console.log("productData", productData.value);
+      // });
     };
 
     return {
@@ -336,14 +341,13 @@ export default defineComponent({
       skills,
       timeLine,
       timeDesc,
-      issueCheck,
       trbleSht,
       productData,
+      IssueCheck
     };
   },
 });
 </script>
 <style lang="scss" scoped>
-// 현재의 컴포넌트에만 아래의 스타일이 적용되도록 scoped 옵션을 필수로 넣는다.
-@import url(../css/index.scss);
+  @import url(../css/index.scss);
 </style>

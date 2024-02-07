@@ -132,32 +132,6 @@
           ]
         }
       ],
-      "issueCheck": [
-        {
-          "complate": "FINISH",
-          "desc": "PC화면 스크롤시 NAV Highlight 분기점 체크"
-        },
-        {
-          "complate": "FINISH",
-          "desc": "Product 마녀팩토리 Unexpected token '<' 에러 체크"
-        },
-        {
-          "complate": "FINISH",
-          "desc": "반응형 구현 2차(수정)"
-        },
-        {
-          "complate": "FINISH",
-          "desc": "Data binding"
-        },
-        {
-          "complate": "FINISH",
-          "desc": "Json data생성 및 axios, api를 통한 data호출"
-        },
-        {
-          "complate": "FINISH",
-          "desc": "반응형 구현 1차"
-        }
-      ],
       "product": [
         {
           "id": "0",
@@ -166,7 +140,8 @@
           "imgUrl": "http://thetititle.com/img/21_manyo.jpg",
           "year": "2021",
           "desc": " Academy project1",
-          "href": "http://thetititle.com/products/manyo/index.html/"
+          "href": "http://thetititle.com/products/manyo/index.html/",
+          "issueCheck": []
         },
         {
           "id": "1",
@@ -175,25 +150,72 @@
           "imgUrl": "http://thetititle.com/img/21_knotted.jpg",
           "year": "2021",
           "desc": "Academy project2",
-          "href": "http://thetititle.com/products/knotted/index.html"
+          "href": "http://thetititle.com/products/knotted/index.html",
+          "issueCheck": []
         },
         {
           "id": "2",
-          "title": "💚this page Quasar",
-          "skills": ["VUE3", "JavaScript", "scss"],
+          "title": "💚this page Quasar(VUE3)",
+          "skills": ["Quasar", "JavaScript", "scss"],
           "imgUrl": "http://thetititle.com/img/23_design.jpg",
           "year": "2023",
           "desc": "Archive website",
-          "href": "http://thetititle.com/products/vue3/index.html"
+          "href": "http://thetititle.com/products/vue3/index.html",
+          "issueCheck": [
+            {
+              "id": "0",
+              "complate": "FINISH",
+              "desc": "반응형 구현 1차"
+            },
+            {
+              "id": "1",
+              "complate": "FINISH",
+              "desc": "Json data생성 및 axios, api를 통한 data호출"
+            },
+            {
+              "id": "2",
+              "complate": "FINISH",
+              "desc": "Data binding"
+            },
+            {
+              "id": "3",
+              "complate": "FINISH",
+              "desc": "반응형 구현 2차(수정)"
+            },
+            {
+              "id": "4",
+              "complate": "FINISH",
+              "desc": "Product 마녀팩토리 Unexpected token '<' 에러 체크"
+            },
+            {
+              "id": "5",
+              "complate": "FINISH",
+              "desc": "PC화면 스크롤시 NAV Highlight 분기점 체크"
+            }
+          ]
         },
         {
           "id": "3",
-          "title": "💙this page Next.js",
-          "skills": ["REACT", "TypeScript", "scss"],
+          "title": "💙this page Next.js(REACT)",
+          "skills": ["Next.js", "TypeScript", "css"],
           "imgUrl": "http://thetititle.com/img/24_design.jpg",
           "year": "2024",
           "desc": "Archive website",
-          "href": "#"
+          "href": "#",
+          "issueCheck": [
+            {
+              "complate": "PRE",
+              "desc": "반응형 구현"
+            },
+            {
+              "complate": "PRE",
+              "desc": "Data binding"
+            },
+            {
+              "complate": "PRE",
+              "desc": "Json data생성 및 axios, api를 통한 data호출"
+            }
+          ]
         },
         {
           "id": "4",
@@ -202,7 +224,8 @@
           "imgUrl": "http://thetititle.com/img/bibiang.jpg",
           "year": "2024",
           "desc": "Shopping Mall renewal",
-          "href": "#"
+          "href": "#",
+          "issueCheck": []
         }
       ]
     }
