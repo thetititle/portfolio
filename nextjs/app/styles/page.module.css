@@ -7,7 +7,7 @@
 /* **************************************** *
 * LAYOUT
 * **************************************** */
-.container{
+.container {
   max-width: 1320px;
   min-width: 320px;
   padding: 0 20px;
@@ -22,40 +22,52 @@
   flex-direction: column;
   gap: 80px;
 }
-.sectionWrap section{
+.sectionWrap section {
   padding: 80px 0;
 }
 .sectionWrap section:first-child {
   height: 100vh;
 }
+.sectionWrap section:nth-child(n+2) article{
+  max-width: 1320px;
+  min-width: 320px;
+  padding: 0 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* **************************************** *
 * SECTION1 - HELLO
 * **************************************** */
-.section1, .titleWrap {
+.section1,
+.titleWrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.section1{
+.section1 {
   position: relative;
 }
-.section1::before{
-  content: '';
+.section1::before {
+  content: "";
   position: absolute;
-  top: 0; right: 0; left: 0; bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   background: url(../../public/img/dark_bg.jpg) no-repeat center/cover;
 }
-.section1:after{
+.section1:after {
   bottom: 0;
   content: "";
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  background: linear-gradient(180deg,#0000 15%,var(--BgColor));
+  background: linear-gradient(180deg, #0000 15%, var(--BgColor));
 }
-.section1 article{
+.section1 article {
   z-index: 1;
   width: 20%;
   text-align: center;
@@ -64,8 +76,13 @@
   flex-direction: column;
   gap: 30px;
 }
-.section1 article span{
+.section1 article span {
   color: var(--fontTitle);
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section1 article {
+    width: 50%;
+  }
 }
 /* **************************************** *
 * SECTION2 - INTRODUCE

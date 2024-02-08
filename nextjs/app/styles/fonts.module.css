@@ -30,7 +30,7 @@
     line-height: 2.5rem;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 320px) and (max-width: 500px) {
   .conTt {
     font-size: 2.5rem;
     line-height: 2.75rem;

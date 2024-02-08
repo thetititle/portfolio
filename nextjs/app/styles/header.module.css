@@ -13,6 +13,11 @@
   align-items: center;
   justify-content: space-between;
 }
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* **************************************** *
 * TAB MENU
@@ -21,6 +26,7 @@
   display: flex;
   height: inherit;
   font-size: 14px;
+  text-transform: uppercase;
 }
 .tabWrapper ul li {
   padding: 0 15px;
@@ -30,9 +36,12 @@
   background-color: rgba(30, 30, 30, 0.5);
   position: relative;
 }
+.tabWrapper ul li.active a{
+  font-weight: 500;
+}
 .tabWrapper ul li.active::after {
   position: absolute;
-  content: '';
+  content: "";
   bottom: 0;
   left: 0;
   right: 0;
@@ -43,4 +52,5 @@
   line-height: 60px;
   height: 60px;
   color: var(--fontTitle);
+  font-size: 12px;
 }
