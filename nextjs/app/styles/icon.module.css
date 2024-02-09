@@ -1,0 +1,25 @@
+/*
+* File       : icon.css
+* Date       : 2024. 02. 08.
+* Author     : SUJI BAE (THETITITLE)
+*/
+.ico {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-indent: -99999em;
+}
+.icoLogo {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-indent: -99999em;
+  width: 100px;
+  height: 55px;
+}
+.icoLogo.logo {
+  background-image: url('../../public/img/logo_origin_white.png');
+}
+.icoLogo.logoDark{
+  background-image: url('../../public/img/logo_origin_dark.png');
+}

@@ -65,6 +65,7 @@ h2,
 h3,
 h4 {
   color: var(--fontTitle);
+  margin: 0;
 }
 h1 {
   font-family: "against";
@@ -129,6 +130,21 @@ header {
   left: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 1);
   z-index: 1;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+header.drop {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 footer {
   border-top: 1px solid rgba(255, 255, 255, 1);
@@ -148,6 +164,8 @@ a {
   height: inherit;
   text-decoration: none;
 }
-ul{
+ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
