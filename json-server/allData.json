@@ -205,6 +205,10 @@
           "issueCheck": [
             {
               "complate": "PRE",
+              "desc": "Header Logo 조건에 따른 className 미변경 이슈"
+            },
+            {
+              "complate": "PRE",
               "desc": "반응형 구현"
             },
             {
@@ -213,7 +217,7 @@
             },
             {
               "complate": "PRE",
-              "desc": "Json data생성 및 axios, api를 통한 data호출"
+              "desc": "api를 통한 data호출"
             }
           ]
         },

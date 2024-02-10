@@ -7,25 +7,23 @@ import styles from "../styles/header.module.css";
 import fonts from "../styles/fonts.module.css";
 import ico from "../styles/icon.module.css";
 
-window.addEventListener("scroll", () => {
-  const Logo = document.querySelector("span");
-  const ScrollTop: number = window.scrollY;
-  console.log("ddd", Logo);
-  if (ScrollTop > 60) {
-    Logo?.classList.remove("logo");
-    Logo?.classList.add("logoDark");
-  } else if (ScrollTop <= 60) {
-    Logo?.classList.remove("logoDark");
-    Logo?.classList.add("logo");
-  }
-});
-
 export default function Header() {
+  let scrollDorp : boolean = true;
+  window.addEventListener("scroll", () => {
+    const ScrollTop: number = window.scrollY;
+    if (ScrollTop <= 60) {
+      scrollDorp = true;
+      console.log('scrollDorp1', scrollDorp)
+    } else if (ScrollTop > 60) {
+      scrollDorp = false;
+      console.log('scrollDorp2', scrollDorp)
+    }
+  });
   return (
     <header>
       <div className={styles.container}>
         <Link href="#" className={styles.logo}>
-          <span className={ico.icoLogo}></span>
+          <span className={`${ scrollDorp ? ico.logo : ico.logoDark}`} ></span>
         </Link>
         <div className={styles.tabWrapper}>
           <ul>

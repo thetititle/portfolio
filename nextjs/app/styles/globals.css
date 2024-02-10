@@ -130,21 +130,31 @@ header {
   left: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 1);
   z-index: 1;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 header.drop {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.5);
   border: 0;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  animation: dropdown 0.5s;
+  -webkit-animation: dropdown 0.5s;
+}
+@keyframes dropdown{
+  from{
+    top: -60px;
+  }
+  to{
+    top: 0;
+  }
 }
 footer {
   border-top: 1px solid rgba(255, 255, 255, 1);
