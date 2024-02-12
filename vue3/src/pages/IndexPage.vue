@@ -10,6 +10,7 @@
               thetititle's<br />
               portfolio<em>.</em>
             </h1>
+            <em>used QARSAR</em>
             <ul class="desc tc">
               <li>This is my main works archive website.</li>
               <li>I hope we can have the opportunity to work together.</li>

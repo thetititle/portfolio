@@ -14,9 +14,16 @@
 }
 .conTt {
   /* content title */
-  text-transform: uppercase;
+  font-family: AppleSDGothicNeoEB00,Gothic A1,Noto Sans KR,"sans-serif";
   font-size: 1.25rem;
+  font-weight: 500;
   line-height: 2.5rem;
+  text-transform: uppercase;
+}
+.bTt{
+  font-family: AppleSDGothicNeoH00,Gothic A1,Noto Sans KR,"sans-serif";
+  font-size: 3rem;
+  font-weight: 500;
 }
 .fontUp{
   text-transform: uppercase;
@@ -39,4 +46,17 @@
 .eb {
   font-family: "AppleSDGothicNeoEB00", "Gothic A1", "Noto Sans KR", "sans-serif";
   font-weight: 500;
+}
+
+/* **************************************** *
+* TEXT TEXTALIGN
+* **************************************** */
+.tc{
+  text-align: center;
+}
+.tr{
+  text-align: right;
+}
+.tl{
+  text-align: left;
 }

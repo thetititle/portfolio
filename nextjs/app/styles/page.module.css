@@ -87,3 +87,32 @@
 /* **************************************** *
 * SECTION2 - INTRODUCE
 * **************************************** */
+.section2 article{
+  display: flex;
+  gap: 60px;
+  justify-content: flex-start;
+}
+.section2 article img{
+  width: 50%;
+  height: auto;
+}
+.section2 article > div:first-child{
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.section2 article .userinfo{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.section2 article > div:nth-child(2){
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+}
+.section2 article > div:nth-child(2) article{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}

@@ -31,13 +31,28 @@
 .tabWrapper ul li {
   padding: 0 15px;
   height: inherit;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 .tabWrapper ul li.active {
-  background-color: rgba(30, 30, 30, 0.5);
+  background-color: rgba(30, 30, 30, 0.8);
   position: relative;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 .tabWrapper ul li.active a{
   font-weight: 500;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 .tabWrapper ul li.active::after {
   position: absolute;
@@ -47,10 +62,20 @@
   right: 0;
   height: 2px;
   background-color: var(--HighLight);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 .tabWrapper ul li a {
   line-height: 60px;
   height: 60px;
   color: var(--fontTitle);
   font-size: 12px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }

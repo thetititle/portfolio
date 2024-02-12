@@ -151,9 +151,11 @@ header.drop {
 @keyframes dropdown{
   from{
     top: -60px;
+    opacity: 0;
   }
   to{
     top: 0;
+    opacity: 1;
   }
 }
 footer {
