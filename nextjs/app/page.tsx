@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // import dynamic from 'next/dynamic'
 // const DynamicHeader = dynamic(()=> import('./components/header'), {ssr : false})
 import Footer from "./components/footer";
@@ -12,10 +12,10 @@ import ico from "./styles/icon.module.css";
 import selfie from "../public/img/self.png";
 // import axios from 'axios';
 
-export default function Home() {
+export default function Home({}) {
   const [isScroll, setScroll] = useState(true);
   const [selectNav, setNav] = useState("hello");
-
+  
   useEffect(() => {
     window.addEventListener("scroll", (): any => {
       const Header = document.querySelector("header");
@@ -28,9 +28,20 @@ export default function Home() {
         setScroll((isScroll) => true);
       }
     });
-
+  
   })
-
+  
+  useEffect(() => {
+    getStaticProps();
+  })
+  
+  const getStaticProps = (async () => {
+    const res = await fetch('api/user')
+    const data = await res.json()
+    console.log('data', data)
+    return { props: { data } }
+  })
+  
   const moveSection = (e: any) => {
     e.preventDefault();
     const lowText = e.target.innerHTML;
@@ -49,7 +60,7 @@ export default function Home() {
             <span className={`${isScroll ? ico.logo : ico.logoDark}`}></span>
           </Link>
           <div className={headerStyle.tabWrapper}>
-            <ul onClick={moveSection}>
+            <ul onClick={moveSection}  className={`${isScroll ? '' : headerStyle.drop}`}>
               <li
                 className={`${selectNav === "hello" ? headerStyle.active : ""}`}
               >
@@ -182,3 +193,4 @@ export default function Home() {
     </main>
   );
 }
+
