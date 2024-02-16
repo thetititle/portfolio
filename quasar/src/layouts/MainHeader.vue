@@ -74,7 +74,7 @@
 <script>
 import { defineComponent, ref, onBeforeMount } from "vue";
 export default defineComponent({
-  name: "PageHeader",
+  name: "MainHeader",
 
   components: {
   },
@@ -84,6 +84,26 @@ export default defineComponent({
     }
   },
   setup(props) {
+    onBeforeMount(() => {
+      checkScreen();
+    })
+    const resWidth = ref('');
+    const checkScreen = () => {
+      const isMobile = window.matchMedia("only screen and (max-width: 500px)").matches;
+      const isMobile2 = window.matchMedia("(min-width: 501px) and (max-width: 767px)").matches;
+      const isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches;
+      const isPc = window.matchMedia("only screen and (min-width: 1024px)").matches;
+
+      if (isMobile) {
+        resWidth.value = 'mobileColumn';
+      } else if (isMobile2) {
+        resWidth.value = 'mobile';
+      } else if (isTablet) {
+        resWidth.value = 'tablet';
+      } else if (isPc) {
+        resWidth.value = 'pc';
+      }
+    };
 
     window.onscroll = () => {
       const qHeader = document.querySelector('header');
@@ -139,6 +159,7 @@ export default defineComponent({
     }
 
     return {
+      checkScreen,
       tab: ref('hello'),
       tab2: ref('2024'),
       moveSection,

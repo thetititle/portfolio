@@ -135,6 +135,7 @@
       "product": [
         {
           "id": "0",
+          "type" : "personal",
           "title": "🔮Manyo Factory site",
           "skills": ["HTML", "JavaScript", "css"],
           "imgUrl": "http://thetititle.com/img/21_manyo.jpg",
@@ -145,6 +146,7 @@
         },
         {
           "id": "1",
+          "type" : "personal",
           "title": "🍩Knotted Mobile site",
           "skills": ["HTML", "jQuery", "css"],
           "imgUrl": "http://thetititle.com/img/21_knotted.jpg",
@@ -155,6 +157,7 @@
         },
         {
           "id": "2",
+          "type" : "personal",
           "title": "💚this page Quasar(VUE3)",
           "skills": ["Quasar", "JavaScript", "scss"],
           "imgUrl": "http://thetititle.com/img/23_design.jpg",
@@ -196,6 +199,7 @@
         },
         {
           "id": "3",
+          "type" : "personal",
           "title": "💙this page Next.js(REACT)",
           "skills": ["Next.js", "TypeScript", "css"],
           "imgUrl": "http://thetititle.com/img/24_design.jpg",
@@ -223,6 +227,7 @@
         },
         {
           "id": "4",
+          "type" : "personal",
           "title": "✨BiBiANG site",
           "skills": ["REACT", "JavaScript", "scss"],
           "imgUrl": "http://thetititle.com/img/bibiang.jpg",
@@ -231,7 +236,132 @@
           "href": "#",
           "issueCheck": []
         }
+      ],
+      "issueCheck": [
+        {
+          "id": "0",
+          "complate": "FINISH",
+          "desc": "반응형 구현 1차"
+        },
+        {
+          "id": "1",
+          "complate": "FINISH",
+          "desc": "Json data생성 및 axios, api를 통한 data호출"
+        },
+        {
+          "id": "2",
+          "complate": "FINISH",
+          "desc": "Data binding"
+        },
+        {
+          "id": "3",
+          "complate": "FINISH",
+          "desc": "반응형 구현 2차(수정)"
+        },
+        {
+          "id": "4",
+          "complate": "FINISH",
+          "desc": "Product 마녀팩토리 Unexpected token '<' 에러 체크"
+        },
+        {
+          "id": "5",
+          "complate": "FINISH",
+          "desc": "PC화면 스크롤시 NAV Highlight 분기점 체크"
+        }
       ]
+    }
+  ],
+  "product": [
+    {
+      "id": "0",
+      "type" : "personal",
+      "title": "🔮Manyo Factory site",
+      "skills": ["HTML", "JavaScript", "css"],
+      "imgUrl": "http://thetititle.com/img/21_manyo.jpg",
+      "year": "2021",
+      "desc": " Academy project1",
+      "href": "http://thetititle.com/products/manyo/index.html/",
+      "issueCheck": []
+    },
+    {
+      "id": "1",
+      "type" : "personal",
+      "title": "🍩Knotted Mobile site",
+      "skills": ["HTML", "jQuery", "css"],
+      "imgUrl": "http://thetititle.com/img/21_knotted.jpg",
+      "year": "2021",
+      "desc": "Academy project2",
+      "href": "http://thetititle.com/products/knotted/index.html",
+      "issueCheck": []
+    },
+    {
+      "id": "2",
+      "type" : "personal",
+      "title": "💚this page Quasar",
+      "skills": ["Quasar", "JavaScript", "scss"],
+      "imgUrl": "http://thetititle.com/img/23_design.jpg",
+      "year": "2023",
+      "desc": "Archive website",
+      "href": "http://thetititle.com/products/quasar/index.html",
+      "issueCheck": [
+        {
+          "id": "0",
+          "complate": "FINISH",
+          "desc": "반응형 구현 1차"
+        },
+        {
+          "id": "1",
+          "complate": "FINISH",
+          "desc": "Json data생성 및 axios, api를 통한 data호출"
+        },
+        {
+          "id": "2",
+          "complate": "FINISH",
+          "desc": "Data binding"
+        },
+        {
+          "id": "3",
+          "complate": "FINISH",
+          "desc": "반응형 구현 2차(수정)"
+        },
+        {
+          "id": "4",
+          "complate": "FINISH",
+          "desc": "Product 마녀팩토리 Unexpected token '<' 에러 체크"
+        },
+        {
+          "id": "5",
+          "complate": "FINISH",
+          "desc": "PC화면 스크롤시 NAV Highlight 분기점 체크"
+        },
+        {
+          "id": "5",
+          "complate": "NOW",
+          "desc": "PRODUCT PAGE route작업 및 data binging1"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "type" : "personal",
+      "title": "🎬Movie site",
+      "skills": ["React", "JavaScript", "css"],
+      "imgUrl": "http://thetititle.com/img/movie.jpg",
+      "year": "2024",
+      "desc": "Toy project",
+      "href": "#",
+      "issueCheck": []
+    },
+    {
+      "id": "4",
+      "type" : "personal",
+      "title": "✨BiBiANG site",
+      "skills": ["Next.js", "TypeScript", "scss"],
+      "imgUrl": "http://thetititle.com/img/bibiang.jpg",
+      "year": "2024",
+      "desc": "Shopping Mall renewal",
+      "href": "#",
+      "issueCheck": []
     }
   ]
 }

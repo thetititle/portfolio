@@ -1,7 +1,8 @@
 <template>
   <q-layout>
 
-    <PageHeader :resWidth="resWidth"/>
+    <!-- <MainHeader :resWidth="resWidth"/>
+    <PagesHeader :resWidth="resWidth"/> -->
 
     <q-page-container>
       <router-view :resWidth="resWidth"/>
@@ -24,13 +25,15 @@
 
 <script>
 import { defineComponent, ref, onBeforeMount} from "vue";
-import PageHeader from "./PageHeader.vue"
+// import MainHeader from "./MainHeader.vue"
+// import PagesHeader from "./PagesHeader.vue"
 
 export default defineComponent({
   name: "MainLayout",
 
   components: {
-    PageHeader
+    // MainHeader,
+    // PagesHeader
   },
   // props:,
   // emits:
@@ -69,9 +72,10 @@ export default defineComponent({
       };
     };
 
+
     return {
       resWidth,
-      checkScreen
+      checkScreen,
     };
   },
 });

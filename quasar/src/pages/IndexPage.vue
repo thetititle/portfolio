@@ -1,5 +1,6 @@
 <template>
   <q-page class="index-page">
+    <MainHeader :resWidth="resWidth"/>
     <main class="scrollMain">
       <section id="hello">
         <div class="container">
@@ -122,12 +123,15 @@
           </div>
         </div>
       </section>
+      <p class="tc fontB">and Now i show you my products.🖤</p>
       <section id="project">
         <div class="container">
           <article>
             <div class="column">
-              <p>and Now i show you my products.🖤</p>
-              <h1 class="title">Product</h1>
+              <router-link to="/product">
+                <h1 class="title">Product</h1>
+                <p>💡더 많은 product를 보고싶다면 click!✨</p>
+              </router-link>
             </div>
             <div class="productWrapper">
               <ul
@@ -246,6 +250,7 @@
 <script>
 import { defineComponent, onBeforeMount, onMounted, ref } from "vue";
 import { api } from "boot/axios.js";
+import MainHeader from "../layouts/MainHeader.vue";
 
 export default defineComponent({
   name: "IndexPage",
@@ -254,11 +259,14 @@ export default defineComponent({
       type: String,
     },
   },
-  components: {},
+  components: {
+    MainHeader
+  },
 
   setup(props) {
     onBeforeMount(() => {
       getData();
+      getProduct();
     });
 
     const openWindow = (e) => {
@@ -275,7 +283,7 @@ export default defineComponent({
         } else {
           window.open(windowUrl, "blank");
         }
-      } else if (windowUrl.includes("vue3")) {
+      } else if (windowUrl.includes("quasar")) {
         alert("현재 페이지에요!");
       } else {
         window.open(windowUrl, "blank");
@@ -286,63 +294,48 @@ export default defineComponent({
     const skills = ref([]);
     const timeLine = ref({});
     const timeDesc = ref([]);
-    const trbleSht = ref([]);
-    const productData = ref({});
     const IssueCheck = ref([]);
+    const productData = ref({});
     const getData = () => {
       api.get(`allData`).then((result) => {
         const data1 = result.data[0];
+    // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
+        // const data1 = result.data.allData[0];
         ownerInfo.value = data1.ownerInfo;
         skills.value = ownerInfo.value.skills;
         timeLine.value = data1.timeLine.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
         });
-        trbleSht.value = data1.troubleShooting;
-        productData.value = data1.product.sort(function (a, b) {
+        IssueCheck.value = data1.issueCheck.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
-        });
-        IssueCheck.value = productData.value[2].issueCheck.sort(function (a, b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
-        });
+        })
+          console.log("ownerInfo", ownerInfo.value);
+          console.log("timeLine", timeLine.value);
+          console.log("IssueCheck", IssueCheck.value);
       });
+    };
+    const getProduct = () => {
+      api.get(`product`).then((result) => {
       // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-      //   const data1 = result.data.allData[0];
-      //   ownerInfo.value = data1.ownerInfo;
-      //   skills.value = ownerInfo.value.skills;
-      //   timeLine.value = data1.timeLine.sort(function (a, b) {
-      //     if (a.id < b.id) return 1;
-      //     if (a.id > b.id) return -1;
-      //   });
-      //   trbleSht.value = data1.troubleShooting.sort(function (a, b) {
-      //     if (a.id < b.id) return 1;
-      //     if (a.id > b.id) return -1;
-      //   });
-      //   productData.value = data1.product.sort(function (a, b) {
-      //     if (a.id < b.id) return 1;
-      //     if (a.id > b.id) return -1;
-      //   });
-      //   IssueCheck.value = productData.value[2].issueCheck.sort(function (a, b) {
-      //     if (a.id < b.id) return 1;
-      //     if (a.id > b.id) return -1;
-      //   });
-      //   console.log("allData", data1);
-      //   console.log("ownerInfo", ownerInfo.value);
-      //   console.log("timeLine", timeLine.value);
-      //   console.log("productData", productData.value);
-      // });
+        const data1 = result.data
+        productData.value = data1.sort(function (a, b) {
+          if (a.id < b.id) return 1;
+          if (a.id > b.id) return -1;
+        }).slice(0,6);
+        console.log('productData', productData.value);
+      });
     };
 
     return {
       openWindow,
       getData,
+      getProduct,
       ownerInfo,
       skills,
       timeLine,
       timeDesc,
-      trbleSht,
       productData,
       IssueCheck
     };
