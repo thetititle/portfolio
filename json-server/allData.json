@@ -135,7 +135,7 @@
       "product": [
         {
           "id": "0",
-          "type" : "personal",
+          "type": "personal",
           "title": "🔮Manyo Factory site",
           "skills": ["HTML", "JavaScript", "css"],
           "imgUrl": "http://thetititle.com/img/21_manyo.jpg",
@@ -146,7 +146,7 @@
         },
         {
           "id": "1",
-          "type" : "personal",
+          "type": "personal",
           "title": "🍩Knotted Mobile site",
           "skills": ["HTML", "jQuery", "css"],
           "imgUrl": "http://thetititle.com/img/21_knotted.jpg",
@@ -157,7 +157,7 @@
         },
         {
           "id": "2",
-          "type" : "personal",
+          "type": "personal",
           "title": "💚this page Quasar(VUE3)",
           "skills": ["Quasar", "JavaScript", "scss"],
           "imgUrl": "http://thetititle.com/img/23_design.jpg",
@@ -199,7 +199,7 @@
         },
         {
           "id": "3",
-          "type" : "personal",
+          "type": "personal",
           "title": "💙this page Next.js(REACT)",
           "skills": ["Next.js", "TypeScript", "css"],
           "imgUrl": "http://thetititle.com/img/24_design.jpg",
@@ -227,7 +227,7 @@
         },
         {
           "id": "4",
-          "type" : "personal",
+          "type": "personal",
           "title": "✨BiBiANG site",
           "skills": ["REACT", "JavaScript", "scss"],
           "imgUrl": "http://thetititle.com/img/bibiang.jpg",
@@ -267,6 +267,16 @@
           "id": "5",
           "complate": "FINISH",
           "desc": "PC화면 스크롤시 NAV Highlight 분기점 체크"
+        },
+        {
+          "id": "6",
+          "complate": "FINISH",
+          "desc": "product page nav routing issue check"
+        },
+        {
+          "id": "6",
+          "complate": "NOW",
+          "desc": "emitted event declared issue check"
         }
       ]
     }
@@ -274,7 +284,7 @@
   "product": [
     {
       "id": "0",
-      "type" : "personal",
+      "type": "personal",
       "title": "🔮Manyo Factory site",
       "skills": ["HTML", "JavaScript", "css"],
       "imgUrl": "http://thetititle.com/img/21_manyo.jpg",
@@ -285,7 +295,7 @@
     },
     {
       "id": "1",
-      "type" : "personal",
+      "type": "personal",
       "title": "🍩Knotted Mobile site",
       "skills": ["HTML", "jQuery", "css"],
       "imgUrl": "http://thetititle.com/img/21_knotted.jpg",
@@ -296,7 +306,7 @@
     },
     {
       "id": "2",
-      "type" : "personal",
+      "type": "personal",
       "title": "💚this page Quasar",
       "skills": ["Quasar", "JavaScript", "scss"],
       "imgUrl": "http://thetititle.com/img/23_design.jpg",
@@ -343,7 +353,7 @@
     },
     {
       "id": "3",
-      "type" : "personal",
+      "type": "personal",
       "title": "🎬Movie site",
       "skills": ["React", "JavaScript", "css"],
       "imgUrl": "http://thetititle.com/img/movie.jpg",
@@ -354,7 +364,7 @@
     },
     {
       "id": "4",
-      "type" : "personal",
+      "type": "personal",
       "title": "✨BiBiANG site",
       "skills": ["Next.js", "TypeScript", "scss"],
       "imgUrl": "http://thetititle.com/img/bibiang.jpg",

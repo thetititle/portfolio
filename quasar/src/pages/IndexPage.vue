@@ -300,7 +300,7 @@ export default defineComponent({
       api.get(`allData`).then((result) => {
         const data1 = result.data[0];
     // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-        // const data1 = result.data.allData[0];
+    //     const data1 = result.data.allData[0];
         ownerInfo.value = data1.ownerInfo;
         skills.value = ownerInfo.value.skills;
         timeLine.value = data1.timeLine.sort(function (a, b) {
@@ -318,8 +318,9 @@ export default defineComponent({
     };
     const getProduct = () => {
       api.get(`product`).then((result) => {
-      // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
         const data1 = result.data
+      // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
+      //   const data1 = result.data.product
         productData.value = data1.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;

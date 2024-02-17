@@ -1,11 +1,12 @@
 <template>
   <q-page class="index-page">
-    <PagesHeader :resWidth="resWidth"/>
+    <PagesHeader :resWidth="resWidth" @update:getProduct="getProduct"/>
     <main class="container">
       <div class="top_desc">
         <h1 class="title">Product</h1>
-        <p>참여한 프로젝트를 기록해요😎</p>
-        <p>왼쪽 최상단이 가장 최근 작업물이며, 역순으로 배열되었습니다.</p>
+        <p v-show="typeCheck === true" class="tc">공부하거나 스스로 좋아서 작업한 것들을 기록해요😎</p>
+        <p v-show="typeCheck === false" class="tc">참여한 프로젝트를 기록해요😎</p>
+        <p class="tc">왼쪽 최상단이 가장 최근 작업물이며, 역순으로 배열되었습니다.</p>
       </div>
       <article>
         <div class="productWrapper">
@@ -14,6 +15,7 @@
             v-for="(item, index) in productData"
             :key="index"
             @click="openWindow(item)"
+            data-aos="fade-up"
           >
             <li>
               <img :src="item.imgUrl" alt="포트폴리오" />
@@ -31,6 +33,7 @@
               <span>{{ item.desc }}</span>
             </li>
           </ul>
+          <p></p>
         </div>
       </article>
     </main>
@@ -38,7 +41,7 @@
 </template>
 
 <script>
-import { defineComponent, onBeforeMount, onMounted, ref } from "vue";
+import { defineComponent, onBeforeMount, ref } from "vue";
 import { api } from "boot/axios.js";
 import PagesHeader from "src/layouts/PagesHeader.vue";
 
@@ -50,7 +53,7 @@ export default defineComponent({
     },
   },
   components: {
-    PagesHeader,
+    PagesHeader
   },
 
   setup(props) {
@@ -58,18 +61,27 @@ export default defineComponent({
       getProduct();
     });
 
+    const typeCheck = ref(true);
     const productData = ref({});
-    const getProduct = () => {
+    const getProduct = (param) => {
+      console.log('param', param)
+      if(param === 'personal') {
+        typeCheck.value = true
+      }else if (param === 'company') {
+        typeCheck.value = false
+      }
       api.get(`product`).then((result) => {
-        // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-        const data1 = result.data;
-        productData.value = data1
-          .sort(function (a, b) {
-            if (a.id < b.id) return 1;
-            if (a.id > b.id) return -1;
-          })
-          .slice(0, 6);
-        console.log("productData", productData.value);
+        const data1 = result.data.sort(function (a, b) {
+      // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
+      //   const data1 = result.data.product.sort(function (a, b) {
+          if (a.id < b.id) return 1;
+          if (a.id > b.id) return -1;
+        });
+        if(typeCheck.value === true){
+          productData.value = data1.filter((item) => item.type === 'personal');
+        } else if (typeCheck.value == false) {
+          productData.value = data1.filter((item) => item.type === 'company');
+        }
       });
     };
 
@@ -97,11 +109,12 @@ export default defineComponent({
     return {
       getProduct,
       productData,
-      openWindow,
+      typeCheck,
+      openWindow
     };
   },
 });
 </script>
 <style lang="scss" scoped>
-@import url(../css/product.scss);
+  @import url(../css/product.scss);
 </style>

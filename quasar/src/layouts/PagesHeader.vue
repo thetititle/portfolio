@@ -10,8 +10,8 @@
           </router-link>
 
           <q-tabs v-model="tab">
-            <q-tab name="personal" label="personal"/>
-            <q-tab name="company" label="company"/>
+            <q-tab name="personal" label="personal" @click="changeTyle('personal')"/>
+            <q-tab name="company" label="company" @click="changeTyle('company')"/>
           </q-tabs>
         </div>
       </q-header>
@@ -24,8 +24,8 @@
           </router-link>
 
           <q-tabs v-model="tab">
-            <q-tab name="personal" label="personal" class="personal"/>
-            <q-tab name="company" label="company" class="company"/>
+            <q-tab name="personal" label="personal" @click="changeTyle('personal')"/>
+            <q-tab name="company" label="company" @click="changeTyle('company')"/>
           </q-tabs>
         </div>
       </div>
@@ -45,10 +45,10 @@
       <q-btn color="pink-13" icon="fa-solid fa-bars" round>
         <q-menu>
           <q-list style="min-width: 100px">
-            <q-item clickable v-close-popup label="personal">
+            <q-item clickable v-close-popup label="personal" @click="changeTyle('personal')">
               <q-item-section>personal</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup label="company">
+            <q-item clickable v-close-popup label="company" @click="changeTyle('company')">
               <q-item-section>company</q-item-section>
             </q-item>
             <q-separator />
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onBeforeMount } from "vue";
+import { defineComponent, ref, onBeforeMount, onMounted } from "vue";
 import { useRouter } from "vue-router";
 export default defineComponent({
   name: "PagesHeader",
@@ -112,9 +112,14 @@ export default defineComponent({
       }
     };
 
+    const changeTyle = (type) => {
+      emit('update:getProduct',type);
+    };
+
     return {
       checkScreen,
-      tab: ref("personal")
+      tab: ref("personal"),
+      changeTyle
     };
   },
 });
