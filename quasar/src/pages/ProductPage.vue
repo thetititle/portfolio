@@ -1,12 +1,18 @@
 <template>
   <q-page class="index-page">
-    <PagesHeader :resWidth="resWidth" @update:getProduct="getProduct"/>
+    <PagesHeader :resWidth="resWidth" @update:getProduct="getProduct" />
     <main class="container">
       <div class="top_desc">
         <h1 class="title">Product</h1>
-        <p v-show="typeCheck === true" class="tc">공부하거나 스스로 좋아서 작업한 것들을 기록해요😎</p>
-        <p v-show="typeCheck === false" class="tc">참여한 프로젝트를 기록해요😎</p>
-        <p class="tc">왼쪽 최상단이 가장 최근 작업물이며, 역순으로 배열되었습니다.</p>
+        <p v-show="typeCheck === true" class="tc">
+          공부하거나 스스로 좋아서 작업한 것들을 기록해요😎
+        </p>
+        <p v-show="typeCheck === false" class="tc">
+          참여한 프로젝트를 기록해요😎
+        </p>
+        <p class="tc">
+          왼쪽 최상단이 가장 최근 작업물이며, 역순으로 배열되었습니다.
+        </p>
       </div>
       <article>
         <div class="productWrapper">
@@ -53,7 +59,7 @@ export default defineComponent({
     },
   },
   components: {
-    PagesHeader
+    PagesHeader,
   },
 
   setup(props) {
@@ -64,23 +70,23 @@ export default defineComponent({
     const typeCheck = ref(true);
     const productData = ref({});
     const getProduct = (param) => {
-      console.log('param', param)
-      if(param === 'personal') {
-        typeCheck.value = true
-      }else if (param === 'company') {
-        typeCheck.value = false
+      console.log("param", param);
+      if (param === "personal") {
+        typeCheck.value = true;
+      } else if (param === "company") {
+        typeCheck.value = false;
       }
-      api.get(`product`).then((result) => {
-        const data1 = result.data.sort(function (a, b) {
-      // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-      //   const data1 = result.data.product.sort(function (a, b) {
+      // api.get(`product`).then((result) => {
+      //   const data1 = result.data.sort(function (a, b) {
+      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
+        const data1 = result.data.product.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
         });
-        if(typeCheck.value === true){
-          productData.value = data1.filter((item) => item.type === 'personal');
+        if (typeCheck.value === true) {
+          productData.value = data1.filter((item) => item.type === "personal");
         } else if (typeCheck.value == false) {
-          productData.value = data1.filter((item) => item.type === 'company');
+          productData.value = data1.filter((item) => item.type === "company");
         }
       });
     };
@@ -110,11 +116,11 @@ export default defineComponent({
       getProduct,
       productData,
       typeCheck,
-      openWindow
+      openWindow,
     };
   },
 });
 </script>
 <style lang="scss" scoped>
-  @import url(../css/product.scss);
+@import url(../css/product.scss);
 </style>

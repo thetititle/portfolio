@@ -6,23 +6,24 @@
 
 @import url(./common.scss);
 
-section{
+section {
   height: auto;
   display: flex;
   flex-direction: column;
   padding-top: 160px;
   padding-bottom: 160px;
-  &:first-child{
+  &:first-child {
     padding-top: 0;
   }
-  &:last-child{
+  &:last-child {
     padding-bottom: 0;
   }
-  &#hello{
+  &#hello {
     position: relative;
     height: 100vh;
-    &::before, &::after{
-      content: '';
+    &::before,
+    &::after {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -31,13 +32,17 @@ section{
       height: 100vh;
       width: 100%;
     }
-    &::before{
+    &::before {
       background: url(../assets/img/bg_snow.jpg) no-repeat center/cover;
     }
-    &::after{
-      background: linear-gradient(180deg, transparent 15%, rgba(252,252,245,1) 100%);
+    &::after {
+      background: linear-gradient(
+        180deg,
+        transparent 15%,
+        rgba(252, 252, 245, 1) 100%
+      );
     }
-    article{
+    article {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -54,56 +59,57 @@ section{
       flex-direction: column;
       align-items: center;
       gap: 30px;
-      h1{
+      h1 {
         opacity: 0.8;
       }
-      .desc{
+      .desc {
         word-break: keep-all;
-        @media all and (max-width: 500px){
+        @media all and (max-width: 500px) {
           width: 90%;
         }
       }
     }
   }
-  &#introduce{
-    > div{
+  &#introduce {
+    > div {
       display: flex;
       flex-direction: column;
       gap: 160px;
       justify-content: center;
       align-items: center;
-      @media (min-width: 501px) and (max-width: 768px){
+      @media (min-width: 501px) and (max-width: 768px) {
         width: 90%;
       }
-      .userInfoWrapper{
+      .userInfoWrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        @media all and (max-width: 500px){
+        @media all and (max-width: 500px) {
           flex-direction: column;
         }
-        .userInfoWrap{
+        .userInfoWrap {
           display: flex;
           flex-direction: column;
           flex: 1;
-          @media (max-width: 768px){
+          @media (max-width: 768px) {
             flex-direction: column;
           }
-          img{
+          img {
             width: 50%;
-            @media (min-width: 501px) and (max-width: 768px){
+            @media (min-width: 501px) and (max-width: 768px) {
               width: 80%;
             }
           }
-          .userInfo{
-            .nameBirth{
-              li{
-                &:nth-child(2){
-                  font-family: 'AppleSDGothicNeoH00','Gothic A1','Noto Sans KR', 'sans-serif';
+          .userInfo {
+            .nameBirth {
+              li {
+                &:nth-child(2) {
+                  font-family: "AppleSDGothicNeoH00", "Gothic A1",
+                    "Noto Sans KR", "sans-serif";
                   font-weight: 500;
                   font-size: 3rem;
-                  @media all and (max-width: 767px){
+                  @media all and (max-width: 767px) {
                     font-size: 2rem;
                   }
                 }
@@ -112,25 +118,25 @@ section{
           }
         }
       }
-      .articleWrap{
+      .articleWrap {
         display: flex;
         flex-direction: row;
         flex: 3;
-        @media all and (max-width: 1024px){
+        @media all and (max-width: 1024px) {
           flex-direction: column;
         }
-        .timeLineWrap{
+        .timeLineWrap {
           height: 30rem;
-          @media (min-width:768px) and (max-width: 1023px){
+          @media (min-width: 768px) and (max-width: 1023px) {
             height: 22rem;
           }
         }
-        .sillsWrap{
-          ul{
-            @media all and (max-width: 320px){
+        .sillsWrap {
+          ul {
+            @media all and (max-width: 320px) {
               width: calc(25% - 12%);
             }
-            @media (min-width: 321px) and (max-width: 500px){
+            @media (min-width: 321px) and (max-width: 500px) {
               width: calc(25% - 58px);
             }
           }
@@ -138,45 +144,42 @@ section{
       }
     }
   }
-  &#project{
-    .container{
+  &#project {
+    .container {
       display: flex;
       flex-direction: column;
       gap: 160px;
-      >article{
+      > article {
         display: flex;
         gap: 60px;
         flex-direction: row;
-        @media all and (max-width: 768px){
+        @media all and (max-width: 768px) {
           flex-direction: column;
           text-align: center;
         }
-        > div{
-          &:first-child{
-            @media all and (max-width: 768px){
+        > div {
+          &:first-child {
+            @media all and (max-width: 768px) {
               align-items: center;
               justify-content: center;
             }
           }
         }
-        .productWrapper{
+        .productWrapper {
           display: flex;
           gap: 20px;
           flex-wrap: wrap;
-          @media (min-width:501px) and (max-width: 768px){
+          @media (min-width: 501px) and (max-width: 768px) {
             // justify-content: flex-end;
             justify-content: flex-start;
           }
-          .productWrap{
+          .productWrap {
             cursor: pointer;
             width: 294px;
-            @media (min-width:501px) and (max-width: 768px){
+            @media (min-width: 501px) and (max-width: 768px) {
               width: calc(33% - 11px);
             }
-            @media (min-width:321px) and (max-width: 500px){
-              width: calc(50% - 10px);
-            }
-            @media all and (max-width: 320px){
+            @media all and (max-width: 500px) {
               width: 100%;
             }
           }
@@ -184,8 +187,8 @@ section{
       }
     }
   }
-  &#thisPage{
-    .pageWrapper{
+  &#thisPage {
+    .pageWrapper {
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -193,16 +196,16 @@ section{
         position: relative;
         margin-top: 100px;
       }
-      @media (min-width:501px) and (max-width: 768px) {
+      @media (min-width: 501px) and (max-width: 768px) {
         position: relative;
         justify-content: flex-end;
       }
-      .imgWrap{
+      .imgWrap {
         flex: 1;
         height: 840px;
         overflow: hidden;
         position: relative;
-        img{
+        img {
           border-radius: 5px;
           -webkit-border-radius: 5px;
           -moz-border-radius: 5px;
@@ -218,15 +221,15 @@ section{
           height: 150px;
           top: -100px;
         }
-        @media (min-width:501px) and (max-width: 768px) {
+        @media (min-width: 501px) and (max-width: 768px) {
           position: absolute;
           position: absolute;
           width: 50%;
           left: 0;
           z-index: -1;
           height: 500px;
-          &::before{
-            content: '';
+          &::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -234,11 +237,15 @@ section{
             bottom: 0;
             height: 100%;
             width: 100%;
-            background: linear-gradient(90deg, transparent 15%, rgba(252,252,245,1) 100%);
+            background: linear-gradient(
+              90deg,
+              transparent 15%,
+              rgba(252, 252, 245, 1) 100%
+            );
           }
         }
-        &::after{
-          content: '';
+        &::after {
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
@@ -246,33 +253,37 @@ section{
           bottom: 0;
           height: 100%;
           width: 100%;
-          background: linear-gradient(180deg, transparent 50%, rgba(252,252,245,1) 100%);
+          background: linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(252, 252, 245, 1) 100%
+          );
         }
       }
-      .descWrap{
+      .descWrap {
         flex: 1;
         display: flex;
         flex-direction: column;
-        @media (min-width:501px) and (max-width: 768px) {
+        @media (min-width: 501px) and (max-width: 768px) {
           flex: none;
         }
-        .list_desc{
+        .list_desc {
           @media all and (max-width: 500px) {
             flex-direction: column;
             gap: 0;
           }
         }
       }
-      .timeLineWrap{
+      .timeLineWrap {
         height: 15rem;
-        @media (min-width:768px) and (max-width: 1023px) {
+        @media (min-width: 768px) and (max-width: 1023px) {
           height: 6rem;
         }
-        .timeLine{
-          > li{
-            &:nth-child(1){
+        .timeLine {
+          > li {
+            &:nth-child(1) {
               width: 74px;
-              @media all and (max-width: 320px){
+              @media all and (max-width: 320px) {
                 width: 50px;
               }
             }

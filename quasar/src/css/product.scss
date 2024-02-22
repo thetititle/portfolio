@@ -3,32 +3,29 @@
  * Date       : 2024. 02. 16.
  * Author     : SUJI BAE (THETITITLE)
  */
- @import url(./common.scss);
-.top_desc{
+@import url(./common.scss);
+.top_desc {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 90px 0 30px 0;
 }
-.productWrapper{
+.productWrapper {
   display: flex;
   row-gap: 30px;
   column-gap: 20px;
   flex-wrap: wrap;
   padding-bottom: 200px;
-  @media (min-width:501px) and (max-width: 768px){
+  @media (min-width: 501px) and (max-width: 768px) {
     justify-content: flex-start;
   }
-  .productWrap{
+  .productWrap {
     cursor: pointer;
     width: 305px;
-    @media (min-width:501px) and (max-width: 768px){
+    @media (min-width: 501px) and (max-width: 768px) {
       width: calc(32% - 4px);
     }
-    @media (min-width:321px) and (max-width: 500px){
-      width: calc(50% - 10px);
-    }
-    @media all and (max-width: 320px){
+    @media all and (max-width: 500px) {
       width: 100%;
     }
   }

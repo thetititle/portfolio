@@ -1,6 +1,6 @@
 <template>
   <q-page class="index-page">
-    <MainHeader :resWidth="resWidth"/>
+    <MainHeader :resWidth="resWidth" />
     <main class="scrollMain">
       <section id="hello">
         <div class="container">
@@ -153,7 +153,7 @@
                     <li>{{ item }}</li>
                   </ul>
                 </li>
-                <li class="pl5 pr5">
+                <li class="pl5 pr5 tl">
                   <span>{{ item.desc }}</span>
                 </li>
               </ul>
@@ -260,7 +260,7 @@ export default defineComponent({
     },
   },
   components: {
-    MainHeader
+    MainHeader,
   },
 
   setup(props) {
@@ -297,35 +297,38 @@ export default defineComponent({
     const IssueCheck = ref([]);
     const productData = ref({});
     const getData = () => {
-      api.get(`allData`).then((result) => {
-        const data1 = result.data[0];
-    // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-    //     const data1 = result.data.allData[0];
+      // api.get(`allData`).then((result) => {
+      //   const data1 = result.data[0];
+      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
+        const data1 = result.data.allData[0];
         ownerInfo.value = data1.ownerInfo;
         skills.value = ownerInfo.value.skills;
         timeLine.value = data1.timeLine.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
         });
-        IssueCheck.value = data1.issueCheck.sort(function (a, b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
-        })
-          console.log("ownerInfo", ownerInfo.value);
-          console.log("timeLine", timeLine.value);
-          console.log("IssueCheck", IssueCheck.value);
+        console.log("ownerInfo", ownerInfo.value);
+        console.log("timeLine", timeLine.value);
       });
     };
     const getProduct = () => {
-      api.get(`product`).then((result) => {
-        const data1 = result.data
-      // api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-      //   const data1 = result.data.product
-        productData.value = data1.sort(function (a, b) {
+      // api.get(`product`).then((result) => {
+      //   const data1 = result.data;
+      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
+        const data1 = result.data.product;
+        productData.value = data1
+          .sort(function (a, b) {
+            if (a.id < b.id) return 1;
+            if (a.id > b.id) return -1;
+          })
+          .slice(0, 6);
+        const data2 = data1.filter((item) => item.id === "2")[0].issueCheck;
+        IssueCheck.value = data2.sort(function (a, b) {
           if (a.id < b.id) return 1;
           if (a.id > b.id) return -1;
-        }).slice(0,6);
-        console.log('productData', productData.value);
+        });
+        console.log("productData", productData.value);
+        console.log("IssueCheck", IssueCheck.value);
       });
     };
 
@@ -338,11 +341,11 @@ export default defineComponent({
       timeLine,
       timeDesc,
       productData,
-      IssueCheck
+      IssueCheck,
     };
   },
 });
 </script>
 <style lang="scss" scoped>
-  @import url(../css/index.scss);
+@import url(../css/index.scss);
 </style>
