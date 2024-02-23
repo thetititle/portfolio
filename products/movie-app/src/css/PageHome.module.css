@@ -1,0 +1,14 @@
+@import url('../styles.css');
+
+/* layout */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 30px;
+}

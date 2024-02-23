@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import PageHome from './routes/PageHome';
 import PageDetail from './routes/PageDetail';
+import './styles.css';
 
 function App() {
   return (

@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Style from '../css/Movie.module.css';
 
 function Movie({
   propCover_image,
@@ -8,19 +10,35 @@ function Movie({
   propGenres,
   propGId,
 }) {
+  const [isHover, setHover] = useState(false);
+  const handleMouseOver = () => {
+    setHover(true);
+  };
+  const handleMouseOut = () => {
+    setHover(false);
+  };
   return (
-    <div>
+    <div
+      className={Style.movie}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
       <img src={propCover_image} alt={propTitle} />
-      <h1>
-        {' '}
-        <Link to={`/movie/${propGId}`}>{propTitle}</Link>
-      </h1>
-      <p>{propSummary}</p>
-      <ul>
-        {propGenres.map((g) => (
-          <li key={g}>{g}</li>
-        ))}
-      </ul>
+      <div className={Style.movieInfo}>
+        <div>
+          <h1>
+            <Link to={`/movie/${propGId}`}>
+              {propTitle}
+            </Link>
+          </h1>
+          <ul>
+            {propGenres.map((g) => (
+              <li key={g}>{g}</li>
+            ))}
+          </ul>
+        </div>
+        <p>{propSummary}</p>
+      </div>
     </div>
   );
 }
