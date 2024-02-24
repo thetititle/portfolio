@@ -3,7 +3,7 @@
  * Date       : 2024. 02. 24
  * Author     : SUJI BAE (THETITITLE)
  */
-
+@import url('../reset.css');
 .loadingWrap {
   display: flex;
   flex-direction: column;

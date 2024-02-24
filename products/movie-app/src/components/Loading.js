@@ -1,5 +1,4 @@
 // import { useState } from 'react';
-import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Spinner } from 'react-bootstrap';
 import Style from '../css/Loading.module.css';

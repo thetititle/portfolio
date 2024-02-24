@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Header from '../components/Header';
 import Style from '../css/PageDetail.module.css';
 
 function PageDetail() {
@@ -18,9 +19,42 @@ function PageDetail() {
   }, [id]);
   console.log(movie);
   return (
-    <div className={Style.container}>
-      <img src={movie.background_image} alt={movie.title} />
-      <h1>{movie.title}</h1>
+    <div className="content">
+      <Header />
+      <section className={Style.section}>
+        <div className={Style.movieInfoWrap}>
+          <img
+            src={movie.large_cover_image}
+            alt={movie.title}
+            className={Style.thumbImg}
+          />
+          <div className={Style.movieInfo}>
+            <h1 className={Style.title}>
+              {movie.title_long}
+            </h1>
+            <div>
+              <ul className={Style.movieDesc}>
+                <li className={Style.subTt}>Genres</li>
+                <li>{movie.genres}</li>
+              </ul>
+              <ul className={Style.movieDesc}>
+                <li className={Style.subTt}>Rating</li>
+                <li>{movie.rating}</li>
+              </ul>
+              <ul className={Style.movieDesc}>
+                <li className={Style.subTt}>Runtime</li>
+                <li>{movie.runtime}</li>
+              </ul>
+            </div>
+            <p>{movie.description_full}</p>
+            <img
+              src={movie.background_image}
+              alt={movie.title}
+              className={Style.detailImg}
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

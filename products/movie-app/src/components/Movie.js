@@ -9,11 +9,14 @@ function Movie({
   propGenres,
   propGId,
 }) {
-  console.log('propGId', propGId);
   return (
     <Link to={`/movie/${propGId}`}>
       <div className={Style.movie}>
-        <img src={propCover_image} alt={propTitle} />
+        <img
+          src={propCover_image}
+          alt={propTitle}
+          className={Style.img}
+        />
         <div className={Style.movieInfoWrap}>
           <div className={Style.movieInfo}>
             <h1 className={Style.title}>{propTitle}</h1>
