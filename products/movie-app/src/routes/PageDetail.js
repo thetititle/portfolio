@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Style from '../css/PageDetail.module.css';
 
 function PageDetail() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ function PageDetail() {
   }, [id]);
   console.log(movie);
   return (
-    <div>
+    <div className={Style.container}>
       <img src={movie.background_image} alt={movie.title} />
       <h1>{movie.title}</h1>
     </div>

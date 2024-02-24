@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Header from '../components/Header';
 import Movie from '../components/Movie';
 import Loading from '../components/Loading';
 import Style from '../css/PageHome.module.css';
@@ -20,22 +21,29 @@ function PageHome() {
     getMovies();
   }, []);
   return (
-    <div className={Style.container}>
-      {/* <Loading propLoading={loading} /> */}
+    <div>
       {loading ? (
-        <Loading propLoading={loading} />
+        <div className={Style.loadingWrap}>
+          <Loading />
+        </div>
       ) : (
-        <div className={Style.movieList}>
-          {movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              propCover_image={movie.medium_cover_image}
-              propTitle={movie.title}
-              propSummary={movie.summary}
-              propGenres={movie.genres}
-              propGId={movie.id}
-            />
-          ))}
+        <div>
+          <Header />
+          <div className={Style.bannerWrap}></div>
+          <div className={Style.container}>
+            <div className={Style.movieList}>
+              {movies.map((movie) => (
+                <Movie
+                  key={movie.id}
+                  propCover_image={movie.medium_cover_image}
+                  propTitle={movie.title}
+                  propSummary={movie.summary}
+                  propGenres={movie.genres}
+                  propGId={movie.id}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </div>

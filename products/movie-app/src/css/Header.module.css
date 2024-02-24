@@ -1,0 +1,12 @@
+/*
+ * File       : Header.module.css
+ * Date       : 2024. 02. 24
+ * Author     : SUJI BAE (THETITITLE)
+ */
+@import url('../styles.css');
+/* layout */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

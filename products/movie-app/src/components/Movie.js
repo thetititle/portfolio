@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Style from '../css/Movie.module.css';
@@ -10,36 +9,29 @@ function Movie({
   propGenres,
   propGId,
 }) {
-  const [isHover, setHover] = useState(false);
-  const handleMouseOver = () => {
-    setHover(true);
-  };
-  const handleMouseOut = () => {
-    setHover(false);
-  };
+  console.log('propGId', propGId);
   return (
-    <div
-      className={Style.movie}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-    >
-      <img src={propCover_image} alt={propTitle} />
-      <div className={Style.movieInfo}>
-        <div>
-          <h1>
-            <Link to={`/movie/${propGId}`}>
-              {propTitle}
-            </Link>
-          </h1>
-          <ul>
-            {propGenres.map((g) => (
-              <li key={g}>{g}</li>
-            ))}
-          </ul>
+    <Link to={`/movie/${propGId}`}>
+      <div className={Style.movie}>
+        <img src={propCover_image} alt={propTitle} />
+        <div className={Style.movieInfoWrap}>
+          <div className={Style.movieInfo}>
+            <h1 className={Style.title}>{propTitle}</h1>
+            <ul className={Style.genres}>
+              {propGenres.map((g) => (
+                <li key={g}>{g}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={Style.summaryWrap}>
+            <p className={Style.summary}>{propSummary}</p>
+          </div>
+          <div className={Style.detailWrap}>
+            <span className={Style.detail}>go Detail</span>
+          </div>
         </div>
-        <p>{propSummary}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 Movie.propTypes = {

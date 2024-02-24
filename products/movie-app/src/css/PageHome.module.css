@@ -1,3 +1,8 @@
+/*
+ * File       : PageHome.module.css
+ * Date       : 2024. 02. 24
+ * Author     : SUJI BAE (THETITITLE)
+ */
 @import url('../styles.css');
 
 /* layout */
@@ -5,6 +10,15 @@
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.loadingWrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bannerWrap {
+  height: 600px;
 }
 .movieList {
   display: flex;

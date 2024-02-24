@@ -2,17 +2,17 @@
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Spinner } from 'react-bootstrap';
+import Style from '../css/Loading.module.css';
 
-function Loading({ propLoading }) {
+function Loading() {
   return (
-    <div>
-      <Spinner animation="grow" variant="warning" />
-      <Spinner animation="border" variant="light" />
-      <h1>Now Loading</h1>
+    <div className={Style.loadingWrap}>
+      <div className={Style.spinnerWrap}>
+        <Spinner animation="grow" variant="warning" />
+        <Spinner animation="border" variant="light" />
+      </div>
+      <h1 className={Style.title}>Now Loading</h1>
     </div>
   );
 }
-Loading.propTypes = {
-  propLoading: PropTypes.bool.isRequired,
-};
 export default Loading;
