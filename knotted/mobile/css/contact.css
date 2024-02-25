@@ -1,0 +1,78 @@
+@import url('common.css');
+header{
+    width: 100%; 
+}
+.header_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 100px;
+}
+.contact_bg{
+    background: url('../images/category_header2.png') no-repeat 0 0 / 97px 97px;
+    width: 97px; height: 97px;
+    text-indent: -9999em;
+    overflow: hidden;
+    margin: 0 auto;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 3.7vh;
+    margin-bottom: 10.6vh;
+}
+fieldset input{
+    background: transparent;
+    height: 36px;
+    width: 100%;
+    outline: none;
+    border-bottom: 1px solid var(--body-color);
+    transition: border-color 0.3s;
+    color: var(--body-sec-color);
+}
+fieldset input::placeholder{
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    color: #c4c4c4;
+    font-size: 14px;
+    line-height: 36px;
+    text-indent: 15px;
+}
+fieldset select{
+    margin-top: 15px;
+    width: 100%;
+    border: #fff;
+    border-color: 1px solid var(--primary-color);
+    color: var(--body-color);
+    font-size: 14px;
+    line-height: 36px;
+    height: 36px;
+}
+fieldset textarea{
+    width: 100%;
+    height: 15vh;
+    resize: none;
+    overflow-y: scroll;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--body-sec-color);
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--primary-color);
+
+}
+.field h3{
+    font-size: 14px;
+    line-height: 14px;
+}
+.bottom_menu{
+    background: var(--primary-color);
+    line-height: 81px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Fashion Fetish';
+    color: var(--body-sec-color);
+}
