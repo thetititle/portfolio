@@ -1,0 +1,517 @@
+/*
+ * File       : comoon.css
+ * Date       : 2023. 12. 03.
+ * Author     : SUJI BAE (THETITITLE)
+ */
+
+@import url(./reset.scss);
+@import url(./nomalize.scss);
+/* **************************************** *
+ * color
+ * **************************************** */
+:root {
+  --fontBasic: #242020;
+  --fontWhite: #fcfcf5;
+  --pointClolr1: #fb0069;
+  --bgColor: #fcfcf5;
+}
+
+/* **************************************** *
+ * font
+ * **************************************** */
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "against";
+  src: url("../assets/font/against-Regular.woff2") format("woff2"),
+    url("../assets/font/against-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AppleSDGothicNeoB00";
+  src: url("../assets/font/AppleSDGothicNeoB00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoB00.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AppleSDGothicNeoEB00";
+  src: url("../assets/font/AppleSDGothicNeoEB00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoEB00.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AppleSDGothicNeoH00";
+  src: url("../assets/font/AppleSDGothicNeoH00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoH00.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AppleSDGothicNeoR00";
+  src: url("../assets/font/AppleSDGothicNeoR00.woff2") format("woff2"),
+    url("../assets/font/AppleSDGothicNeoR00.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 {
+  font-family: "AppleSDGothicNeoH00", "Gothic A1", "Noto Sans KR", "sans-serif";
+  font-weight: 500;
+  font-size: 4rem; //64px
+  line-height: 5rem;
+  margin: 0;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  @media all and (max-width: 767px) {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+  }
+  &.title {
+    font-family: "against", "Gothic A1", "Noto Sans KR", "sans-serif";
+  }
+}
+.subTt {
+  font-family: "AppleSDGothicNeoEB00", "Gothic A1", "Noto Sans KR", "sans-serif";
+  font-weight: 500;
+  font-size: 2.75rem; //44px
+  line-height: 4rem;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 1.25;
+    line-height: 2.5rem;
+  }
+}
+.conTt {
+  font-family: "AppleSDGothicNeoEB00", "Gothic A1", "Noto Sans KR", "sans-serif";
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  @media all and (max-width: 500px) {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+.fontB {
+  font-family: "AppleSDGothicNeoB00", "Gothic A1", "Noto Sans KR", "sans-serif";
+  font-weight: 500;
+}
+.fontEB {
+  font-family: "AppleSDGothicNeoEB00", "Gothic A1", "Noto Sans KR", "sans-serif";
+  font-weight: 500;
+}
+
+body {
+  font-family: "AppleSDGothicNeoR00", "Gothic A1", "Noto Sans KR", "sans-serif";
+  font-weight: 300;
+  font-style: normal;
+  color: var(--fontBasic);
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--bgColor);
+  word-break: keep-all;
+  @media only screen and (max-width: 320px) {
+    font-size: 0.85rem;
+  }
+}
+
+/* **************************************** *
+ * common
+ * **************************************** */
+.hidden {
+  display: none !important;
+}
+.tr {
+  text-align: right;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+em {
+  color: var(--pointClolr1);
+}
+img {
+  width: 100%;
+}
+.btnWrap {
+  display: flex;
+  height: 42px;
+  gap: 5px;
+  .q-btn {
+    margin: 0;
+  }
+}
+.fHighlight {
+  color: var(--pointClolr1);
+}
+.fblur {
+  opacity: 0.5;
+}
+
+/* **************************************** *
+ * flex & padding & margin
+ * **************************************** */
+@for $i from 1 through 999 {
+  .mg#{$i} {
+    margin: 1px * $i;
+  }
+  .mt#{$i} {
+    margin-top: 1px * $i;
+  }
+  .mr#{$i} {
+    margin-right: 1px * $i;
+  }
+  .mb#{$i} {
+    margin-bottom: 1px * $i;
+  }
+  .ml#{$i} {
+    margin-left: 1px * $i;
+  }
+  .pd#{$i} {
+    padding: 1px * $i;
+  }
+  .pt#{$i} {
+    padding-top: 1px * $i;
+  }
+  .pr#{$i} {
+    padding-right: 1px * $i;
+  }
+  .pb#{$i} {
+    padding-bottom: 1px * $i;
+  }
+  .pl#{$i} {
+    padding-left: 1px * $i;
+  }
+  .g#{$i} {
+    gap: 1px * $i;
+  }
+  .rg#{$i} {
+    row-gap: 1px * $i;
+  }
+  .flex#{$i} {
+    flex: 1 * $i;
+  }
+}
+
+/* **************************************** *
+ * logo & icon
+ * **************************************** */
+.ico,
+.slides {
+  background-size: cover !important;
+  display: inline-block;
+  text-indent: -999999999999999em;
+}
+/* **************************************** *
+ * logo
+ * **************************************** */
+.ico.logoWhite {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/logo_origin_white.png);
+}
+.ico.logoDark {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/logo_origin_dark.png);
+}
+a.logoWrap {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  .q-avatar {
+    width: inherit;
+    height: 55px;
+  }
+}
+
+/* **************************************** *
+ * layout
+ * **************************************** */
+.container {
+  min-width: 320px;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  // overflow: hidden;
+  @media (min-width: 768px) and (max-width: 1179px) {
+    min-width: 768px;
+    max-width: 1179px;
+  }
+}
+header {
+  &.q-layout__section--marginal {
+    color: rgba(45, 45, 45, 0.8);
+    background-color: rgba(252, 252, 245, 0.25);
+    height: 60px;
+    opacity: 1;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    .q-tab--active {
+      .q-tab__label {
+        color: rgba(45, 45, 45, 0.9);
+        font-family: "AppleSDGothicNeoB00", "Noto Sans KR", sans-serif;
+      }
+      .q-tab__indicator {
+        background-color: rgba(251, 0, 105, 0.8);
+      }
+    }
+  }
+  .q-layout__shadow:after {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.025), 0 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  &.active {
+    opacity: 0;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+  }
+}
+div#navBar {
+  color: var(--fontWhite);
+  background-color: rgba(36, 32, 32, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: -100px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  z-index: 9999999;
+  &.active {
+    top: 0px;
+    opacity: 1;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+  .q-tab {
+    .q-tab__content {
+      .q-tab__label {
+        font-family: "AppleSDGothicNeoR00", "Noto Sans KR", sans-serif;
+        color: rgba(252, 252, 245, 0.9);
+        // color: var(--fontWhite);
+      }
+    }
+    &.q-tab--active {
+      .q-tab__content {
+        .q-tab__label {
+          font-family: "AppleSDGothicNeoB00", "Noto Sans KR", sans-serif;
+          color: var(--fontWhite);
+        }
+      }
+      .q-tab__indicator {
+        background-color: rgba(251, 0, 105, 0.8);
+      }
+    }
+  }
+}
+
+/* **************************************** *
+ * header & nav 공통
+ * **************************************** */
+.q-tabs {
+  .q-tab {
+    height: 60px;
+    .q-tab__content {
+      padding: 0;
+    }
+  }
+}
+// pages
+.q-page-container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  &.index-page {
+    .q-splitter {
+      .q-splitter__before,
+      .q-splitter__separator {
+        display: none !important;
+      }
+    }
+  }
+}
+/* **************************************** *
+ * q-page-sticky
+ * **************************************** */
+.q-page-sticky {
+  z-index: 999;
+}
+
+/* **************************************** *
+ * footer
+ * **************************************** */
+footer {
+  &.shadow-up-1 {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 rgba(0, 0, 0, 0.1),
+      0 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+  &.q-layout__section--marginal {
+    height: 90px;
+    border-top: 1px solid rgba(45, 45, 45, 0.1);
+    background-color: var(--bgColor);
+    color: var(--fontColor1);
+  }
+  .q-layout__shadow:after {
+    box-shadow: none;
+  }
+  @media all and (max-width: 767px) {
+    .logoWrap {
+      display: none;
+    }
+    .q-btn {
+      width: 100%;
+    }
+  }
+}
+
+/* **************************************** *
+ * timeline
+ * **************************************** */
+.timeLineWrapper {
+  .timeLineWrap {
+    padding: 5px 0;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      border-left: 1px dashed var(--fontBasic);
+      opacity: 0.7;
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      font-size: 0.875rem !important;
+      line-height: 1;
+    }
+    .timeLines {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      // height: 30rem;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      @media (min-width: 768px) and (max-width: 1023px) {
+        gap: 20px;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .timeLine {
+        margin-left: 10px;
+        display: flex;
+        gap: 15px;
+        &.yet {
+          opacity: 0.3;
+        }
+        > li {
+          &:nth-child(1) {
+            width: 80px;
+            @media only screen and (max-width: 320px) {
+              width: 50px;
+            }
+          }
+          &:nth-child(2) {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+          }
+        }
+        .fontB {
+          span {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 0.3rem;
+              height: 0.3rem;
+              background-color: var(--pointClolr1);
+              top: 50%;
+              left: -12px;
+              transform: translateY(-50%);
+              -webkit-transform: translateY(-50%);
+              -moz-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              -o-transform: translateY(-50%);
+              z-index: 1;
+              border-radius: 50%;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              -o-border-radius: 50%;
+            }
+          }
+        }
+        > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+      .skills {
+        @media (min-width: 768px) and (max-width: 1023px) {
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* **************************************** *
+ * LIST WITH DESC
+ * **************************************** */
+.list_desc {
+  display: flex;
+  gap: 15px;
+
+  > li {
+    &:first-child {
+      width: 80px;
+    }
+  }
+  @media all and (max-width: 767px) {
+    gap: 10px;
+    > li {
+      &:first-child {
+        width: 70px;
+      }
+      &:nth-child(2) {
+        word-break: break-all;
+      }
+    }
+  }
+}

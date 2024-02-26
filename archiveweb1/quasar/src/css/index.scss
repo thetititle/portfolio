@@ -1,0 +1,295 @@
+/*
+ * File       : index.css
+ * Date       : 2023. 12. 03.
+ * Author     : SUJI BAE (THETITITLE)
+ */
+
+@import url(./common.scss);
+
+section {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+  &#hello {
+    position: relative;
+    height: 100vh;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100%;
+    }
+    &::before {
+      background: url(../assets/img/bg_snow.jpg) no-repeat center/cover;
+    }
+    &::after {
+      background: linear-gradient(
+        180deg,
+        transparent 15%,
+        rgba(252, 252, 245, 1) 100%
+      );
+    }
+    article {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.8;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      z-index: 1;
+      width: 370px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      h1 {
+        opacity: 0.8;
+      }
+      .desc {
+        word-break: keep-all;
+        @media all and (max-width: 500px) {
+          width: 90%;
+        }
+      }
+    }
+  }
+  &#introduce {
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 160px;
+      justify-content: center;
+      align-items: center;
+      @media (min-width: 501px) and (max-width: 768px) {
+        width: 90%;
+      }
+      .userInfoWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        @media all and (max-width: 500px) {
+          flex-direction: column;
+        }
+        .userInfoWrap {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          @media (max-width: 768px) {
+            flex-direction: column;
+          }
+          img {
+            width: 50%;
+            @media (min-width: 501px) and (max-width: 768px) {
+              width: 80%;
+            }
+          }
+          .userInfo {
+            .nameBirth {
+              li {
+                &:nth-child(2) {
+                  font-family: "AppleSDGothicNeoH00", "Gothic A1",
+                    "Noto Sans KR", "sans-serif";
+                  font-weight: 500;
+                  font-size: 3rem;
+                  @media all and (max-width: 767px) {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .articleWrap {
+        display: flex;
+        flex-direction: row;
+        flex: 3;
+        @media all and (max-width: 1024px) {
+          flex-direction: column;
+        }
+        .timeLineWrap {
+          height: 30rem;
+          @media (min-width: 768px) and (max-width: 1023px) {
+            height: 22rem;
+          }
+        }
+        .sillsWrap {
+          ul {
+            @media all and (max-width: 320px) {
+              width: calc(25% - 12%);
+            }
+            @media (min-width: 321px) and (max-width: 500px) {
+              width: calc(25% - 58px);
+            }
+          }
+        }
+      }
+    }
+  }
+  &#project {
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 160px;
+      > article {
+        display: flex;
+        gap: 60px;
+        flex-direction: row;
+        @media all and (max-width: 768px) {
+          flex-direction: column;
+          text-align: center;
+        }
+        > div {
+          &:first-child {
+            @media all and (max-width: 768px) {
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+        .productWrapper {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          @media (min-width: 501px) and (max-width: 768px) {
+            // justify-content: flex-end;
+            justify-content: flex-start;
+          }
+          .productWrap {
+            cursor: pointer;
+            width: 294px;
+            @media (min-width: 501px) and (max-width: 768px) {
+              width: calc(33% - 11px);
+            }
+            @media all and (max-width: 500px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &#thisPage {
+    .pageWrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      @media all and (max-width: 500px) {
+        position: relative;
+        margin-top: 100px;
+      }
+      @media (min-width: 501px) and (max-width: 768px) {
+        position: relative;
+        justify-content: flex-end;
+      }
+      .imgWrap {
+        flex: 1;
+        height: 840px;
+        overflow: hidden;
+        position: relative;
+        img {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+        }
+        @media all and (max-width: 500px) {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          height: 150px;
+          top: -100px;
+        }
+        @media (min-width: 501px) and (max-width: 768px) {
+          position: absolute;
+          position: absolute;
+          width: 50%;
+          left: 0;
+          z-index: -1;
+          height: 500px;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(
+              90deg,
+              transparent 15%,
+              rgba(252, 252, 245, 1) 100%
+            );
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 100%;
+          width: 100%;
+          background: linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(252, 252, 245, 1) 100%
+          );
+        }
+      }
+      .descWrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 501px) and (max-width: 768px) {
+          flex: none;
+        }
+        .list_desc {
+          @media all and (max-width: 500px) {
+            flex-direction: column;
+            gap: 0;
+          }
+        }
+      }
+      .timeLineWrap {
+        height: 15rem;
+        @media (min-width: 768px) and (max-width: 1023px) {
+          height: 6rem;
+        }
+        .timeLine {
+          > li {
+            &:nth-child(1) {
+              width: 74px;
+              @media all and (max-width: 320px) {
+                width: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
