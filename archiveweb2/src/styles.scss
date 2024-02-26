@@ -1,0 +1,84 @@
+/*
+ * File       : styles.scss
+ * Date       : 2024. 02. 27
+ * Author     : SUJI BAE (THETITITLE)
+ */
+/* **************************************** *
+ * FONT
+ * **************************************** */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'against';
+  src: url('../public/font/against-Regular.woff2')
+      format('woff2'),
+    url('../public/font/against-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AppleSDGothicNeoB00';
+  src: url('../public/font/AppleSDGothicNeoB00.woff2')
+      format('woff2'),
+    url('../public/font/AppleSDGothicNeoB00.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AppleSDGothicNeoEB00';
+  src: url('../public/font/AppleSDGothicNeoEB00.woff2')
+      format('woff2'),
+    url('../public/font/AppleSDGothicNeoEB00.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AppleSDGothicNeoH00';
+  src: url('../public/font/AppleSDGothicNeoH00.woff2')
+      format('woff2'),
+    url('../public/font/AppleSDGothicNeoH00.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AppleSDGothicNeoR00';
+  src: url('../public/font/AppleSDGothicNeoR00.woff2')
+      format('woff2'),
+    url('../public/font/AppleSDGothicNeoR00.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: 'AppleSDGothicNeoR00', 'Gothic A1',
+    'Noto Sans KR', 'sans-serif';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 0.87rem;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+/* **************************************** *
+ * COLOR
+ * **************************************** */
+/* **************************************** *
+ * COMMON
+ * **************************************** */
+/* **************************************** *
+ * BUTTON
+ * **************************************** */
+/* **************************************** *
+ * HEADER
+ * **************************************** */
+/* **************************************** *
+ * FOOTER
+ * **************************************** */
