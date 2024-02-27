@@ -46,7 +46,7 @@
 }
 .hello .article .scrollDown {
   position: absolute;
-  top: 725px;
+  top: 800px;
   text-transform: uppercase;
   cursor: default;
 }
@@ -57,9 +57,68 @@
 }
 .introduce .userWrap .userInfo {
   flex: 1;
+  flex-direction: column;
+  display: flex;
+  gap: 30px;
 }
-.introduce .userWrap .timeLine {
+.introduce .userWrap .userInfo .imgWrap {
+  height: 50%;
+}
+.introduce .userWrap .userInfo .imgWrap img {
+  height: 100%;
+}
+.introduce .userWrap .userInfo .descWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.introduce .userWrap .timeLineWrap {
   flex: 1;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.introduce .userWrap .timeLineWrap::-webkit-scrollbar {
+  display: none;
+}
+.introduce .userWrap .timeLineWrap .timeLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  height: 100%;
+}
+.introduce .userWrap .timeLineWrap .timeLine .time {
+  display: flex;
+}
+.introduce .userWrap .timeLineWrap .timeLine .time .timeDate {
+  width: 80px;
+  margin-left: 15px;
+  position: relative;
+}
+.introduce .userWrap .timeLineWrap .timeLine .time .timeDate::after {
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: -15px;
+  width: 5px;
+  height: 5px;
+  background-color: var(--highLight);
+  border-radius: 50%;
+  z-index: 10;
+}
+.introduce .userWrap .timeLineWrap .timeLine .time .timeDesc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.introduce .userWrap .timeLineWrap .timeLine::after {
+  position: absolute;
+  content: "";
+  border-left: 1px dashed var(--bdColor);
+  top: 0;
+  bottom: 0;
+  left: 2px;
 }
 .introduce .userWrap .skillLinks {
   flex: 1;

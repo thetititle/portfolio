@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from '../component/Header';
+import Footer from '../component/Footer';
 import Style from '../scss/PageIndex.module.scss';
 import Mimoji from '../img/mino.png';
 import { motion } from 'framer-motion';
@@ -25,7 +26,7 @@ function PageIndex() {
     setSkills(skills);
     setTimeLine(timeLine);
     setProduct(product);
-    console.log(ownerInfo);
+    console.log(timeLine);
   }
   useEffect(() => {
     getData();
@@ -73,7 +74,11 @@ function PageIndex() {
                     <em>.</em>
                   </motion.h1>
                   <div>
-                    <p>프로덕트 아카이브 웹사이트입니다.</p>
+                    <p>
+                      프로덕트 아카이브 웹사이트입니다.
+                      <br />
+                      chrome에 최적화 되어있습니다.
+                    </p>
                     <em>
                       made with Rreact, JavaScript, SCSS
                       <br />
@@ -107,11 +112,13 @@ function PageIndex() {
                   className={`content ${Style.userWrap}`}
                 >
                   <div className={Style.userInfo}>
-                    <img
-                      src={Mimoji}
-                      alt="thtitle미모티콘"
-                    />
-                    <div>
+                    <div className={Style.imgWrap}>
+                      <img
+                        src={Mimoji}
+                        alt="thtitle미모티콘"
+                      />
+                    </div>
+                    <div className={Style.descWrap}>
                       <ul>
                         <li>{ownerInfo.enName}</li>
                         <li>{ownerInfo.koName}</li>
@@ -127,13 +134,28 @@ function PageIndex() {
                       </ul>
                     </div>
                   </div>
-                  <div className={Style.timeLine}>
-                    {timeLine.map((time) => (
-                      <ul key={time.id}>
-                        <li>{time.date}</li>
-                        <li>{time.desc}</li>
-                      </ul>
-                    ))}
+                  <div className={Style.timeLineWrap}>
+                    <div className={Style.timeLine}>
+                      {timeLine.map((time) => (
+                        <ul
+                          key={time.id}
+                          className={Style.time}
+                        >
+                          <li className={Style.timeDate}>
+                            {time.date}
+                          </li>
+                          <li className={Style.timeDesc}>
+                            {time.desc.map(
+                              (desc, index) => (
+                                <ul key={index}>
+                                  <li>{desc}</li>
+                                </ul>
+                              )
+                            )}
+                          </li>
+                        </ul>
+                      ))}
+                    </div>
                   </div>
                   <div className={Style.skillLinks}>
                     <div>
@@ -162,6 +184,7 @@ function PageIndex() {
               </div>
             </section>
           </div>
+          <Footer propFooter={ownerInfo} />
         </div>
       )}
     </main>

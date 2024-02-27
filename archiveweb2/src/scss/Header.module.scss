@@ -76,3 +76,10 @@
     }
   }
 }
+@supports (-webkit-backdrop-filter: none) or
+  (backdrop-filter: none) {
+  .scrollDown {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+}

@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap");
 :root {
   --bgColor: #121212;
+  --bdColor: #393939;
   --fontBasic: #cccccc;
   --fontTitle: #ffffff;
   --highLight: rgb(162, 231, 0);
@@ -129,6 +130,8 @@ em {
 * **************************************** */
 ul {
   margin: 0;
+  list-style: none;
+  padding: 0;
 }
 
 /* **************************************** *
@@ -138,9 +141,6 @@ img {
   vertical-align: middle;
 }
 
-/* **************************************** *
-* ICON
-* **************************************** */
 /* **************************************** *
 * HEADER
 * **************************************** */
@@ -162,4 +162,15 @@ header {
 * **************************************** */
 footer {
   height: 80px;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  display: flex;
+  align-items: center;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .footer {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
 }/*# sourceMappingURL=styles.css.map */

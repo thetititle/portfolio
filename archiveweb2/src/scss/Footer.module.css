@@ -1,0 +1,27 @@
+/*
+* File       : Footer.module.scss
+* Date       : 2024. 02. 28
+* Author     : SUJI BAE (THETITITLE)
+*/
+/* **************************************** *
+* LAYOUT
+* **************************************** */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 50px;
+}
+.footer .link img {
+  height: 50px;
+}
+.footer .link .mailTo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}/*# sourceMappingURL=footer.module.css.map */
