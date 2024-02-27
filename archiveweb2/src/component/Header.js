@@ -9,7 +9,6 @@ function Header({ propHeader }) {
   function handleSelect(e) {
     setTabs(e.target.textContent);
   }
-  console.log('propHeader', propHeader);
   return (
     <header className={propHeader ? Style.scrollDown : ''}>
       <div className="container">

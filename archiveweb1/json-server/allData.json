@@ -34,6 +34,10 @@
             "imgUrl": "http://thetititle.com/img/skills/javascript.png"
           },
           {
+            "name": "react",
+            "imgUrl": "http://thetititle.com/img/skills/react.png"
+          },
+          {
             "name": "vue3",
             "imgUrl": "http://thetititle.com/img/skills/vue.png"
           },
