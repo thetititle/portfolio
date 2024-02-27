@@ -1,0 +1,71 @@
+/*
+* File       : PageIndex.module.scss
+* Date       : 2024. 02. 27
+* Author     : SUJI BAE (THETITITLE)
+*/
+
+/* **************************************** *
+* LAYOUT
+* **************************************** */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+.hello {
+  height: 100vh;
+  background-image: url(../img/banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 5%,
+      var(--bgColor) 100%
+    );
+  }
+  .article {
+    height: 800px;
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .scrollDown {
+      position: absolute;
+      top: 725px;
+      text-transform: uppercase;
+      cursor: default;
+    }
+  }
+}
+.introduce {
+  .userWrap {
+    display: flex;
+    gap: 60px;
+    .userInfo {
+      flex: 1;
+    }
+    .timeLine {
+      flex: 1;
+    }
+    .skillLinks {
+      flex: 1;
+    }
+  }
+}

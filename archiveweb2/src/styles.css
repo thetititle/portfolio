@@ -1,12 +1,22 @@
 /*
- * File       : styles.scss
- * Date       : 2024. 02. 27
- * Author     : SUJI BAE (THETITITLE)
- */
+* File       : styles.scss
+* Date       : 2024. 02. 27
+* Author     : SUJI BAE (THETITITLE)
+*/
 /* **************************************** *
- * FONT
- * **************************************** */
+* COLOR
+* **************************************** */
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --bgColor: #121212;
+  --fontBasic: #cccccc;
+  --fontTitle: #ffffff;
+  --highLight: rgb(162, 231, 0);
+}
+
+/* **************************************** *
+* FONT
+* **************************************** */
 @font-face {
   font-family: "against";
   src: url("../public/font/against-Regular.woff2") format("woff2"), url("../public/font/against-Regular.woff") format("woff");
@@ -49,20 +59,100 @@ body {
   font-size: 0.87rem;
   line-height: 1.2;
   word-break: keep-all;
+  background-color: var(--bgColor);
+  color: var(--fontBasic);
+  overflow-y: scroll;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "against";
+  margin: 0;
+  color: var(--fontTitle);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* **************************************** *
- * COLOR
- * **************************************** */
+* COMMON
+* **************************************** */
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 0 20px;
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.mainTt {
+  font-size: 3.37rem;
+  cursor: default;
+}
+
+.subTt {
+  font-size: 1.7rem;
+  cursor: default;
+}
+
+.bold {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+em {
+  color: var(--highLight);
+}
+
 /* **************************************** *
- * COMMON
- * **************************************** */
+* BUTTON
+* **************************************** */
 /* **************************************** *
- * BUTTON
- * **************************************** */
+* IMG
+* **************************************** */
+img {
+  vertical-align: middle;
+}
+
 /* **************************************** *
- * HEADER
- * **************************************** */
+* ICON
+* **************************************** */
 /* **************************************** *
- * FOOTER
- * **************************************** *//*# sourceMappingURL=styles.css.map */
+* HEADER
+* **************************************** */
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* **************************************** *
+* FOOTER
+* **************************************** */
+footer {
+  height: 80px;
+}/*# sourceMappingURL=styles.css.map */
