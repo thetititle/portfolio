@@ -14,7 +14,7 @@ function PageIndex() {
   const [product, setProduct] = useState([]);
   async function getData() {
     const response = await fetch(
-      'https://raw.githubusercontent.com/thetititle/portfolio/main/archiveweb1/json-server/allData.json'
+      'https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json'
     );
     const jsonData = await response.json();
     const ownerInfo = jsonData.allData[0].ownerInfo;
