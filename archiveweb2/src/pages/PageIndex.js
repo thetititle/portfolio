@@ -5,6 +5,9 @@ import Style from '../scss/PageIndex.module.scss';
 import Mimoji from '../img/mino.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 function PageIndex() {
   const [isScroll, setScroll] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -12,6 +15,7 @@ function PageIndex() {
   const [skills, setSkills] = useState([]);
   const [timeLine, setTimeLine] = useState([]);
   const [product, setProduct] = useState([]);
+  const [url, setUrl] = useState('');
   async function getData() {
     const response = await fetch(
       'https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json'
@@ -20,14 +24,19 @@ function PageIndex() {
     const ownerInfo = jsonData.allData[0].ownerInfo;
     const skills = ownerInfo.skills;
     const timeLine = jsonData.allData[0].timeLine.reverse();
-    const product = jsonData.product.reverse();
+    const data2 = jsonData.product.slice(0, 5);
+    const product = data2.reverse();
     setLoading(false);
     setOwnerInfo(ownerInfo);
     setSkills(skills);
     setTimeLine(timeLine);
     setProduct(product);
-    console.log(timeLine);
+    console.log('ownerInfo', ownerInfo);
+    console.log('skills', skills);
+    console.log('timeLine', timeLine);
+    console.log('product', product);
   }
+
   useEffect(() => {
     getData();
   }, []);
@@ -40,7 +49,7 @@ function PageIndex() {
           setScroll(false);
         }
       }),
-    []
+    [isScroll]
   );
 
   return (
@@ -52,6 +61,7 @@ function PageIndex() {
           <Header propHeader={isScroll} />
           <div className={Style.content}>
             <section id="hello" className={Style.hello}>
+              <h1 className="hidden">hello</h1>
               <div className="container">
                 <article className={Style.article}>
                   <motion.h1
@@ -107,6 +117,7 @@ function PageIndex() {
               id="introduce"
               className={Style.introduce}
             >
+              <h1 className="hidden">introduce</h1>
               <div className="container">
                 <article
                   className={`content ${Style.userWrap}`}
@@ -120,65 +131,139 @@ function PageIndex() {
                     </div>
                     <div className={Style.descWrap}>
                       <ul>
-                        <li>{ownerInfo.enName}</li>
-                        <li>{ownerInfo.koName}</li>
+                        <li className="bold">
+                          {ownerInfo.enName}
+                        </li>
+                        <li className="subTt">
+                          {ownerInfo.koName}
+                        </li>
                         <li>{ownerInfo.birthDay}</li>
                       </ul>
                       <ul>
-                        <li>Phone.</li>
+                        <li className="bold">Phone.</li>
                         <li>{ownerInfo.phoneNum}</li>
-                        <li>Email.</li>
+                        <li className="bold">Email.</li>
                         <li>{ownerInfo.emailAdd}</li>
-                        <li>Based in.</li>
+                        <li className="bold">Based in.</li>
                         <li>{ownerInfo.baseAdd}</li>
                       </ul>
                     </div>
                   </div>
-                  <div className={Style.timeLineWrap}>
-                    <div className={Style.timeLine}>
-                      {timeLine.map((time) => (
-                        <ul
-                          key={time.id}
-                          className={Style.time}
-                        >
-                          <li className={Style.timeDate}>
-                            {time.date}
-                          </li>
-                          <li className={Style.timeDesc}>
-                            {time.desc.map(
-                              (desc, index) => (
-                                <ul key={index}>
-                                  <li>{desc}</li>
-                                </ul>
-                              )
-                            )}
-                          </li>
-                        </ul>
-                      ))}
+                  <div className="timeLineWrapper">
+                    <p className="subTt">⏰TIME LINE</p>
+                    <div className="timeLineWrap">
+                      <div className="timeLine">
+                        {timeLine.map((time) => (
+                          <ul
+                            key={time.id}
+                            className="time"
+                          >
+                            <li
+                              className={
+                                time.date === 'NOW'
+                                  ? 'timeDate now'
+                                  : 'timeDate'
+                              }
+                            >
+                              {time.date}
+                            </li>
+                            <li className="timeDesc">
+                              {time.desc.map(
+                                (desc, index) => (
+                                  <ul key={index}>
+                                    <li>{desc}</li>
+                                  </ul>
+                                )
+                              )}
+                            </li>
+                          </ul>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   <div className={Style.skillLinks}>
-                    <div>
-                      {skills.map((skill) => (
+                    <div className={Style.skills}>
+                      <p className="subTt">🎮SKILLS</p>
+                      <div>
+                        {skills.map((skill) => (
+                          <img
+                            key={skill.name}
+                            src={skill.imgUrl}
+                            alt={skill.name}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <div className={Style.linksWrap}>
+                      <p className="subTt">🔗LINKS</p>
+                      <div className={Style.links}>
+                        <span>
+                          아래 링크를 통해 깃헙과 벨로그를
+                          보실 수 있어요!{' '}
+                        </span>
+                        <div className="btnWrap">
+                          <button>
+                            <Link to={ownerInfo.gitHub}>
+                              <FontAwesomeIcon
+                                icon={faGithub}
+                              />
+                              GITHUB
+                            </Link>
+                          </button>
+                          <button>
+                            <Link to={ownerInfo.veLog}>
+                              <FontAwesomeIcon
+                                icon={faCode}
+                              />
+                              VELOG
+                            </Link>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+            <section
+              id="products"
+              className={Style.productsWrapper}
+            >
+              <div className="container">
+                <article
+                  className={`content ${Style.productsWrap}`}
+                >
+                  <Link to="/" className={Style.titleWrap}>
+                    <h1 className="mainTt">products</h1>
+                    <p>
+                      💡더 많은 product를 보고싶다면
+                      Click!✨
+                    </p>
+                  </Link>
+                  <div className={Style.products}>
+                    {product.map((item) => (
+                      <div
+                        key={item.id}
+                        className={Style.product}
+                      >
                         <img
-                          key={skill.name}
-                          src={skill.imgUrl}
-                          alt={skill.name}
+                          src={item.imgUrl}
+                          alt={item.title}
                         />
-                      ))}
-                    </div>
-                    <div>
-                      <button>
-                        <Link to={ownerInfo.gitHub}>
-                          github
-                        </Link>
-                      </button>
-                      <button>
-                        <Link to={ownerInfo.veLog}>
-                          velog
-                        </Link>
-                      </button>
-                    </div>
+                        <ul className={Style.name}>
+                          <li>{item.title}</li>
+                          <li>{item.year}</li>
+                        </ul>
+                        <div className={Style.skills}>
+                          {item.skills.map((i, index) => (
+                            <ul key={index}>
+                              <li>{i}</li>
+                            </ul>
+                          ))}
+                        </div>
+                        <span>{item.desc}</span>
+                      </div>
+                    ))}
                   </div>
                 </article>
               </div>

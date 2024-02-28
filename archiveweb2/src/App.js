@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+
 import PageIndex from './pages/PageIndex';
 import './styles.scss';
 function App() {

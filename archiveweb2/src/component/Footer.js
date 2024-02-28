@@ -11,19 +11,21 @@ function Footer({ propFooter }) {
           <Link to={`/`} className={Styles.link}>
             <img src={Logo} alt="logo" />
           </Link>
-          <Link
-            to={`#`}
-            onClick={() =>
-              (window.location =
-                'mailto:business.thetititle@gmail.com')
-            }
-            className={Styles.link}
-          >
-            <div className={Styles.mailTo}>
-              <FontAwesomeIcon icon={faAt} />
-              <p>CONTACT ME</p>
-            </div>
-          </Link>
+          <button className="noBorder">
+            <Link
+              to={`#`}
+              onClick={() =>
+                (window.location =
+                  'mailto:business.thetititle@gmail.com')
+              }
+              className={Styles.link}
+            >
+              <div className={Styles.mailTo}>
+                <FontAwesomeIcon icon={faAt} />
+                <p>CONTACT ME</p>
+              </div>
+            </Link>
+          </button>
         </div>
       </div>
     </footer>
