@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Header from '../component/Header';
+import IndexHeader from '../component/IndexHeader';
 import Footer from '../component/Footer';
 import Style from '../scss/PageIndex.module.scss';
 import Mimoji from '../img/mino.png';
@@ -16,6 +16,7 @@ function PageIndex() {
   const [skills, setSkills] = useState([]);
   const [timeLine, setTimeLine] = useState([]);
   const [product, setProduct] = useState([]);
+  const [issueCheck, setIssueCheck] = useState([]);
 
   async function getData() {
     const response = await fetch(
@@ -25,17 +26,21 @@ function PageIndex() {
     const ownerInfo = jsonData.allData[0].ownerInfo;
     const skills = ownerInfo.skills;
     const timeLine = jsonData.allData[0].timeLine.reverse();
-    const data2 = jsonData.product.slice(0, 5);
+    const data2 = jsonData.product.slice(0, 8);
     const product = data2.reverse();
+    const issueCheck = product.filter(
+      (item) => item.id === '4'
+    )[0].issueCheck;
     setLoading(false);
     setOwnerInfo(ownerInfo);
     setSkills(skills);
     setTimeLine(timeLine);
     setProduct(product);
-    // console.log('ownerInfo', ownerInfo);
-    // console.log('skills', skills);
-    // console.log('timeLine', timeLine);
-    // console.log('product', product);
+    setIssueCheck(issueCheck);
+    console.log('ownerInfo', ownerInfo);
+    console.log('skills', skills);
+    console.log('timeLine', timeLine);
+    console.log('issueCheck', issueCheck);
   }
 
   useEffect(() => {
@@ -60,7 +65,7 @@ function PageIndex() {
         ''
       ) : (
         <div>
-          <Header propHeader={isScroll} />
+          <IndexHeader propHeader={isScroll} />
           <div className={Style.content}>
             <section id="hello" className={Style.hello}>
               <h1 className="hidden">hello</h1>
@@ -121,8 +126,14 @@ function PageIndex() {
             >
               <h1 className="hidden">introduce</h1>
               <div className="container">
-                <article
+                <motion.article
                   className={`content ${Style.userWrap}`}
+                  initial={{ opacity: 0.2, y: 100 }}
+                  whileInView={{
+                    opacity: 1,
+                    transition: { delay: 0.1 },
+                    y: 0,
+                  }}
                 >
                   <div className={Style.userInfo}>
                     <div className={Style.imgWrap}>
@@ -224,7 +235,7 @@ function PageIndex() {
                       </div>
                     </div>
                   </div>
-                </article>
+                </motion.article>
               </div>
             </section>
             <section
@@ -232,10 +243,19 @@ function PageIndex() {
               className={Style.productsWrapper}
             >
               <div className="container">
-                <article
+                <motion.article
                   className={`content ${Style.productsWrap}`}
+                  initial={{ opacity: 0.2, y: 100 }}
+                  whileInView={{
+                    opacity: 1,
+                    transition: { delay: 0.1 },
+                    y: 0,
+                  }}
                 >
-                  <Link to="/" className={Style.titleWrap}>
+                  <Link
+                    to="/products"
+                    className={Style.titleWrap}
+                  >
                     <h1 className="mainTt">
                       products<em>.</em>
                     </h1>
@@ -246,32 +266,41 @@ function PageIndex() {
                   </Link>
                   <div className={Style.products}>
                     {product.map((item) => (
-                      <Link
-                        to={item.href}
-                        target="_blank"
+                      <motion.div
                         key={item.id}
-                        className={Style.product}
+                        initial={{ y: 0 }}
+                        whileHover={{
+                          scale: 1.1,
+                          transition: { delay: 0.1 },
+                          y: -50,
+                        }}
                       >
-                        <img
-                          src={item.imgUrl}
-                          alt={item.title}
-                        />
-                        <ul className={Style.name}>
-                          <li>{item.title}</li>
-                          <li>{item.year}</li>
-                        </ul>
-                        <div className={Style.skills}>
-                          {item.skills.map((i, index) => (
-                            <ul key={index}>
-                              <li>{i}</li>
-                            </ul>
-                          ))}
-                        </div>
-                        <span>{item.desc}</span>
-                      </Link>
+                        <Link
+                          to={item.href}
+                          target="_blank"
+                          className={Style.product}
+                        >
+                          <img
+                            src={item.imgUrl}
+                            alt={item.title}
+                          />
+                          <ul className={Style.name}>
+                            <li>{item.title}</li>
+                            <li>{item.year}</li>
+                          </ul>
+                          <div className={Style.skills}>
+                            {item.skills.map((i, index) => (
+                              <ul key={index}>
+                                <li>{i}</li>
+                              </ul>
+                            ))}
+                          </div>
+                          <span>{item.desc}</span>
+                        </Link>
+                      </motion.div>
                     ))}
                   </div>
-                </article>
+                </motion.article>
               </div>
             </section>
             <section
@@ -279,8 +308,14 @@ function PageIndex() {
               className={Style.thispage}
             >
               <div className="container">
-                <article
+                <motion.article
                   className={`content ${Style.thisPwarp}`}
+                  initial={{ opacity: 0.2, y: 100 }}
+                  whileInView={{
+                    opacity: 1,
+                    transition: { delay: 0.1 },
+                    y: 0,
+                  }}
                 >
                   <div className={Style.poster}>poster</div>
                   <div className={Style.thisDesc}>
@@ -298,35 +333,52 @@ function PageIndex() {
                           HTML5, SCSS, REACT, JavaScript
                         </li>
                       </ul>
+                      <ul>
+                        <li className="bold">Data</li>
+                        <li>Json (console 확인가능)</li>
+                      </ul>
+                      <ul>
+                        <li className="bold">
+                          RESPONSIVE (예정)
+                        </li>
+                        <li>@media</li>
+                        <li>(max-width: 320px)</li>
+                        <li>
+                          (min-width: 321px) and (max-width:
+                          500px)
+                        </li>
+                        <li>
+                          (min-width: 501px) and (max-width:
+                          768px)
+                        </li>
+                        <li>
+                          (min-width: 769px) and (max-width:
+                          1024px)
+                        </li>
+                      </ul>
                     </div>
                     <div className="timeLineWrapper">
                       <p className="subTt">📌ISSUE CHECK</p>
                       <div
-                        className={`timeLineWrap ${Style.height400}`}
+                        className={`timeLineWrap ${Style.height}`}
                       >
                         <div className="timeLine">
-                          {timeLine.map((time) => (
+                          {issueCheck.map((item) => (
                             <ul
-                              key={time.id}
+                              key={item.id}
                               className="time"
                             >
                               <li
                                 className={
-                                  time.date === 'NOW'
+                                  item.complate === 'NOW'
                                     ? 'timeDate now'
                                     : 'timeDate'
                                 }
                               >
-                                {time.date}
+                                {item.complate}
                               </li>
                               <li className="timeDesc">
-                                {time.desc.map(
-                                  (desc, index) => (
-                                    <ul key={index}>
-                                      <li>{desc}</li>
-                                    </ul>
-                                  )
-                                )}
+                                {item.desc}
                               </li>
                             </ul>
                           ))}
@@ -334,7 +386,7 @@ function PageIndex() {
                       </div>
                     </div>
                   </div>
-                </article>
+                </motion.article>
               </div>
             </section>
           </div>

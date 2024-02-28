@@ -9,7 +9,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 300px;
 }
 
 .hello {
@@ -54,15 +54,16 @@
 .introduce .userWrap {
   display: flex;
   gap: 60px;
+  height: 520px;
 }
 .introduce .userWrap .userInfo {
   flex: 1;
   flex-direction: column;
   display: flex;
-  gap: 30px;
+  justify-content: space-between;
 }
 .introduce .userWrap .userInfo .imgWrap {
-  height: 50%;
+  height: 35%;
 }
 .introduce .userWrap .userInfo .imgWrap img {
   height: 100%;
@@ -71,55 +72,128 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  text-transform: uppercase;
 }
-.introduce .userWrap .timeLineWrap {
-  flex: 1;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-}
-.introduce .userWrap .timeLineWrap::-webkit-scrollbar {
-  display: none;
-}
-.introduce .userWrap .timeLineWrap .timeLine {
+.introduce .userWrap .userInfo .descWrap ul {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  position: relative;
-  height: 100%;
+  gap: 5px;
 }
-.introduce .userWrap .timeLineWrap .timeLine .time {
-  display: flex;
+.introduce .userWrap .userInfo .descWrap ul:nth-of-type(1) {
+  color: var(--fontTitle);
 }
-.introduce .userWrap .timeLineWrap .timeLine .time .timeDate {
-  width: 80px;
-  margin-left: 15px;
-  position: relative;
+.introduce .userWrap .userInfo .descWrap ul:nth-of-type(2) li:nth-child(odd) {
+  color: var(--fontTitle);
 }
-.introduce .userWrap .timeLineWrap .timeLine .time .timeDate::after {
-  position: absolute;
-  content: "";
-  top: 3px;
-  left: -15px;
-  width: 5px;
-  height: 5px;
-  background-color: var(--highLight);
-  border-radius: 50%;
-  z-index: 10;
+.introduce .userWrap .userInfo .descWrap ul:nth-of-type(2) li:nth-child(even) {
+  margin-bottom: 5px;
 }
-.introduce .userWrap .timeLineWrap .timeLine .time .timeDesc {
+.introduce .userWrap .skillLinks {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.introduce .userWrap .skillLinks .skills {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.introduce .userWrap .skillLinks .skills > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 5px;
+}
+.introduce .userWrap .skillLinks .linksWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.introduce .userWrap .skillLinks .linksWrap .links {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.introduce .userWrap .timeLineWrap .timeLine::after {
+
+.productsWrapper .productsWrap {
+  display: flex;
+  gap: 60px;
+}
+.productsWrapper .productsWrap .titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.productsWrapper .productsWrap .products {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.productsWrapper .productsWrap .products .product {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 214px;
+  cursor: pointer;
+}
+.productsWrapper .productsWrap .products .product .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productsWrapper .productsWrap .products .product .skills {
+  display: flex;
+  gap: 5px;
+}
+
+.thispage {
+  margin-bottom: 160px;
+}
+.thispage .thisPwarp {
+  display: flex;
+  gap: 60px;
+  height: 700px;
+}
+.thispage .thisPwarp .poster {
+  text-indent: -999999999999em;
+  width: 50%;
+  height: 700px;
+  background-image: url(../img/poster.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.thispage .thisPwarp .poster::after {
   position: absolute;
   content: "";
-  border-left: 1px dashed var(--bdColor);
   top: 0;
+  right: 0;
+  left: 0;
   bottom: 0;
-  left: 2px;
+  background: linear-gradient(180deg, transparent 50%, var(--bgColor) 100%);
 }
-.introduce .userWrap .skillLinks {
+.thispage .thisPwarp .thisDesc {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.thispage .thisPwarp .thisDesc .desc {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.thispage .thisPwarp .thisDesc .desc ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.thispage .thisPwarp .thisDesc .desc ul li:nth-of-type(odd) {
+  color: var(--fontTitle);
+}
+.thispage .thisPwarp .height {
+  height: 180px;
 }/*# sourceMappingURL=PageIndex.module.css.map */

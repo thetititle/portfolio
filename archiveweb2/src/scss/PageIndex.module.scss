@@ -10,7 +10,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 300px;
 }
 .hello {
   height: 100vh;
@@ -210,8 +210,8 @@
         }
       }
     }
-    .height400 {
-      height: 400px;
+    .height {
+      height: 180px;
     }
   }
 }

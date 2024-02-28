@@ -1,0 +1,56 @@
+/*
+* File       : PageIndex.module.scss
+* Date       : 2024. 02. 27
+* Author     : SUJI BAE (THETITITLE)
+*/
+
+/* **************************************** *
+* LAYOUT
+* **************************************** */
+.content {
+  margin: 120px 0 160px;
+}
+/* **************************************** *
+* TITLE WARP
+* **************************************** */
+.titleWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  span {
+    line-height: 1.4;
+  }
+}
+/* **************************************** *
+* PRODUCT WARP
+* **************************************** */
+.productswrap {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  .products {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    .product {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 240px;
+      cursor: pointer;
+      .name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .skills {
+        display: flex;
+        gap: 5px;
+      }
+    }
+  }
+}

@@ -274,10 +274,14 @@ header {
 * FOOTER
 * **************************************** */
 footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
   height: 80px;
   backdrop-filter: blur(50px);
   display: flex;
   align-items: center;
+  border-top: 1px solid var(--fontTitle);
 }
 @supports (-webkit-backdrop-filter: none) or
   (backdrop-filter: none) {

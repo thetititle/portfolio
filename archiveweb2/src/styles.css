@@ -80,6 +80,11 @@ h6 {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
 }
 
 /* **************************************** *
@@ -105,17 +110,22 @@ a {
 
 .mainTt {
   font-size: 3.37rem;
-  cursor: default;
+  color: var(--fontTitle);
 }
 
 .subTt {
   font-size: 1.7rem;
-  cursor: default;
+  font-weight: 700;
+  color: var(--fontTitle);
 }
 
 .bold {
   font-size: 1rem;
   font-weight: 700;
+}
+
+.noBorder {
+  border: none;
 }
 
 em {
@@ -125,6 +135,49 @@ em {
 /* **************************************** *
 * BUTTON
 * **************************************** */
+.btnWrap {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  height: 34px;
+  border: 1px solid rgba(204, 204, 204, 0.18);
+  color: var(--fontBasic);
+  border-radius: 3px;
+  background-color: transparent;
+  padding: 3px 10px;
+  transition: 0.3s;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button a {
+  height: 34px;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+button .svg-inline--fa {
+  height: 1.2rem;
+}
+button:hover {
+  transition: 0.3s;
+  border-color: transparent;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  color: var(--highLight);
+  background-color: rgba(37, 37, 37, 0.8);
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  button:hover {
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+}
 /* **************************************** *
 * LIST
 * **************************************** */
@@ -132,6 +185,65 @@ ul {
   margin: 0;
   list-style: none;
   padding: 0;
+}
+
+/* **************************************** *
+* TIMELINE
+* **************************************** */
+.timeLineWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.timeLineWrapper .timeLineWrap {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.timeLineWrapper .timeLineWrap::-webkit-scrollbar {
+  display: none;
+}
+.timeLineWrapper .timeLineWrap .timeLine {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  height: 100%;
+}
+.timeLineWrapper .timeLineWrap .timeLine .time {
+  display: flex;
+}
+.timeLineWrapper .timeLineWrap .timeLine .time .timeDate {
+  width: 80px;
+  margin-left: 15px;
+  position: relative;
+}
+.timeLineWrapper .timeLineWrap .timeLine .time .timeDate.now {
+  color: var(--highLight);
+}
+.timeLineWrapper .timeLineWrap .timeLine .time .timeDate::after {
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: -15px;
+  width: 5px;
+  height: 5px;
+  background-color: var(--highLight);
+  border-radius: 50%;
+  z-index: 10;
+}
+.timeLineWrapper .timeLineWrap .timeLine .time .timeDesc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.timeLineWrapper .timeLineWrap .timeLine::after {
+  position: absolute;
+  content: "";
+  border-left: 1px dashed var(--bdColor);
+  top: 0;
+  bottom: 0;
+  left: 2px;
 }
 
 /* **************************************** *
@@ -161,11 +273,15 @@ header {
 * FOOTER
 * **************************************** */
 footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
   height: 80px;
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
   display: flex;
   align-items: center;
+  border-top: 1px solid var(--fontTitle);
 }
 
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

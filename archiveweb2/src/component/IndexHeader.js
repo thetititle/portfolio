@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../img/Logo_lg_l.png';
 import Tab from 'react-bootstrap/Tab';
 import Style from '../scss/Header.module.scss';
-function Header({ propHeader }) {
+function IndexHeader({ propHeader }) {
   const [tabs, setTabs] = useState('hello');
   function handleSelect(e) {
     setTabs(e.target.textContent);
@@ -72,7 +72,7 @@ function Header({ propHeader }) {
     </header>
   );
 }
-Header.propTypes = {
+IndexHeader.propTypes = {
   propHeader: PropTypes.bool.isRequired,
 };
-export default Header;
+export default IndexHeader;
