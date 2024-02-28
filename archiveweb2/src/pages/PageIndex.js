@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+
 function PageIndex() {
   const [isScroll, setScroll] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ function PageIndex() {
   const [skills, setSkills] = useState([]);
   const [timeLine, setTimeLine] = useState([]);
   const [product, setProduct] = useState([]);
-  const [url, setUrl] = useState('');
+
   async function getData() {
     const response = await fetch(
       'https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json'
@@ -31,15 +32,16 @@ function PageIndex() {
     setSkills(skills);
     setTimeLine(timeLine);
     setProduct(product);
-    console.log('ownerInfo', ownerInfo);
-    console.log('skills', skills);
-    console.log('timeLine', timeLine);
-    console.log('product', product);
+    // console.log('ownerInfo', ownerInfo);
+    // console.log('skills', skills);
+    // console.log('timeLine', timeLine);
+    // console.log('product', product);
   }
 
   useEffect(() => {
     getData();
   }, []);
+
   useEffect(
     () =>
       window.addEventListener('scroll', () => {
@@ -234,7 +236,9 @@ function PageIndex() {
                   className={`content ${Style.productsWrap}`}
                 >
                   <Link to="/" className={Style.titleWrap}>
-                    <h1 className="mainTt">products</h1>
+                    <h1 className="mainTt">
+                      products<em>.</em>
+                    </h1>
                     <p>
                       💡더 많은 product를 보고싶다면
                       Click!✨
@@ -242,7 +246,9 @@ function PageIndex() {
                   </Link>
                   <div className={Style.products}>
                     {product.map((item) => (
-                      <div
+                      <Link
+                        to={item.href}
+                        target="_blank"
                         key={item.id}
                         className={Style.product}
                       >
@@ -262,8 +268,71 @@ function PageIndex() {
                           ))}
                         </div>
                         <span>{item.desc}</span>
-                      </div>
+                      </Link>
                     ))}
+                  </div>
+                </article>
+              </div>
+            </section>
+            <section
+              id="thispage"
+              className={Style.thispage}
+            >
+              <div className="container">
+                <article
+                  className={`content ${Style.thisPwarp}`}
+                >
+                  <div className={Style.poster}>poster</div>
+                  <div className={Style.thisDesc}>
+                    <h1 className="mainTt">
+                      This Page<em>.</em>
+                    </h1>
+                    <div className={Style.desc}>
+                      <ul>
+                        <li className="bold">제작기간</li>
+                        <li>2024.02.27~진행중</li>
+                      </ul>
+                      <ul>
+                        <li className="bold">사용스킬</li>
+                        <li>
+                          HTML5, SCSS, REACT, JavaScript
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="timeLineWrapper">
+                      <p className="subTt">📌ISSUE CHECK</p>
+                      <div
+                        className={`timeLineWrap ${Style.height400}`}
+                      >
+                        <div className="timeLine">
+                          {timeLine.map((time) => (
+                            <ul
+                              key={time.id}
+                              className="time"
+                            >
+                              <li
+                                className={
+                                  time.date === 'NOW'
+                                    ? 'timeDate now'
+                                    : 'timeDate'
+                                }
+                              >
+                                {time.date}
+                              </li>
+                              <li className="timeDesc">
+                                {time.desc.map(
+                                  (desc, index) => (
+                                    <ul key={index}>
+                                      <li>{desc}</li>
+                                    </ul>
+                                  )
+                                )}
+                              </li>
+                            </ul>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </article>
               </div>

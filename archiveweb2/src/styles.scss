@@ -198,7 +198,7 @@ ul {
   flex-direction: column;
   gap: 30px;
   .timeLineWrap {
-    flex: 1;
+    // flex: 1;
     overflow-y: scroll;
     -ms-overflow-style: none;
     &::-webkit-scrollbar {
