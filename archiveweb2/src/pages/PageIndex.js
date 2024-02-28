@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import IndexHeader from '../component/IndexHeader';
-import Footer from '../component/Footer';
-import Style from '../scss/PageIndex.module.scss';
-import Mimoji from '../img/mino.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+import IndexHeader from '../component/IndexHeader';
+import Footer from '../component/Footer';
+import Style from '../scss/PageIndex.module.scss';
+import Mimoji from '../img/mino.png';
 
 function PageIndex() {
   const [isScroll, setScroll] = useState(false);
@@ -58,6 +58,14 @@ function PageIndex() {
       }),
     [isScroll]
   );
+
+  //프로젝트url을 담을 변수(초기값)
+  // const [productUrl, setProductUrl] = useState("");
+  //프로젝트를 클릭하면 프로젝트href가 변수에 담긴다
+  // const changeUrl = () =>{
+  //   setProductUrl();
+  // }
+  //변수의 state가 변경되면 useEffect내에서 함수 실행
 
   return (
     <main>
