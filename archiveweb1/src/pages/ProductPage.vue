@@ -76,19 +76,23 @@ export default defineComponent({
       } else if (param === "company") {
         typeCheck.value = false;
       }
-      // api.get(`product`).then((result) => {
-      //   const data1 = result.data.sort(function (a, b) {
-      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-        const data1 = result.data.product.sort(function (a, b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
+      api
+        .get(
+          `https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json`
+        )
+        .then((result) => {
+          const data1 = result.data.product.sort(function (a, b) {
+            if (a.id < b.id) return 1;
+            if (a.id > b.id) return -1;
+          });
+          if (typeCheck.value === true) {
+            productData.value = data1.filter(
+              (item) => item.type === "personal"
+            );
+          } else if (typeCheck.value == false) {
+            productData.value = data1.filter((item) => item.type === "company");
+          }
         });
-        if (typeCheck.value === true) {
-          productData.value = data1.filter((item) => item.type === "personal");
-        } else if (typeCheck.value == false) {
-          productData.value = data1.filter((item) => item.type === "company");
-        }
-      });
     };
 
     const openWindow = (e) => {

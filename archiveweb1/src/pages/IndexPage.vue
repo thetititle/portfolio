@@ -297,39 +297,43 @@ export default defineComponent({
     const IssueCheck = ref([]);
     const productData = ref({});
     const getData = () => {
-      // api.get(`allData`).then((result) => {
-      //   const data1 = result.data[0];
-      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-        const data1 = result.data.allData[0];
-        ownerInfo.value = data1.ownerInfo;
-        skills.value = ownerInfo.value.skills;
-        timeLine.value = data1.timeLine.sort(function (a, b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
-        });
-        console.log("ownerInfo", ownerInfo.value);
-        console.log("timeLine", timeLine.value);
-      });
-    };
-    const getProduct = () => {
-      // api.get(`product`).then((result) => {
-      //   const data1 = result.data;
-      api.get(`http://thetititle.com/api/allData.json`).then((result) => {
-        const data1 = result.data.product;
-        productData.value = data1
-          .sort(function (a, b) {
+      api
+        .get(
+          `https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json`
+        )
+        .then((result) => {
+          const data1 = result.data.allData[0];
+          ownerInfo.value = data1.ownerInfo;
+          skills.value = ownerInfo.value.skills;
+          timeLine.value = data1.timeLine.sort(function (a, b) {
             if (a.id < b.id) return 1;
             if (a.id > b.id) return -1;
-          })
-          .slice(0, 6);
-        const data2 = data1.filter((item) => item.id === "2")[0].issueCheck;
-        IssueCheck.value = data2.sort(function (a, b) {
-          if (a.id < b.id) return 1;
-          if (a.id > b.id) return -1;
+          });
+          console.log("ownerInfo", ownerInfo.value);
+          console.log("timeLine", timeLine.value);
         });
-        console.log("productData", productData.value);
-        console.log("IssueCheck", IssueCheck.value);
-      });
+    };
+    const getProduct = () => {
+      api
+        .get(
+          `https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json`
+        )
+        .then((result) => {
+          const data1 = result.data.product;
+          productData.value = data1
+            .sort(function (a, b) {
+              if (a.id < b.id) return 1;
+              if (a.id > b.id) return -1;
+            })
+            .slice(0, 6);
+          const data2 = data1.filter((item) => item.id === "2")[0].issueCheck;
+          IssueCheck.value = data2.sort(function (a, b) {
+            if (a.id < b.id) return 1;
+            if (a.id > b.id) return -1;
+          });
+          console.log("productData", productData.value);
+          console.log("IssueCheck", IssueCheck.value);
+        });
     };
 
     return {
