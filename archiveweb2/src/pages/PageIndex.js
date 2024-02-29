@@ -38,10 +38,10 @@ function PageIndex() {
     setTimeLine(timeLine);
     setProduct(product);
     setIssueCheck(issueCheck);
-    // console.log('ownerInfo', ownerInfo);
-    // console.log('skills', skills);
-    // console.log('timeLine', timeLine);
-    // console.log('issueCheck', issueCheck);
+    console.log('ownerInfo', ownerInfo);
+    console.log('skills', skills);
+    console.log('timeLine', timeLine);
+    console.log('issueCheck', issueCheck);
   }
 
   useEffect(() => {
@@ -123,7 +123,7 @@ function PageIndex() {
                       chrome에 최적화 되어있습니다.
                     </p>
                     <em>
-                      made with Rreact, JavaScript, SCSS
+                      made with React, JavaScript, SCSS
                       <br />
                       and Framer Motion
                     </em>
