@@ -202,11 +202,6 @@
           display: flex;
           flex-direction: column;
           gap: 5px;
-          li {
-            &:nth-of-type(odd) {
-              color: var(--fontTitle);
-            }
-          }
         }
       }
     }

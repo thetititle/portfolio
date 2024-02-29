@@ -122,6 +122,7 @@ p {
 .bold {
   font-size: 1rem;
   font-weight: 700;
+  color: var(--fontTitle);
 }
 
 .noBorder {

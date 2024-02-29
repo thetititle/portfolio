@@ -34,6 +34,7 @@ function PageProducts() {
       }),
     [isScroll]
   );
+
   return (
     <main>
       {loading ? (
@@ -86,7 +87,9 @@ function PageProducts() {
                             alt={item.title}
                           />
                           <ul className={Style.name}>
-                            <li>{item.title}</li>
+                            <li className="bold">
+                              {item.title}
+                            </li>
                             <li>{item.year}</li>
                           </ul>
                           <div className={Style.skills}>
@@ -96,7 +99,10 @@ function PageProducts() {
                               </ul>
                             ))}
                           </div>
-                          <span>{item.desc}</span>
+                          <ul className={Style.name}>
+                            <li>{item.desc}</li>
+                            <li>{item.responsive}</li>
+                          </ul>
                         </Link>
                       </motion.div>
                     ))}

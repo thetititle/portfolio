@@ -191,9 +191,6 @@
   flex-direction: column;
   gap: 5px;
 }
-.thispage .thisPwarp .thisDesc .desc ul li:nth-of-type(odd) {
-  color: var(--fontTitle);
-}
 .thispage .thisPwarp .height {
   height: 180px;
 }/*# sourceMappingURL=PageIndex.module.css.map */

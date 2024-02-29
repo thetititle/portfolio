@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,7 @@ function PageIndex() {
   const [timeLine, setTimeLine] = useState([]);
   const [product, setProduct] = useState([]);
   const [issueCheck, setIssueCheck] = useState([]);
+  const navigate = useNavigate();
 
   async function getData() {
     const response = await fetch(
@@ -37,10 +38,10 @@ function PageIndex() {
     setTimeLine(timeLine);
     setProduct(product);
     setIssueCheck(issueCheck);
-    console.log('ownerInfo', ownerInfo);
-    console.log('skills', skills);
-    console.log('timeLine', timeLine);
-    console.log('issueCheck', issueCheck);
+    // console.log('ownerInfo', ownerInfo);
+    // console.log('skills', skills);
+    // console.log('timeLine', timeLine);
+    // console.log('issueCheck', issueCheck);
   }
 
   useEffect(() => {
@@ -59,13 +60,30 @@ function PageIndex() {
     [isScroll]
   );
 
-  //프로젝트url을 담을 변수(초기값)
-  // const [productUrl, setProductUrl] = useState("");
-  //프로젝트를 클릭하면 프로젝트href가 변수에 담긴다
-  // const changeUrl = () =>{
-  //   setProductUrl();
-  // }
-  //변수의 state가 변경되면 useEffect내에서 함수 실행
+  function openWindow(href) {
+    const thispage = window.location.href;
+    console.log(href);
+    console.log(thispage);
+    if (href === '#') {
+      alert('준비중 이에요!');
+    } else if (href.includes('knotted')) {
+      var userAgent = navigator.userAgent;
+      var isMobile = userAgent.match(
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+      );
+      if ((userAgent = isMobile)) {
+        alert('PC에서 볼 수 있어요!');
+      } else {
+        window.open(href, 'blank');
+      }
+    } else if (href === 'products') {
+      navigate('/products', { replace: false });
+    } else if (href === thispage) {
+      alert('현재 페이지에요!');
+    } else {
+      window.open(href, 'blank');
+    }
+  }
 
   return (
     <main>
@@ -268,6 +286,9 @@ function PageIndex() {
                       products<em>.</em>
                     </h1>
                     <p>
+                      💻PC적응형, 📱Mobile적응형, 💫반응형
+                    </p>
+                    <p>
                       💡더 많은 product를 보고싶다면
                       Click!✨
                     </p>
@@ -283,17 +304,20 @@ function PageIndex() {
                           y: -50,
                         }}
                       >
-                        <Link
-                          to={item.href}
-                          target="_blank"
+                        <div
                           className={Style.product}
+                          onClick={() => {
+                            openWindow(item.href);
+                          }}
                         >
                           <img
                             src={item.imgUrl}
                             alt={item.title}
                           />
                           <ul className={Style.name}>
-                            <li>{item.title}</li>
+                            <li className="bold">
+                              {item.title}
+                            </li>
                             <li>{item.year}</li>
                           </ul>
                           <div className={Style.skills}>
@@ -303,8 +327,18 @@ function PageIndex() {
                               </ul>
                             ))}
                           </div>
-                          <span>{item.desc}</span>
-                        </Link>
+                          <ul className={Style.name}>
+                            <li>{item.desc}</li>
+                            <li>
+                              {item.responsive === 'PC'
+                                ? '💻'
+                                : item.responsive ===
+                                  'MOBILE'
+                                ? '📱'
+                                : '💫'}
+                            </li>
+                          </ul>
+                        </div>
                       </motion.div>
                     ))}
                   </div>
