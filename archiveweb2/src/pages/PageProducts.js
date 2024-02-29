@@ -43,23 +43,24 @@ function PageProducts() {
   );
 
   function OpenWindow(href) {
-    const thispage = window.location.href;
+    const thispage =
+      'http://thetititle.com/products/personal';
     if (href === '#') {
-      alert('준비중 이에요!');
+      alert('준비중 이에요(🎀ॣ•͈з•͈ ॣ)');
     } else if (href.includes('knotted')) {
       var userAgent = navigator.userAgent;
       var isMobile = userAgent.match(
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
       );
       if ((userAgent = isMobile)) {
-        alert('PC에서 볼 수 있어요!');
+        alert('PC에서 볼 수 있어요⊹꒰⍢⑅ ꒱꙳');
       } else {
         window.open(href, 'blank');
       }
     } else if (href === 'products') {
       navigate('/products', { replace: false });
     } else if (href === thispage) {
-      alert('현재 페이지에요!');
+      alert('현재 보고있는 사이트에요⊹꒰ ⑅·͈·̮·͈꒱ ♡⊹');
     } else {
       window.open(href, 'blank');
     }
