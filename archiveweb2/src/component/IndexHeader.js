@@ -1,27 +1,60 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Logo from '../img/Logo_lg_l.png';
 import Tab from 'react-bootstrap/Tab';
 import Style from '../scss/Header.module.scss';
-function IndexHeader({ propHeader, propsNavi }) {
+
+function IndexHeader({ propHeader, propsNavId }) {
   const [tabs, setTabs] = useState('hello');
+  const [isScroll, setScroll] = useState(false);
   function handleSelect(e) {
     setTabs(e.target.textContent);
-    propsNavi([e.target.textContent, e.target.id]);
+    propsNavId(e.target.id);
   }
+
+  function goTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  useEffect(
+    () =>
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+          setScroll(true);
+          if (window.scrollY < 920) {
+            setTabs('introduce');
+          } else if (
+            window.scrollY >= 920 &&
+            window.scrollY < 1760
+          ) {
+            setTabs('product');
+          } else if (window.scrollY >= 1760) {
+            setTabs('this page');
+          }
+        } else {
+          setScroll(false);
+          setTabs('hello');
+        }
+      }),
+    [isScroll]
+  );
+
   return (
     <header className={propHeader ? Style.scrollDown : ''}>
       <div className="container">
         <div className="content">
           <div className={Style.header}>
-            <Link to={`/`} className={Style.link}>
+            <div className={Style.link} onClick={goTop}>
               <img
                 src={Logo}
                 alt="logo"
                 className={Style.logo}
               />
-            </Link>
+            </div>
             <Tab.Content
               className={Style.tabWrap}
               onClick={handleSelect}
@@ -79,5 +112,6 @@ function IndexHeader({ propHeader, propsNavi }) {
 }
 IndexHeader.propTypes = {
   propHeader: PropTypes.bool.isRequired,
+  propsNavId: PropTypes.func.isRequired,
 };
 export default IndexHeader;

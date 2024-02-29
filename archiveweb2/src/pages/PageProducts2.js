@@ -4,14 +4,14 @@ import Footer from '../component/Footer';
 import Style from '../scss/PageProducts.module.scss';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-function PageProducts() {
+function PageProducts2() {
   const [isScroll, setScroll] = useState(false);
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
   const [ownerInfo, setOwnerInfo] = useState({});
-  const isNavi = useState('personal');
+  const isNavi = useState('company');
 
-  async function getData() {
+  async function GetData() {
     const response = await fetch(
       'https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json'
     );
@@ -19,7 +19,7 @@ function PageProducts() {
     const data1 = jsonData.product;
     const ownerInfo = jsonData.allData[0].ownerInfo;
     const product = data1
-      .filter((item) => item.type === 'personal')
+      .filter((item) => item.type === 'company')
       .reverse();
     setLoading(false);
     setProduct(product);
@@ -27,7 +27,7 @@ function PageProducts() {
   }
   console.log('product', product);
   useEffect(() => {
-    getData();
+    GetData();
   }, []);
   useEffect(
     () =>
@@ -59,8 +59,7 @@ function PageProducts() {
                     Products<em>.</em>
                   </h1>
                   <span>
-                    공부하거나 스스로 좋아서 작업한 것들을
-                    기록해요😎
+                    참여한 프로젝트를 기록해요😎
                     <br />
                     왼쪽 최상단이 가장 최근 작업물이며,
                     역순으로 배열되었습니다.
@@ -126,4 +125,4 @@ function PageProducts() {
     </main>
   );
 }
-export default PageProducts;
+export default PageProducts2;

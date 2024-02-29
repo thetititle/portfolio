@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import IndexHeader from '../component/IndexHeader';
-import Footer from '../component/Footer';
+import IndexFooter from '../component/IndexFooter';
 import Style from '../scss/PageIndex.module.scss';
 import Mimoji from '../img/mino.png';
 
@@ -20,20 +20,17 @@ function PageIndex() {
   const navigate = useNavigate();
 
   const listRef = useRef(null);
-  const [navi, setNavi] = useState('hello');
 
-  function selectNavi(data) {
-    setNavi(data[0]);
+  function SelectNavi(data) {
     const listNode = listRef.current;
     const imgNode =
-      listNode.querySelectorAll('section')[data[1]];
+      listNode.querySelectorAll('section')[data];
     imgNode.scrollIntoView({
       behavior: 'smooth',
     });
-    console.log(imgNode.scrollY);
   }
 
-  async function getData() {
+  async function GetData() {
     const response = await fetch(
       'https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json'
     );
@@ -59,7 +56,7 @@ function PageIndex() {
   }
 
   useEffect(() => {
-    getData();
+    GetData();
   }, []);
 
   useEffect(
@@ -74,10 +71,8 @@ function PageIndex() {
     [isScroll]
   );
 
-  function openWindow(href) {
+  function OpenWindow(href) {
     const thispage = window.location.href;
-    console.log(href);
-    console.log(thispage);
     if (href === '#') {
       alert('준비중 이에요!');
     } else if (href.includes('knotted')) {
@@ -107,8 +102,7 @@ function PageIndex() {
         <div>
           <IndexHeader
             propHeader={isScroll}
-            propsNavi={selectNavi}
-            propsIndex={selectNavi}
+            propsNavId={SelectNavi}
           />
           <div className={Style.content} ref={listRef}>
             <section className={Style.hello}>
@@ -291,7 +285,7 @@ function PageIndex() {
                   }}
                 >
                   <Link
-                    to="/products"
+                    to="/products/personal"
                     className={Style.titleWrap}
                   >
                     <h1 className="mainTt">
@@ -319,7 +313,7 @@ function PageIndex() {
                         <div
                           className={Style.product}
                           onClick={() => {
-                            openWindow(item.href);
+                            OpenWindow(item.href);
                           }}
                         >
                           <img
@@ -441,7 +435,7 @@ function PageIndex() {
               </div>
             </section>
           </div>
-          <Footer propFooter={ownerInfo} />
+          <IndexFooter propFooter={ownerInfo} />
         </div>
       )}
     </main>

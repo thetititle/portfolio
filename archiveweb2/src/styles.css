@@ -169,8 +169,12 @@ button:hover {
   border-color: transparent;
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
-  color: var(--highLight);
-  background-color: rgba(37, 37, 37, 0.8);
+  color: var(--bgColor);
+  background-color: var(--highLight);
+}
+button:hover .svg-inline--fa {
+  transform: scale(1.1);
+  transition: 0.1s;
 }
 
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   line-height: 50px;
+  cursor: pointer;
 }
 .footer .link img {
   height: 50px;
