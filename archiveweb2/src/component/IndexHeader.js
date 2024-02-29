@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import Logo from '../img/Logo_lg_l.png';
 import Tab from 'react-bootstrap/Tab';
 import Style from '../scss/Header.module.scss';
-function IndexHeader({ propHeader }) {
+function IndexHeader({ propHeader, propsNavi }) {
   const [tabs, setTabs] = useState('hello');
   function handleSelect(e) {
     setTabs(e.target.textContent);
+    propsNavi([e.target.textContent, e.target.id]);
   }
   return (
     <header className={propHeader ? Style.scrollDown : ''}>
@@ -26,6 +27,7 @@ function IndexHeader({ propHeader }) {
               onClick={handleSelect}
             >
               <Tab.Pane
+                id="0"
                 eventKey="hello"
                 className={
                   tabs === 'hello'
@@ -36,6 +38,7 @@ function IndexHeader({ propHeader }) {
                 hello
               </Tab.Pane>
               <Tab.Pane
+                id="1"
                 eventKey="introduce"
                 className={
                   tabs === 'introduce'
@@ -46,6 +49,7 @@ function IndexHeader({ propHeader }) {
                 introduce
               </Tab.Pane>
               <Tab.Pane
+                id="2"
                 eventKey="product"
                 className={
                   tabs === 'product'
@@ -56,6 +60,7 @@ function IndexHeader({ propHeader }) {
                 product
               </Tab.Pane>
               <Tab.Pane
+                id="3"
                 eventKey="this page"
                 className={
                   tabs === 'this page'

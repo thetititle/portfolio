@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,6 +19,20 @@ function PageIndex() {
   const [issueCheck, setIssueCheck] = useState([]);
   const navigate = useNavigate();
 
+  const listRef = useRef(null);
+  const [navi, setNavi] = useState('hello');
+
+  function selectNavi(data) {
+    setNavi(data[0]);
+    const listNode = listRef.current;
+    const imgNode =
+      listNode.querySelectorAll('section')[data[1]];
+    imgNode.scrollIntoView({
+      behavior: 'smooth',
+    });
+    console.log(imgNode.scrollY);
+  }
+
   async function getData() {
     const response = await fetch(
       'https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json'
@@ -38,10 +52,10 @@ function PageIndex() {
     setTimeLine(timeLine);
     setProduct(product);
     setIssueCheck(issueCheck);
-    console.log('ownerInfo', ownerInfo);
-    console.log('skills', skills);
-    console.log('timeLine', timeLine);
-    console.log('issueCheck', issueCheck);
+    // console.log('ownerInfo', ownerInfo);
+    // console.log('skills', skills);
+    // console.log('timeLine', timeLine);
+    // console.log('issueCheck', issueCheck);
   }
 
   useEffect(() => {
@@ -91,9 +105,13 @@ function PageIndex() {
         ''
       ) : (
         <div>
-          <IndexHeader propHeader={isScroll} />
-          <div className={Style.content}>
-            <section id="hello" className={Style.hello}>
+          <IndexHeader
+            propHeader={isScroll}
+            propsNavi={selectNavi}
+            propsIndex={selectNavi}
+          />
+          <div className={Style.content} ref={listRef}>
+            <section className={Style.hello}>
               <h1 className="hidden">hello</h1>
               <div className="container">
                 <article className={Style.article}>
@@ -146,10 +164,7 @@ function PageIndex() {
                 </article>
               </div>
             </section>
-            <section
-              id="introduce"
-              className={Style.introduce}
-            >
+            <section className={Style.introduce}>
               <h1 className="hidden">introduce</h1>
               <div className="container">
                 <motion.article
@@ -264,10 +279,7 @@ function PageIndex() {
                 </motion.article>
               </div>
             </section>
-            <section
-              id="products"
-              className={Style.productsWrapper}
-            >
+            <section className={Style.productsWrapper}>
               <div className="container">
                 <motion.article
                   className={`content ${Style.productsWrap}`}
@@ -345,10 +357,7 @@ function PageIndex() {
                 </motion.article>
               </div>
             </section>
-            <section
-              id="thispage"
-              className={Style.thispage}
-            >
+            <section className={Style.thispage}>
               <div className="container">
                 <motion.article
                   className={`content ${Style.thisPwarp}`}

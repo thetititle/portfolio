@@ -9,7 +9,6 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 300px;
 }
 
 .hello {
@@ -51,6 +50,9 @@
   cursor: default;
 }
 
+.introduce {
+  padding: 160px 0;
+}
 .introduce .userWrap {
   display: flex;
   gap: 60px;
@@ -116,6 +118,9 @@
   gap: 10px;
 }
 
+.productsWrapper {
+  padding: 160px 0;
+}
 .productsWrapper .productsWrap {
   display: flex;
   gap: 60px;
@@ -149,7 +154,7 @@
 }
 
 .thispage {
-  margin-bottom: 160px;
+  padding: 160px 0;
 }
 .thispage .thisPwarp {
   display: flex;
