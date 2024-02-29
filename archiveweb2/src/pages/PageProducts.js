@@ -3,13 +3,14 @@ import PageHeader from '../component/PageHeader';
 import Footer from '../component/Footer';
 import Style from '../scss/PageProducts.module.scss';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function PageProducts() {
   const [isScroll, setScroll] = useState(false);
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
   const [ownerInfo, setOwnerInfo] = useState({});
   const isNavi = useState('personal');
+  const navigate = useNavigate();
 
   async function getData() {
     const response = await fetch(
@@ -40,6 +41,29 @@ function PageProducts() {
       }),
     [isScroll]
   );
+
+  function OpenWindow(href) {
+    const thispage = window.location.href;
+    if (href === '#') {
+      alert('준비중 이에요!');
+    } else if (href.includes('knotted')) {
+      var userAgent = navigator.userAgent;
+      var isMobile = userAgent.match(
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+      );
+      if ((userAgent = isMobile)) {
+        alert('PC에서 볼 수 있어요!');
+      } else {
+        window.open(href, 'blank');
+      }
+    } else if (href === 'products') {
+      navigate('/products', { replace: false });
+    } else if (href === thispage) {
+      alert('현재 페이지에요!');
+    } else {
+      window.open(href, 'blank');
+    }
+  }
 
   return (
     <main>
@@ -86,10 +110,13 @@ function PageProducts() {
                           y: -50,
                         }}
                       >
-                        <Link
+                        <div
                           to={item.href}
                           target="_blank"
                           className={Style.product}
+                          onClick={() => {
+                            OpenWindow(item.href);
+                          }}
                         >
                           <img
                             src={item.imgUrl}
@@ -112,7 +139,7 @@ function PageProducts() {
                             <li>{item.desc}</li>
                             <li>{item.responsive}</li>
                           </ul>
-                        </Link>
+                        </div>
                       </motion.div>
                     ))}
                   </div>

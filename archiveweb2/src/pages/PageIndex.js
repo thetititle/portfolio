@@ -49,10 +49,10 @@ function PageIndex() {
     setTimeLine(timeLine);
     setProduct(product);
     setIssueCheck(issueCheck);
-    // console.log('ownerInfo', ownerInfo);
-    // console.log('skills', skills);
-    // console.log('timeLine', timeLine);
-    // console.log('issueCheck', issueCheck);
+    console.log('ownerInfo', ownerInfo);
+    console.log('skills', skills);
+    console.log('timeLine', timeLine);
+    console.log('issueCheck', issueCheck);
   }
 
   useEffect(() => {
