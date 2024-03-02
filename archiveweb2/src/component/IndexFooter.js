@@ -14,25 +14,27 @@ function IndexFooter() {
   return (
     <footer>
       <div className="container">
-        <div className={Styles.footer}>
-          <div className={Styles.link} onClick={goTop}>
-            <img src={Logo} alt="logo" />
+        <div className="content">
+          <div className={Styles.footer}>
+            <div className={Styles.link} onClick={goTop}>
+              <img src={Logo} alt="logo" />
+            </div>
+            <button className="noBorder">
+              <Link
+                to={`#`}
+                onClick={() =>
+                  (window.location =
+                    'mailto:business.thetititle@gmail.com')
+                }
+                className={Styles.link}
+              >
+                <div className={Styles.mailTo}>
+                  <FontAwesomeIcon icon={faAt} />
+                  <p>CONTACT ME</p>
+                </div>
+              </Link>
+            </button>
           </div>
-          <button className="noBorder">
-            <Link
-              to={`#`}
-              onClick={() =>
-                (window.location =
-                  'mailto:business.thetititle@gmail.com')
-              }
-              className={Styles.link}
-            >
-              <div className={Styles.mailTo}>
-                <FontAwesomeIcon icon={faAt} />
-                <p>CONTACT ME</p>
-              </div>
-            </Link>
-          </button>
         </div>
       </div>
     </footer>

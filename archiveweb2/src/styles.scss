@@ -119,6 +119,9 @@ p {
 .mainTt {
   font-size: 3.37rem;
   color: var(--fontTitle);
+  @media (min-width: 320px) and (max-width: 500px) {
+    font-size: 2.5rem;
+  }
 }
 .subTt {
   font-size: 1.7rem;
