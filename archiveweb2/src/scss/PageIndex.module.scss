@@ -34,6 +34,9 @@
   .article {
     height: 800px;
     width: 315px;
+    @media (max-width: 500px) {
+      width: 235px;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,16 +62,32 @@
     display: flex;
     gap: 60px;
     height: 520px;
+    @media (max-width: 1024px) {
+      height: auto;
+    }
+    @media (max-width: 769px) {
+      height: auto;
+      flex-direction: column;
+    }
     .userInfo {
       flex: 1;
       flex-direction: column;
       display: flex;
       justify-content: space-between;
-
+      @media (max-width: 1024px) {
+        justify-content: flex-start;
+        gap: 30px;
+      }
       .imgWrap {
         height: 35%;
+        @media (min-width: 769px) and (max-width: 1024px) {
+          height: 25%;
+        }
         img {
           height: 100%;
+          @media (max-width: 500px) {
+            width: 50%;
+          }
         }
       }
       .descWrap {
@@ -97,31 +116,47 @@
         }
       }
     }
-
-    .skillLinks {
-      flex: 1;
+    .timeSkills {
+      flex: 3;
       display: flex;
-      flex-direction: column;
-      gap: 30px;
-      .skills {
-        display: flex;
+      gap: 60px;
+      @media (max-width: 1024px) {
         flex-direction: column;
-        gap: 30px;
-        > div {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          row-gap: 5px;
-        }
       }
-      .linksWrap {
+      .timeLineWrapper {
+        flex: 1;
+      }
+
+      .skillLinks {
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 30px;
-        .links {
+        .skills {
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 30px;
+          > div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            .skillImg {
+              height: calc(50% - 10px);
+              @media (min-width: 1024px) and (max-width: 1112px) {
+                height: calc(40% - 10px);
+              }
+            }
+          }
+        }
+        .linksWrap {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
         }
       }
     }
@@ -132,30 +167,52 @@
   .productsWrap {
     display: flex;
     gap: 60px;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: center;
+    }
     .titleWrap {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      width: calc(30% - 30px);
+      @media (max-width: 1024px) {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+      }
     }
     .products {
       flex: 1;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      .product {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        width: 214px;
-        cursor: pointer;
-        .name {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+      width: calc(70% - 30px);
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+      .productsList {
+        width: calc(25% - 15px);
+        @media (min-width: 501px) and (max-width: 769px) {
+          width: calc(50% - 10px);
         }
-        .skills {
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+        .product {
           display: flex;
+          flex-direction: column;
           gap: 5px;
+          cursor: pointer;
+          .name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .skills {
+            display: flex;
+            gap: 5px;
+          }
         }
       }
     }

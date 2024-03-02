@@ -43,6 +43,11 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+@media (max-width: 500px) {
+  .hello .article {
+    width: 235px;
+  }
+}
 .hello .article .scrollDown {
   position: absolute;
   top: 800px;
@@ -58,17 +63,44 @@
   gap: 60px;
   height: 520px;
 }
+@media (max-width: 1024px) {
+  .introduce .userWrap {
+    height: auto;
+  }
+}
+@media (max-width: 769px) {
+  .introduce .userWrap {
+    height: auto;
+    flex-direction: column;
+  }
+}
 .introduce .userWrap .userInfo {
   flex: 1;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1024px) {
+  .introduce .userWrap .userInfo {
+    justify-content: flex-start;
+    gap: 30px;
+  }
+}
 .introduce .userWrap .userInfo .imgWrap {
   height: 35%;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .introduce .userWrap .userInfo .imgWrap {
+    height: 25%;
+  }
+}
 .introduce .userWrap .userInfo .imgWrap img {
   height: 100%;
+}
+@media (max-width: 500px) {
+  .introduce .userWrap .userInfo .imgWrap img {
+    width: 50%;
+  }
 }
 .introduce .userWrap .userInfo .descWrap {
   display: flex;
@@ -90,29 +122,49 @@
 .introduce .userWrap .userInfo .descWrap ul:nth-of-type(2) li:nth-child(even) {
   margin-bottom: 5px;
 }
-.introduce .userWrap .skillLinks {
+.introduce .userWrap .timeSkills {
+  flex: 3;
+  display: flex;
+  gap: 60px;
+}
+@media (max-width: 1024px) {
+  .introduce .userWrap .timeSkills {
+    flex-direction: column;
+  }
+}
+.introduce .userWrap .timeSkills .timeLineWrapper {
+  flex: 1;
+}
+.introduce .userWrap .timeSkills .skillLinks {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.introduce .userWrap .skillLinks .skills {
+.introduce .userWrap .timeSkills .skillLinks .skills {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.introduce .userWrap .skillLinks .skills > div {
+.introduce .userWrap .timeSkills .skillLinks .skills > div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  row-gap: 5px;
+  gap: 5px;
 }
-.introduce .userWrap .skillLinks .linksWrap {
+.introduce .userWrap .timeSkills .skillLinks .skills > div .skillImg {
+  height: calc(50% - 10px);
+}
+@media (min-width: 1024px) and (max-width: 1112px) {
+  .introduce .userWrap .timeSkills .skillLinks .skills > div .skillImg {
+    height: calc(40% - 10px);
+  }
+}
+.introduce .userWrap .timeSkills .skillLinks .linksWrap {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.introduce .userWrap .skillLinks .linksWrap .links {
+.introduce .userWrap .timeSkills .skillLinks .linksWrap .links {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -125,30 +177,62 @@
   display: flex;
   gap: 60px;
 }
+@media (max-width: 1024px) {
+  .productsWrapper .productsWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .productsWrapper .productsWrap .titleWrap {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: calc(30% - 30px);
+}
+@media (max-width: 1024px) {
+  .productsWrapper .productsWrap .titleWrap {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
 }
 .productsWrapper .productsWrap .products {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  width: calc(70% - 30px);
 }
-.productsWrapper .productsWrap .products .product {
+@media (max-width: 1024px) {
+  .productsWrapper .productsWrap .products {
+    width: 100%;
+  }
+}
+.productsWrapper .productsWrap .products .productsList {
+  width: calc(25% - 15px);
+}
+@media (min-width: 501px) and (max-width: 769px) {
+  .productsWrapper .productsWrap .products .productsList {
+    width: calc(50% - 10px);
+  }
+}
+@media (max-width: 500px) {
+  .productsWrapper .productsWrap .products .productsList {
+    width: 100%;
+  }
+}
+.productsWrapper .productsWrap .products .productsList .product {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 214px;
   cursor: pointer;
 }
-.productsWrapper .productsWrap .products .product .name {
+.productsWrapper .productsWrap .products .productsList .product .name {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.productsWrapper .productsWrap .products .product .skills {
+.productsWrapper .productsWrap .products .productsList .product .skills {
   display: flex;
   gap: 5px;
 }

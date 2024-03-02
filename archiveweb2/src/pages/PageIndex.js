@@ -197,75 +197,80 @@ function PageIndex() {
                       </ul>
                     </div>
                   </div>
-                  <div className="timeLineWrapper">
-                    <p className="subTt">⏰TIME LINE</p>
-                    <div className="timeLineWrap">
-                      <div className="timeLine">
-                        {timeLine.map((time) => (
-                          <ul
-                            key={time.id}
-                            className="time"
-                          >
-                            <li
-                              className={
-                                time.date === 'NOW'
-                                  ? 'timeDate now'
-                                  : 'timeDate'
-                              }
+                  <div className={Style.timeSkills}>
+                    <div
+                      className={`timeLineWrapper ${Style.timeLineWrapper}`}
+                    >
+                      <p className="subTt">⏰TIME LINE</p>
+                      <div className="timeLineWrap">
+                        <div className="timeLine">
+                          {timeLine.map((time) => (
+                            <ul
+                              key={time.id}
+                              className="time"
                             >
-                              {time.date}
-                            </li>
-                            <li className="timeDesc">
-                              {time.desc.map(
-                                (desc, index) => (
-                                  <ul key={index}>
-                                    <li>{desc}</li>
-                                  </ul>
-                                )
-                              )}
-                            </li>
-                          </ul>
-                        ))}
+                              <li
+                                className={
+                                  time.date === 'NOW'
+                                    ? 'timeDate now'
+                                    : 'timeDate'
+                                }
+                              >
+                                {time.date}
+                              </li>
+                              <li className="timeDesc">
+                                {time.desc.map(
+                                  (desc, index) => (
+                                    <ul key={index}>
+                                      <li>{desc}</li>
+                                    </ul>
+                                  )
+                                )}
+                              </li>
+                            </ul>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className={Style.skillLinks}>
-                    <div className={Style.skills}>
-                      <p className="subTt">🎮SKILLS</p>
-                      <div>
-                        {skills.map((skill) => (
-                          <img
-                            key={skill.name}
-                            src={skill.imgUrl}
-                            alt={skill.name}
-                          />
-                        ))}
+                    <div className={Style.skillLinks}>
+                      <div className={Style.skills}>
+                        <p className="subTt">🎮SKILLS</p>
+                        <div>
+                          {skills.map((skill) => (
+                            <img
+                              key={skill.name}
+                              src={skill.imgUrl}
+                              alt={skill.name}
+                              className={Style.skill}
+                            />
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <div className={Style.linksWrap}>
-                      <p className="subTt">🔗LINKS</p>
-                      <div className={Style.links}>
-                        <span>
-                          아래 링크를 통해 깃헙과 벨로그를
-                          보실 수 있어요!{' '}
-                        </span>
-                        <div className="btnWrap">
-                          <button>
-                            <Link to={ownerInfo.gitHub}>
-                              <FontAwesomeIcon
-                                icon={faGithub}
-                              />
-                              GITHUB
-                            </Link>
-                          </button>
-                          <button>
-                            <Link to={ownerInfo.veLog}>
-                              <FontAwesomeIcon
-                                icon={faCode}
-                              />
-                              VELOG
-                            </Link>
-                          </button>
+                      <div className={Style.linksWrap}>
+                        <p className="subTt">🔗LINKS</p>
+                        <div className={Style.links}>
+                          <span>
+                            아래 링크를 통해 깃헙과 벨로그를
+                            보실 수 있어요!{' '}
+                          </span>
+                          <div className="btnWrap">
+                            <button>
+                              <Link to={ownerInfo.gitHub}>
+                                <FontAwesomeIcon
+                                  icon={faGithub}
+                                />
+                                GITHUB
+                              </Link>
+                            </button>
+                            <button>
+                              <Link to={ownerInfo.veLog}>
+                                <FontAwesomeIcon
+                                  icon={faCode}
+                                />
+                                VELOG
+                              </Link>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -302,6 +307,7 @@ function PageIndex() {
                   <div className={Style.products}>
                     {product.map((item) => (
                       <motion.div
+                        className={Style.productsList}
                         key={item.id}
                         initial={{ y: 0 }}
                         whileHover={{
