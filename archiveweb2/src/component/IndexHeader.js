@@ -8,7 +8,7 @@ function IndexHeader({ propHeader, propsNavId }) {
   const [tabs, setTabs] = useState('hello');
   const [isScroll, setScroll] = useState(false);
   function handleSelect(e) {
-    setTabs(e.target.textContent);
+    // setTabs(e.target.textContent);
     propsNavId(e.target.id);
   }
 
