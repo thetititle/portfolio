@@ -179,6 +179,33 @@ button {
       transition: 0.1s;
     }
   }
+  // &.mobileNav {
+  //   position: fixed;
+  //   bottom: 100px;
+  //   right: 20px;
+  //   border-radius: 50%;
+  //   height: 45px;
+  //   width: 45px;
+  //   background-color: var(--highLight);
+  //   color: var(--bgColor);
+  //   @media (min-width: 501px) {
+  //     display: none;
+  //   }
+  //   @media (max-width: 500px) {
+  //     display: block;
+  //   }
+  // }
+  // &.mobileDropdown {
+  //   position: absolute;
+  //   inset: -160px auto auto 0px;
+  //   transform: translate3d(0px, 666px, 0px);
+  //   display: flex;
+  //   flex-direction: column;
+  //   a {
+  //     line-height: 30px;
+  //     padding: 0 10px;
+  //   }
+  // }
 }
 @supports (-webkit-backdrop-filter: none) or
   (backdrop-filter: none) {
@@ -189,6 +216,11 @@ button {
     }
   }
 }
+
+/* **************************************** *
+* MOBILE NAV
+* **************************************** */
+
 /* **************************************** *
 * LIST
 * **************************************** */

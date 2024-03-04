@@ -3,7 +3,10 @@ import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCode,
+  faBars,
+} from '@fortawesome/free-solid-svg-icons';
 import IndexHeader from '../component/IndexHeader';
 import IndexFooter from '../component/IndexFooter';
 import Style from '../scss/PageIndex.module.scss';
@@ -17,6 +20,8 @@ function PageIndex() {
   const [timeLine, setTimeLine] = useState([]);
   const [product, setProduct] = useState([]);
   const [issueCheck, setIssueCheck] = useState([]);
+  const [isFixed, setFixed] = useState(false);
+  const [isShow, setShow] = useState(false);
   const navigate = useNavigate();
 
   const listRef = useRef(null);
@@ -28,6 +33,19 @@ function PageIndex() {
     imgNode.scrollIntoView({
       behavior: 'smooth',
     });
+  }
+  function SelectNavi2(e) {
+    let id = e.target.id;
+    const listNode = listRef.current;
+    const imgNode =
+      listNode.querySelectorAll('section')[id];
+    imgNode.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
+
+  function showNave() {
+    setShow((isShow) => !isShow);
   }
 
   async function GetData() {
@@ -64,6 +82,12 @@ function PageIndex() {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 80) {
           setScroll(true);
+          if (window.scrollY > 5800) {
+            setFixed(true);
+          } else {
+            setFixed(false);
+          }
+          console.log('window.scrollY', window.scrollY);
         } else {
           setScroll(false);
         }
@@ -241,7 +265,7 @@ function PageIndex() {
                               key={skill.name}
                               src={skill.imgUrl}
                               alt={skill.name}
-                              className={Style.skill}
+                              className={Style.skillImg}
                             />
                           ))}
                         </div>
@@ -361,12 +385,6 @@ function PageIndex() {
               <div className="container">
                 <motion.article
                   className={`content ${Style.thisPwarp}`}
-                  initial={{ opacity: 0.2, y: 100 }}
-                  whileInView={{
-                    opacity: 1,
-                    transition: { delay: 0.1 },
-                    y: 0,
-                  }}
                 >
                   <div className={Style.poster}>poster</div>
                   <div className={Style.thisDesc}>
@@ -390,7 +408,7 @@ function PageIndex() {
                       </ul>
                       <ul>
                         <li className="bold">
-                          RESPONSIVE (예정)
+                          RESPONSIVE (완료)
                         </li>
                         <li>@media</li>
                         <li>(max-width: 320px)</li>
@@ -440,6 +458,32 @@ function PageIndex() {
                 </motion.article>
               </div>
             </section>
+            <div
+              className={
+                isFixed
+                  ? `${Style.mobileNav} ${Style.fixed}`
+                  : Style.mobileNav
+              }
+              onClick={showNave}
+            >
+              <div
+                className={
+                  isShow
+                    ? `${Style.mobileTab} ${Style.show}`
+                    : Style.mobileTab
+                }
+              >
+                <ul onClick={SelectNavi2}>
+                  <li id="0">HELLO</li>
+                  <li id="1">INTRODUSE</li>
+                  <li id="2">PRODUCTS</li>
+                  <li id="3">THIS PAGE</li>
+                </ul>
+              </div>
+              <div className={Style.hamberger}>
+                <FontAwesomeIcon icon={faBars} />
+              </div>
+            </div>
           </div>
           <IndexFooter propFooter={ownerInfo} />
         </div>
