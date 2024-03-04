@@ -393,7 +393,11 @@ function PageIndex() {
                     <div className={Style.desc}>
                       <ul>
                         <li className="bold">제작기간</li>
-                        <li>2024.02.27~진행중</li>
+                        <li>2024.02.27~2024.02.29</li>
+                        <li>
+                          지속적으로 보완하며 보다 더 나은
+                          페이지가 되도록 노력합니다.
+                        </li>
                       </ul>
                       <ul>
                         <li className="bold">사용스킬</li>
