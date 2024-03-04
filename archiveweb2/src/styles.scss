@@ -179,33 +179,6 @@ button {
       transition: 0.1s;
     }
   }
-  // &.mobileNav {
-  //   position: fixed;
-  //   bottom: 100px;
-  //   right: 20px;
-  //   border-radius: 50%;
-  //   height: 45px;
-  //   width: 45px;
-  //   background-color: var(--highLight);
-  //   color: var(--bgColor);
-  //   @media (min-width: 501px) {
-  //     display: none;
-  //   }
-  //   @media (max-width: 500px) {
-  //     display: block;
-  //   }
-  // }
-  // &.mobileDropdown {
-  //   position: absolute;
-  //   inset: -160px auto auto 0px;
-  //   transform: translate3d(0px, 666px, 0px);
-  //   display: flex;
-  //   flex-direction: column;
-  //   a {
-  //     line-height: 30px;
-  //     padding: 0 10px;
-  //   }
-  // }
 }
 @supports (-webkit-backdrop-filter: none) or
   (backdrop-filter: none) {
@@ -220,7 +193,61 @@ button {
 /* **************************************** *
 * MOBILE NAV
 * **************************************** */
+.mobileNav {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  border: none;
+  transition: 0.3s;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: var(--highLight);
+  display: none;
+  box-shadow: -4px 4px 5px 1px rgba(0, 0, 0, 0.5);
 
+  .hamberger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    svg {
+      width: 27px;
+      height: 27px;
+      color: var(--bgColor);
+    }
+  }
+  .mobileTab {
+    display: none;
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    text-align: right;
+    background-color: var(--bgColor);
+    border: 1px solid var(--bdColor);
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: -4px 4px 5px 1px rgba(0, 0, 0, 0.5);
+    li {
+      line-height: 36px;
+      padding: 0 10px;
+      border-bottom: 1px solid var(--bdColor);
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    &.show {
+      display: block;
+      transition: 0.3s;
+    }
+  }
+  @media (max-width: 500px) {
+    display: block;
+  }
+  &.fixed {
+    bottom: 120px;
+  }
+}
 /* **************************************** *
 * LIST
 * **************************************** */

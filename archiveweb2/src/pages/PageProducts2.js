@@ -4,12 +4,17 @@ import Footer from '../component/Footer';
 import Style from '../scss/PageProducts.module.scss';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 function PageProducts2() {
   const [isScroll, setScroll] = useState(false);
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
   const [ownerInfo, setOwnerInfo] = useState({});
   const isNavi = useState('company');
+  const [isFixed, setFixed] = useState(false);
+  const [isShow, setShow] = useState(false);
 
   async function GetData() {
     const response = await fetch(
@@ -25,21 +30,31 @@ function PageProducts2() {
     setProduct(product);
     setOwnerInfo(ownerInfo);
   }
-  console.log('product', product);
+
   useEffect(() => {
     GetData();
   }, []);
+
   useEffect(
     () =>
       window.addEventListener('scroll', () => {
         if (window.scrollY > 80) {
           setScroll(true);
+          if (window.scrollY > 1000) {
+            setFixed(true);
+          } else {
+            setFixed(false);
+          }
         } else {
           setScroll(false);
         }
       }),
     [isScroll]
   );
+
+  function showNave() {
+    setShow((isShow) => !isShow);
+  }
 
   return (
     <main>
@@ -116,6 +131,34 @@ function PageProducts2() {
                     ))}
                   </div>
                 </motion.article>
+              </div>
+            </div>
+            <div
+              className={
+                isFixed ? 'mobileNav fixed' : 'mobileNav'
+              }
+              onClick={showNave}
+            >
+              <div
+                className={
+                  isShow ? 'mobileTab show' : 'mobileTab'
+                }
+              >
+                <ul>
+                  <li>
+                    <Link to="/products/personal">
+                      PERSONAL
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/products/company">
+                      COMPANY
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="hamberger">
+                <FontAwesomeIcon icon={faBars} />
               </div>
             </div>
           </div>

@@ -39,20 +39,37 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  cursor: pointer;
 }
-.productswrap .products .product {
+.productswrap .products > div {
+  width: calc(24% - 3px);
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .productswrap .products > div {
+    width: calc(32% - 4px);
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  .productswrap .products > div {
+    width: calc(50% - 10px);
+  }
+}
+@media (max-width: 500px) {
+  .productswrap .products > div {
+    width: 100%;
+  }
+}
+.productswrap .products > div .product {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 240px;
-  cursor: pointer;
 }
-.productswrap .products .product .name {
+.productswrap .products > div .product .name {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.productswrap .products .product .skills {
+.productswrap .products > div .product .skills {
   display: flex;
   gap: 5px;
 }/*# sourceMappingURL=PageProducts.module.css.map */

@@ -87,7 +87,6 @@ function PageIndex() {
           } else {
             setFixed(false);
           }
-          console.log('window.scrollY', window.scrollY);
         } else {
           setScroll(false);
         }
@@ -460,17 +459,13 @@ function PageIndex() {
             </section>
             <div
               className={
-                isFixed
-                  ? `${Style.mobileNav} ${Style.fixed}`
-                  : Style.mobileNav
+                isFixed ? 'mobileNav fixed' : 'mobileNav'
               }
               onClick={showNave}
             >
               <div
                 className={
-                  isShow
-                    ? `${Style.mobileTab} ${Style.show}`
-                    : Style.mobileTab
+                  isShow ? 'mobileTab show' : 'mobileTab'
                 }
               >
                 <ul onClick={SelectNavi2}>
@@ -480,7 +475,7 @@ function PageIndex() {
                   <li id="3">THIS PAGE</li>
                 </ul>
               </div>
-              <div className={Style.hamberger}>
+              <div className="hamberger">
                 <FontAwesomeIcon icon={faBars} />
               </div>
             </div>

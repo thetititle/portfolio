@@ -37,20 +37,32 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    .product {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      width: 240px;
-      cursor: pointer;
-      .name {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    cursor: pointer;
+    > div {
+      width: calc(24% - 3px);
+      @media (min-width: 769px) and (max-width: 1024px) {
+        width: calc(32% - 4px);
       }
-      .skills {
+      @media (min-width: 501px) and (max-width: 768px) {
+        width: calc(50% - 10px);
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+      .product {
         display: flex;
+        flex-direction: column;
         gap: 5px;
+
+        .name {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .skills {
+          display: flex;
+          gap: 5px;
+        }
       }
     }
   }
