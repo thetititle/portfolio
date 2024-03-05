@@ -59,8 +59,7 @@ function PageProducts() {
   }
 
   function OpenWindow(href) {
-    const thispage =
-      'http://thetititle.com/products/personal';
+    const thispage = 'http://thetititle.com/';
     if (href === '#') {
       alert('준비중 이에요(🎀ॣ•͈з•͈ ॣ)');
     } else if (href.includes('knotted')) {
