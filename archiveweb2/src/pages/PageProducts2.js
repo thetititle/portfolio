@@ -56,6 +56,24 @@ function PageProducts2() {
     setShow((isShow) => !isShow);
   }
 
+  function OpenWindow(href) {
+    if (href === '#') {
+      alert('준비중 이에요(🎀ॣ•͈з•͈ ॣ)');
+    } else if (href.includes('knotted')) {
+      var userAgent = navigator.userAgent;
+      var isMobile = userAgent.match(
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+      );
+      if ((userAgent = isMobile)) {
+        alert('PC에서 볼 수 있어요⊹꒰⍢⑅ ꒱꙳');
+      } else {
+        window.open(href, 'blank');
+      }
+    } else {
+      window.open(href, 'blank');
+    }
+  }
+
   return (
     <main>
       {loading ? (
@@ -100,10 +118,13 @@ function PageProducts2() {
                           y: -50,
                         }}
                       >
-                        <Link
+                        <div
                           to={item.href}
                           target="_blank"
                           className={Style.product}
+                          onClick={() => {
+                            OpenWindow(item.href);
+                          }}
                         >
                           <img
                             src={item.imgUrl}
@@ -126,7 +147,7 @@ function PageProducts2() {
                             <li>{item.desc}</li>
                             <li>{item.responsive}</li>
                           </ul>
-                        </Link>
+                        </div>
                       </motion.div>
                     ))}
                   </div>
