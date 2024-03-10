@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import ScrollToTop from './component/ScrollTop';
 
 import PageIndex from './pages/PageIndex';
 import PageProducts from './pages/PageProducts';
@@ -11,6 +12,7 @@ import PageProducts2 from './pages/PageProducts2';
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<PageIndex />} />
         <Route
