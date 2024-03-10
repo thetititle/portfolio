@@ -326,7 +326,7 @@ export default defineComponent({
               if (a.id > b.id) return -1;
             })
             .slice(0, 6);
-          const data2 = data1.filter((item) => item.id === "2")[0].issueCheck;
+          const data2 = data1.filter((item) => item.id === "4")[0].issueCheck;
           IssueCheck.value = data2.sort(function (a, b) {
             if (a.id < b.id) return 1;
             if (a.id > b.id) return -1;

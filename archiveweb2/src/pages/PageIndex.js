@@ -59,7 +59,7 @@ function PageIndex() {
     const data2 = jsonData.product.slice(0, 8);
     const product = data2.reverse();
     const issueCheck = product.filter(
-      (item) => item.id === '4'
+      (item) => item.id === '6'
     )[0].issueCheck;
     setLoading(false);
     setOwnerInfo(ownerInfo);
