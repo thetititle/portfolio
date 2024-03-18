@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { isMobile } from 'react-device-detect';
 
 function PageProducts() {
   const [isScroll, setScroll] = useState(false);
@@ -16,6 +17,12 @@ function PageProducts() {
   const isNavi = useState('personal');
   const [isFixed, setFixed] = useState(false);
   const [isShow, setShow] = useState(false);
+  const [isScrollEnd, setScrollEnd] = useState(false);
+  let productswrap =
+    document.getElementsByClassName(
+      'productswrap'
+    ).offsetHeight;
+
   const navigate = useNavigate();
 
   async function getData() {
@@ -40,12 +47,17 @@ function PageProducts() {
   useEffect(
     () =>
       window.addEventListener('scroll', () => {
+        var isScrollAtBottom =
+          window.innerHeight + window.scrollY >=
+          document.body.offsetHeight;
         if (window.scrollY > 80) {
           setScroll(true);
-          if (window.scrollY > 1000) {
+          if (isMobile && isScrollAtBottom) {
             setFixed(true);
+            setScrollEnd(true);
           } else {
             setFixed(false);
+            setScrollEnd(false);
           }
         } else {
           setScroll(false);
@@ -53,7 +65,9 @@ function PageProducts() {
       }),
     [isScroll]
   );
-
+  console.log('isScrollEnd', isScrollEnd);
+  console.log('window.scrollY', productswrap);
+  // console.log('window.scrollY', product.length * 325);
   function showNave() {
     setShow((isShow) => !isShow);
   }
@@ -170,7 +184,11 @@ function PageProducts() {
             >
               <div
                 className={
-                  isShow ? 'mobileTab show' : 'mobileTab'
+                  isShow && isScrollEnd
+                    ? 'mobileTab show fixed'
+                    : isShow
+                    ? 'mobileTab show '
+                    : 'mobileTab'
                 }
               >
                 <ul>

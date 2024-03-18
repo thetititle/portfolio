@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { isMobile } from 'react-device-detect';
 
 function PageProducts2() {
   const [isScroll, setScroll] = useState(false);
@@ -15,6 +16,7 @@ function PageProducts2() {
   const isNavi = useState('company');
   const [isFixed, setFixed] = useState(false);
   const [isShow, setShow] = useState(false);
+  const [isScrollEnd, setScrollEnd] = useState(false);
 
   async function GetData() {
     const response = await fetch(
@@ -38,12 +40,17 @@ function PageProducts2() {
   useEffect(
     () =>
       window.addEventListener('scroll', () => {
+        var isScrollAtBottom =
+          window.innerHeight + window.scrollY >=
+          document.body.offsetHeight;
         if (window.scrollY > 80) {
           setScroll(true);
-          if (window.scrollY > 1000) {
+          if (isMobile && isScrollAtBottom) {
             setFixed(true);
+            setScrollEnd(true);
           } else {
             setFixed(false);
+            setScrollEnd(false);
           }
         } else {
           setScroll(false);
@@ -162,7 +169,11 @@ function PageProducts2() {
             >
               <div
                 className={
-                  isShow ? 'mobileTab show' : 'mobileTab'
+                  isShow && isScrollEnd
+                    ? 'mobileTab show fixed'
+                    : isShow
+                    ? 'mobileTab show '
+                    : 'mobileTab'
                 }
               >
                 <ul>

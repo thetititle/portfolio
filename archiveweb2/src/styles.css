@@ -239,6 +239,9 @@ button:hover .svg-inline--fa {
   display: block;
   transition: 0.3s;
 }
+.mobileNav .mobileTab.fixed {
+  bottom: 180px;
+}
 @media (max-width: 500px) {
   .mobileNav {
     display: block;

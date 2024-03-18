@@ -11,6 +11,7 @@ import IndexHeader from '../component/IndexHeader';
 import IndexFooter from '../component/IndexFooter';
 import Style from '../scss/PageIndex.module.scss';
 import Mimoji from '../img/mino.png';
+import { isMobile } from 'react-device-detect';
 
 function PageIndex() {
   const [isScroll, setScroll] = useState(false);
@@ -22,6 +23,7 @@ function PageIndex() {
   const [issueCheck, setIssueCheck] = useState([]);
   const [isFixed, setFixed] = useState(false);
   const [isShow, setShow] = useState(false);
+  const [isScrollEnd, setScrollEnd] = useState(false);
   const navigate = useNavigate();
 
   const listRef = useRef(null);
@@ -80,12 +82,17 @@ function PageIndex() {
   useEffect(
     () =>
       window.addEventListener('scroll', () => {
+        var isScrollAtBottom =
+          window.innerHeight + window.scrollY >=
+          document.body.offsetHeight;
         if (window.scrollY > 80) {
           setScroll(true);
-          if (window.scrollY > 5800) {
+          if (isMobile && isScrollAtBottom) {
             setFixed(true);
+            setScrollEnd(true);
           } else {
             setFixed(false);
+            setScrollEnd(false);
           }
         } else {
           setScroll(false);
@@ -469,7 +476,11 @@ function PageIndex() {
             >
               <div
                 className={
-                  isShow ? 'mobileTab show' : 'mobileTab'
+                  isShow && isScrollEnd
+                    ? 'mobileTab show fixed'
+                    : isShow
+                    ? 'mobileTab show '
+                    : 'mobileTab'
                 }
               >
                 <ul onClick={SelectNavi2}>
