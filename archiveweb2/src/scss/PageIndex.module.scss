@@ -196,6 +196,9 @@
       }
       .productsList {
         width: calc(25% - 15px);
+        @media (min-width: 769px) and (max-width: 1024px) {
+          width: calc(33.3% - 14px);
+        }
         @media (min-width: 501px) and (max-width: 768px) {
           width: calc(50% - 10px);
         }
