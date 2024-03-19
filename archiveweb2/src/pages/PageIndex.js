@@ -58,7 +58,7 @@ function PageIndex() {
     const ownerInfo = jsonData.allData[0].ownerInfo;
     const skills = ownerInfo.skills;
     const timeLine = jsonData.allData[0].timeLine.reverse();
-    const data2 = jsonData.product.slice(0, 8);
+    const data2 = jsonData.product.slice(0, 12);
     const product = data2.reverse();
     const issueCheck = product.filter(
       (item) => item.id === '6'

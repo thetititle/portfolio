@@ -170,16 +170,18 @@ section {
           gap: 20px;
           flex-wrap: wrap;
           @media (min-width: 501px) and (max-width: 768px) {
-            // justify-content: flex-end;
             justify-content: flex-start;
           }
           .productWrap {
             cursor: pointer;
-            width: 294px;
-            @media (min-width: 501px) and (max-width: 768px) {
-              width: calc(33% - 11px);
+            width: calc(25% - 15px);
+            @media (min-width: 769px) and (max-width: 1024px) {
+              width: calc(33.3% - 14px);
             }
-            @media all and (max-width: 500px) {
+            @media (min-width: 501px) and (max-width: 768px) {
+              width: calc(50% - 10px);
+            }
+            @media (max-width: 500px) {
               width: 100%;
             }
           }

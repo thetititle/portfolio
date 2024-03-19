@@ -179,14 +179,19 @@ section#project .container > article .productWrapper {
 }
 section#project .container > article .productWrapper .productWrap {
   cursor: pointer;
-  width: 294px;
+  width: calc(25% - 15px);
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  section#project .container > article .productWrapper .productWrap {
+    width: calc(33.3% - 14px);
+  }
 }
 @media (min-width: 501px) and (max-width: 768px) {
   section#project .container > article .productWrapper .productWrap {
-    width: calc(33% - 11px);
+    width: calc(50% - 10px);
   }
 }
-@media all and (max-width: 500px) {
+@media (max-width: 500px) {
   section#project .container > article .productWrapper .productWrap {
     width: 100%;
   }

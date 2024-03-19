@@ -305,10 +305,7 @@ export default defineComponent({
           const data1 = result.data.allData[0];
           ownerInfo.value = data1.ownerInfo;
           skills.value = ownerInfo.value.skills;
-          timeLine.value = data1.timeLine.sort(function (a, b) {
-            if (a.id < b.id) return 1;
-            if (a.id > b.id) return -1;
-          });
+          timeLine.value = data1.timeLine.reverse();
           console.log("ownerInfo", ownerInfo.value);
           console.log("timeLine", timeLine.value);
         });
@@ -319,18 +316,10 @@ export default defineComponent({
           `https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json`
         )
         .then((result) => {
-          const data1 = result.data.product;
-          productData.value = data1
-            .sort(function (a, b) {
-              if (a.id < b.id) return 1;
-              if (a.id > b.id) return -1;
-            })
-            .slice(0, 6);
+          const data1 = result.data.product.reverse();
+          productData.value = data1.slice(0, 12);
           const data2 = data1.filter((item) => item.id === "4")[0].issueCheck;
-          IssueCheck.value = data2.sort(function (a, b) {
-            if (a.id < b.id) return 1;
-            if (a.id > b.id) return -1;
-          });
+          IssueCheck.value = data2.reverse();
           console.log("productData", productData.value);
           console.log("IssueCheck", IssueCheck.value);
         });

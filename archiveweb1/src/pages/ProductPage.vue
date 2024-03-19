@@ -81,10 +81,7 @@ export default defineComponent({
           `https://raw.githubusercontent.com/thetititle/data/main/archiveweb.json`
         )
         .then((result) => {
-          const data1 = result.data.product.sort(function (a, b) {
-            if (a.id < b.id) return 1;
-            if (a.id > b.id) return -1;
-          });
+          const data1 = result.data.product.reverse();
           if (typeCheck.value === true) {
             productData.value = data1.filter(
               (item) => item.type === "personal"
