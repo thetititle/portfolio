@@ -60,9 +60,9 @@ function PageIndex() {
     const timeLine = jsonData.allData[0].timeLine.reverse();
     const data2 = jsonData.product.slice(0, 12);
     const product = data2.reverse();
-    const issueCheck = product.filter(
-      (item) => item.id === '6'
-    )[0].issueCheck;
+    const issueCheck = product
+      .filter((item) => item.id === '6')[0]
+      .issueCheck.reverse();
     setLoading(false);
     setOwnerInfo(ownerInfo);
     setSkills(skills);
